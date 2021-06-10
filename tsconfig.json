@@ -17,8 +17,10 @@
 		"moduleResolution": "node",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
-		"noEmit": true,
-		"jsx": "react-jsx"
+		"jsx": "react-jsx",
+		"sourceMap": true,
+		"outDir": "./out",
+		"noEmit": true
 	},
 	"include": ["src"]
 }

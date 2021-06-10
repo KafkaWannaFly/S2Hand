@@ -1,0 +1,32 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "pwa-msedge",
+			"request": "launch",
+			"name": "Edge Debug",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}",
+			"outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"],
+			"urlFilter": "http://localhost:3000",
+			"cleanUp": "onlyTab",
+			"smartStep": true,
+			"skipFiles": ["<node_internals>/**"]
+		},
+		{
+			"type": "pwa-chrome",
+			"request": "launch",
+			"name": "Chrome Debug",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}",
+			"outFiles": ["${workspaceFolder}/**/*.js", "!**/node_modules/**"],
+			"urlFilter": "http://localhost:3000",
+			"cleanUp": "onlyTab",
+			"smartStep": true,
+			"skipFiles": ["<node_internals>/**"]
+		}
+	]
+}
