@@ -1,5 +1,5 @@
 {
-  "name": "student-sale",
+  "name": "s2hand",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "prettier-format": "prettier --config .prettierrc src/** --write"
   },
   "eslintConfig": {
     "extends": [
