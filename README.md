@@ -1,46 +1,42 @@
-# Getting Started with Create React App
+# S2Hand
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Second hand sale site for students. This school project is tended to have Front-End only. Tech stack:
 
-## Available Scripts
+- ReactJS
+- Redux
+- TypeScript (ES6)
+- Bootstrap
 
-In the project directory, you can run:
+## Pre-Require
 
-### `npm start`
+To run this project properly, you should have:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- NodeJS v14.15.5 (or any LTS version > 12)
+- VSCode (Not a must but I hope your code editor have those following extension)
+- Debugger for Chrome/ Debugger for Edge: For debugging
+- ESLint (Dirk Baeume): ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, with the goal of making code more consistent and avoiding bugs.
+- Prettier Code Formatter (Prettier): Code formatter
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Optional extensions:
 
-### `npm test`
+- GitLens — Git supercharged: Give you information about commits in each line of code
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Run
 
-### `npm run build`
+In the project directory:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Run `npm i` to install necessary dependencies
+- `npm start` to start our web site
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Debug
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Run `npm start`
+- Choose debug with Chrome or Edge
+- Press start button or F5
 
-### `npm run eject`
+![image-20210612154726640](README.assets/image-20210612154726640.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Create Production Build
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run `npm run build`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
