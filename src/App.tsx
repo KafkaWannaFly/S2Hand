@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Text14 } from "./shared/texts";
+import { Text14 } from "./shared/components";
 
 function App(): JSX.Element {
   return (
