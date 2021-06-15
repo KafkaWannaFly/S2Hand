@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { Text14 } from "./shared/components";
+import { R } from "./shared/res";
 
 function App(): JSX.Element {
   return (
@@ -15,16 +16,15 @@ function App(): JSX.Element {
 
       <Text14 semiBold text={"This is how a semi-bold text look like"} />
 
-      <Text14
-        black
-        text={"You can also change apply your own style"}
-        style={{ color: "red", fontSize: 24 }}
-      />
+      <Text14 black text={"ABC"} style={{ color: "red", fontSize: 24 }} />
 
       <Text14
         black
         text={"Define your callback"}
-        style={{ color: "violet", fontSize: 24 }}
+        style={{
+          color: R.colors.black,
+          fontSize: 24
+        }}
         onClick={(e) =>
           (e.currentTarget.innerHTML = (Math.random() * 100).toFixed(0))
         }
