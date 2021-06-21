@@ -1,15 +1,14 @@
 {
-    "cSpell.words": [
-        "Plex",
-        "TTFB",
-        "browserslist",
-        "fontawesome",
-        "fortawesome",
-        "prettierrc",
-        "reduxjs",
-        "webfonts"
-    ],
-    "editor.formatOnType": true,
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "cSpell.words": [
+    "Plex",
+    "TTFB",
+    "browserslist",
+    "fontawesome",
+    "fortawesome",
+    "prettierrc",
+    "reduxjs",
+    "webfonts"
+  ],
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

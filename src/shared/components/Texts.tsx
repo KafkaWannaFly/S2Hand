@@ -17,7 +17,7 @@ interface Props
   black?: boolean;
 }
 
-const Text = (props: Props): JSX.Element => {
+export const Text = (props: Props): JSX.Element => {
   const { text, style, italic, underline, onClick, id, className } = props;
 
   const defaultStyle: CSSProperties = {
@@ -41,8 +41,20 @@ const Text = (props: Props): JSX.Element => {
   );
 };
 
+export const Text10 = (props: Props): JSX.Element => {
+  return <Text style={{ fontSize: 10 }} {...props} />;
+};
+
+export const Text12 = (props: Props): JSX.Element => {
+  return <Text style={{ fontSize: 12 }} {...props} />;
+};
+
 export const Text14 = (props: Props): JSX.Element => {
   return <Text style={{ fontSize: 14 }} {...props} />;
+};
+
+export const Text20 = (props: Props): JSX.Element => {
+  return <Text style={{ fontSize: 20 }} {...props} />;
 };
 
 function getFontFamily(props: Props) {
