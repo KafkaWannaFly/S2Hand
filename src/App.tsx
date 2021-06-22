@@ -1,34 +1,17 @@
 import React from "react";
 import "./App.css";
-import { Text14 } from "./shared/components";
+import { Home } from "./screens";
 import { R } from "./shared/res";
 
 function App(): JSX.Element {
   return (
-    <div className="App">
-      <Text14
-        text={
-          "Sample text have fontSize = 14 and fontFamily = Montserrat Regular"
-        }
-      />
-
-      <Text14 italic underline text={"Italic looks like this"} />
-
-      <Text14 semiBold text={"This is how a semi-bold text look like"} />
-
-      <Text14 black text={"ABC"} style={{ color: "red", fontSize: 24 }} />
-
-      <Text14
-        black
-        text={"Define your callback"}
-        style={{
-          color: R.colors.black,
-          fontSize: 24
-        }}
-        onClick={(e) =>
-          (e.currentTarget.innerHTML = (Math.random() * 100).toFixed(0))
-        }
-      />
+    <div
+      style={{
+        backgroundColor: R.colors.background,
+        flex: 1
+      }}
+    >
+      <Home />
     </div>
   );
 }
