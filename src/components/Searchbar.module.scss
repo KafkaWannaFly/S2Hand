@@ -1,0 +1,49 @@
+@import "../styles/standard";
+
+.searchbar {
+  background-color: $surface;
+  border-radius: 0.5rem;
+
+  .searchbar__container {
+    padding: 0.15rem;
+    display: flex;
+
+    .searchbar__input {
+      @include reset-input;
+      @include set-text($fontSerifRegular, $onSearchbarText, null);
+      padding: 0.1rem 0.5rem;
+      flex: 1;
+    }
+
+    .searchbar__delete {
+      @include reset-button();
+      padding: 0.1rem 0.3rem;
+      margin: 0 0.25rem;
+
+      .searchbar__delete__icon {
+        color: $onVariant;
+        font-size: $onSearchbarIcon;
+      }
+    }
+
+    .searchbar__input:placeholder-shown ~ .searchbar__delete {
+      visibility: hidden;
+    }
+
+    .searchbar__input:not(:placeholder-shown) ~ .searchbar__delete {
+      visibility: visible;
+    }
+
+    .searchbar__search {
+      @include reset-button();
+      background-color: $primaryVariantDark;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.4rem;
+
+      .searchbar__search__icon {
+        color: $onPrimary;
+        font-size: $onSearchbarIcon;
+      }
+    }
+  }
+}

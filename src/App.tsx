@@ -1,11 +1,16 @@
 import React from "react";
 import { Home } from "./pages";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar } from "./components";
 
 const App = () => {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 };
 

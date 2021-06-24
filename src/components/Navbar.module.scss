@@ -1,0 +1,23 @@
+@import "../styles/standard";
+
+.navbar {
+  width: 100%;
+  background-color: $primary;
+  padding: 0.45rem 0;
+
+  .navbar__container {
+    width: 75%;
+    display: flex;
+    margin: auto;
+
+    .navbar__logo {
+      width: $onLogo;
+      height: $onLogo;
+    }
+
+    .navbar__searchbar {
+      margin-left: 1.5rem;
+      align-self: flex-end;
+    }
+  }
+}
