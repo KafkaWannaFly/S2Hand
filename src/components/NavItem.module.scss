@@ -1,11 +1,51 @@
 @import "../styles/standard";
 
-.nav__item__icon__page {
-  font-size: $onNavItemPageIcon;
-  margin-right: 0.5rem;
+.nav__item {
+  border-radius: 0.45rem;
+  color: $onPrimary !important;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.nav__item__icon__action {
-  font-size: $onNavItemActionIcon;
-  margin-right: 0.75rem;
+.nav__item__page {
+  @extend .nav__item;
+  font-size: $onNavItemPageText;
+  transition: all 0.4s ease-in-out;
+  padding: 0 1rem;
+
+  &:hover {
+    background-color: $primaryVariantLight;
+  }
+
+  &.active {
+    background-color: $primaryVariantLight;
+  }
+
+  .nav__item__icon {
+    font-size: $onNavItemPageIcon;
+    margin-right: 0.75rem;
+  }
+}
+
+.nav__item__action {
+  @extend .nav__item;
+  font-size: $onNavItemActionText;
+  background-color: $primaryVariantDark;
+  padding: 0.05rem 1.25rem;
+  transition: all 0.4s ease-in-out;
+
+  &:hover {
+    background-color: $onPrimaryVariantDarkHover;
+  }
+
+  &.active {
+    background-color: $onPrimaryVariantDarkHover;
+  }
+
+  .nav__item__icon {
+    font-size: $onNavItemActionIcon;
+    margin-right: 1rem;
+  }
 }
