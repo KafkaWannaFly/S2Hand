@@ -3,21 +3,82 @@
 .navbar {
   width: 100%;
   background-color: $primary;
-  padding: 0.45rem 0;
+  padding: 0.35rem 0;
 
   .navbar__container {
     width: 75%;
     display: flex;
     margin: auto;
 
-    .navbar__logo {
+    .nav__logo {
+      @include display-flex(center, center);
       width: $onLogo;
       height: $onLogo;
+      align-self: center;
+      flex: 1;
     }
 
-    .navbar__searchbar {
-      margin-left: 1.5rem;
+    .nav__searchbar {
+      margin: 0 2rem 0 1.5rem;
       align-self: flex-end;
+      flex: 4;
+    }
+
+    .nav__container {
+      flex: 7;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+
+      .nav__page {
+        flex: 5;
+        list-style-type: none;
+        display: flex;
+
+        .nav__item {
+          font-size: $onNavItemPageText;
+          transition: all 0.4s ease-in-out;
+          padding: 0 1rem;
+        }
+
+        .nav__item:hover {
+          background-color: $primaryVariantLight;
+        }
+
+        .nav__item:not(:last-child) {
+          margin-right: 1.25rem;
+        }
+      }
+
+      .nav__item {
+        border-radius: 0.45rem;
+        color: $onPrimary;
+        text-decoration: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .nav__action {
+        flex: 7;
+        margin-top: 0.2rem;
+        list-style-type: none;
+        display: flex;
+
+        .nav__item {
+          font-size: $onNavItemActionText;
+          background-color: $primaryVariantDark;
+          padding: 0.05rem 1.25rem;
+        }
+
+        .nav__item:hover {
+          background-color: $onPrimaryVariantDarkHover;
+        }
+
+        .nav__item:not(:last-child) {
+          margin-right: 1.25rem;
+        }
+      }
     }
   }
 }

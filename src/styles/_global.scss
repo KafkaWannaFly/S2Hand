@@ -11,12 +11,16 @@
 
 @mixin reset-button {
   @include reset-border-outline();
+  @include display-flex(center, center);
   background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @mixin reset-input {
   @include reset-border-outline();
+}
+
+@mixin display-flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
 }

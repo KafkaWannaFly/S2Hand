@@ -1,0 +1,11 @@
+@import "../styles/standard";
+
+.nav__item__icon__page {
+  font-size: $onNavItemPageIcon;
+  margin-right: 0.5rem;
+}
+
+.nav__item__icon__action {
+  font-size: $onNavItemActionIcon;
+  margin-right: 0.75rem;
+}

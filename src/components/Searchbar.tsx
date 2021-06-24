@@ -21,14 +21,10 @@ export const Searchbar: React.FC<Props> = (props) => {
             spellCheck="false"
           />
           <button className={Styles.searchbar__delete}>
-            <Icon className={Styles.searchbar__delete__icon}>
-              <MdClose />
-            </Icon>
+            <Icon className={Styles.searchbar__delete__icon} icon={MdClose} />
           </button>
           <button type="submit" className={Styles.searchbar__search}>
-            <Icon className={Styles.searchbar__search__icon}>
-              <IoSearch />
-            </Icon>
+            <Icon className={Styles.searchbar__search__icon} icon={IoSearch} />
           </button>
         </div>
       </form>

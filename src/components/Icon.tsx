@@ -1,13 +1,15 @@
 import React from "react";
-import { IconContext } from "react-icons";
+import { IconContext, IconType } from "react-icons";
 import { DivProps } from "react-html-props";
 
-type Props = DivProps;
+interface Props extends DivProps {
+  icon: IconType;
+}
 
 export const Icon: React.FC<Props> = (props) => {
   return (
     <IconContext.Provider value={{ ...props }}>
-      {props.children}
+      {<props.icon />}
     </IconContext.Provider>
   );
 };
