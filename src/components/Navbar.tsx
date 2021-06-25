@@ -5,8 +5,11 @@ import { Searchbar } from "./Searchbar";
 import { Link } from "react-router-dom";
 import { NavListPages, NavListActions } from "../res";
 import { NavItem } from "./NavItem";
+import { DivProps } from "react-html-props";
 
-export const Navbar = () => {
+type Props = DivProps;
+
+export const Navbar: React.FC<Props> = (props) => {
   const NavPages = NavListPages.map(({ icon, text, to }) => {
     return (
       <NavItem
@@ -34,10 +37,10 @@ export const Navbar = () => {
   });
 
   return (
-    <nav className={Styles.navbar}>
+    <nav className={`${Styles.navbar} ${props.className}`}>
       <div className={Styles.navbar__container}>
-        <Link to="/" className={Styles.nav__logo__container}>
-          <img src={Logo} alt="S2Hand Logo" className={Styles.nav__logo} />
+        <Link to="/" className={Styles.navbar__logo__container}>
+          <img src={Logo} alt="S2Hand Logo" className={Styles.navbar__logo} />
         </Link>
         <div className={Styles.navbar__nav__container}>
           <div className={Styles.nav__searchbar__container}>

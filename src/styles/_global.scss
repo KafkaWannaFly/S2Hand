@@ -24,3 +24,16 @@
   justify-content: $justify-content;
   align-items: $align-items;
 }
+
+@mixin position-sticky() {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+}
+
+@mixin text-max-line($numline) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $numline; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}

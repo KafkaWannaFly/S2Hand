@@ -1,3 +1,4 @@
 import { Navbar } from "./Navbar";
+import { CategoryPanel } from "./CategoryPanel";
 
-export { Navbar };
+export { Navbar, CategoryPanel };

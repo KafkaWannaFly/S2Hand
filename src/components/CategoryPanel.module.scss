@@ -1,0 +1,35 @@
+@import "../styles/standard";
+
+.category__panel {
+  background-color: $surface;
+  border-radius: 0.65rem;
+  padding: 0.5rem 0 0.75rem 0;
+
+  .category__panel__container {
+    .category__panel__title {
+      @include set-text(
+        $fontSerifMedium,
+        $onCategoryPanelTitle-Large,
+        $onSurface
+      );
+      margin-left: 1rem;
+      margin-bottom: 0;
+    }
+
+    .hr {
+      height: 1px;
+      margin: 0.65rem 0;
+      color: $hrNormal;
+    }
+
+    .category__list__container {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-evenly;
+    }
+
+    .category__list__item {
+      align-self: stretch;
+    }
+  }
+}
