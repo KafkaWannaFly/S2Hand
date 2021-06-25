@@ -8,6 +8,7 @@ export const Strings = {
     houseHold: "Đồ gia dụng",
     personalUse: "Đồ dùng cá nhân",
     electronic: "Đồ điện tử",
-    other: "Khác"
+    other: "Khác",
+    category: "Danh mục sản phẩm"
   }
 };
