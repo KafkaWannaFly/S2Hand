@@ -4,6 +4,11 @@
   width: 80%;
   background-color: $surface;
   border-radius: 0.5rem;
+  transition: all 0.5s ease-in-out;
+
+  &.searchbar__active {
+    width: 100%;
+  }
 
   .searchbar__container {
     padding: 0.15rem;
@@ -32,7 +37,7 @@
     }
 
     .searchbar__input:not(:placeholder-shown) ~ .searchbar__delete {
-      display: inline-block;
+      display: flex;
     }
 
     .searchbar__search {
@@ -98,10 +103,19 @@
 @media only screen and (max-width: 601px) {
   .searchbar {
     width: auto;
+
+    &.searchbar__active {
+      width: 100%;
+    }
+
     .searchbar__container {
       .searchbar__input {
         display: none;
         @include set-text($fontSerifRegular, $onSearchbarText-ExSmall, null);
+
+        &.searchbar__input__active {
+          display: flex;
+        }
       }
 
       .searchbar__delete {

@@ -40,7 +40,7 @@ export const Navbar = () => {
           <img src={Logo} alt="S2Hand Logo" className={Styles.nav__logo} />
         </Link>
         <div className={Styles.navbar__nav__container}>
-          <div className={Styles.nav__searchbar__container} tabIndex={1}>
+          <div className={Styles.nav__searchbar__container}>
             <Searchbar className={Styles.nav__searchbar} />
           </div>
           <div className={Styles.nav__container}>
