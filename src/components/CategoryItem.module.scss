@@ -108,15 +108,12 @@
 @media only screen and (max-width: 601px) {
   .category__item {
     .category__item__container {
-      // width: calc(#{$onCategoryItemThumbnail-W-ExSmall} + 0.15rem * 2);
-      width: 100%;
+      width: 62.5%;
       padding: 0.15rem;
       border-radius: 0.35rem;
 
       .category__item__link {
         .category__item__thumbnail {
-          // width: $onCategoryItemThumbnail-W-ExSmall;
-          // height: $onCategoryItemThumbnail-H-ExSmall;
           width: 100%;
           height: $onCategoryItemThumbnail-H-ExSmall;
           border-radius: 0.35rem;

@@ -26,10 +26,29 @@
       display: flex;
       align-items: stretch;
       justify-content: space-evenly;
-    }
 
-    .category__list__item {
-      align-self: stretch;
+      .category__list__item {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 601px) {
+  .category__panel {
+    .category__panel__container {
+      .category__list__container {
+        flex-wrap: wrap;
+        // padding: 0 2.5%;
+
+        .category__list__item {
+          flex-basis: 33.33%;
+
+          &:nth-child(n + 4) {
+            margin-top: 0.5rem;
+          }
+        }
+      }
     }
   }
 }
