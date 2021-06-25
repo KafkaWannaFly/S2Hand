@@ -1,6 +1,6 @@
 import React, { CSSProperties, DetailedHTMLProps, HTMLAttributes } from "react";
 import { Card } from "react-bootstrap";
-import { Text } from "..";
+import { FontFamily } from "../res";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props
@@ -14,7 +14,8 @@ export const CategoryItem = (props: Props) => {
     <div {...props}>
       <Card style={styles.container}>
         <Card.Img variant="top" src={props.imageSource} style={styles.img} />
-        <Text semiBold text={props.title} style={styles.title} />
+        {/* <Text semiBold text={props.title} style={styles.title} /> */}
+        <div style={styles.title}>{props.title}</div>
       </Card>
     </div>
   );
@@ -40,7 +41,8 @@ const styles: Styles = {
     alignSelf: "center",
     justifyContent: "center",
     alignItems: "center",
-    fontSize: 12
+    fontSize: 12,
+    fontFamily: FontFamily.montserrat.semiBold
   },
   img: { marginBottom: 10 }
 };
