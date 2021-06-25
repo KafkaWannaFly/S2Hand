@@ -1,48 +1,26 @@
-import React, { CSSProperties, DetailedHTMLProps, HTMLAttributes } from "react";
-import { Card } from "react-bootstrap";
-import { FontFamily } from "../res";
+import React from "react";
+import { DivProps } from "react-html-props";
+import Styles from "./CategoryItem.module.scss";
+import { Link } from "react-router-dom";
+import { CategoryItemType } from "../res";
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface Props
-  extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-  imageSource: string;
-  title: string;
-}
+type Props = DivProps & CategoryItemType;
 
-export const CategoryItem = (props: Props) => {
+export const CategoryItem: React.FC<Props> = (props) => {
   return (
-    <div {...props}>
-      <Card style={styles.container}>
-        <Card.Img variant="top" src={props.imageSource} style={styles.img} />
-        {/* <Text semiBold text={props.title} style={styles.title} /> */}
-        <div style={styles.title}>{props.title}</div>
-      </Card>
+    <div className={`${props.className} ${Styles.category__item}`}>
+      <div className={Styles.category__item__container}>
+        <Link to={props.to} className={Styles.category__item__link}>
+          <img
+            src={props.thumbnail}
+            alt={props.name}
+            className={Styles.category__item__thumbnail}
+          />
+          <div className={Styles.category__item__title__container}>
+            <p className={Styles.category__item__title}>{props.title}</p>
+          </div>
+        </Link>
+      </div>
     </div>
   );
-};
-
-interface Styles {
-  container: CSSProperties;
-  title: CSSProperties;
-  img: CSSProperties;
-}
-
-const styles: Styles = {
-  container: {
-    paddingTop: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingBottom: 5,
-    borderRadius: 15,
-    marginLeft: 20,
-    marginRight: 20
-  },
-  title: {
-    alignSelf: "center",
-    justifyContent: "center",
-    alignItems: "center",
-    fontSize: 12,
-    fontFamily: FontFamily.montserrat.semiBold
-  },
-  img: { marginBottom: 10 }
 };
