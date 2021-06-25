@@ -1,15 +1,16 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { CategoryItem } from "./CategoryItem";
-import bookImg from "../../../assets/img/book-category.jpg";
-import clothesImg from "../../../assets/img/clothes-category.jpg";
-import electronicImg from "../../../assets/img/electronic-category.jpg";
-import houseHoldImg from "../../../assets/img/household-category.jpg";
-import personalImg from "../../../assets/img/personal-category.jpg";
-import schoolSuppliesImg from "../../../assets/img/school-supply-category.jpg";
-import { Text } from "..";
+import bookImg from "../assets/img/book-category.jpg";
+import clothesImg from "../assets/img/clothes-category.jpg";
+import electronicImg from "../assets/img/electronic-category.jpg";
+import houseHoldImg from "../assets/img/household-category.jpg";
+import personalImg from "../assets/img/personal-category.jpg";
+import schoolSuppliesImg from "../assets/img/school-supply-category.jpg";
+// import { Text } from "..";
 import { CSSProperties } from "react";
-import { R } from "../../res";
+// import { R } from "../../res";
+import { FontFamily, Strings } from "../res";
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 interface Props
@@ -19,12 +20,13 @@ export function CategoryPanel(props: Props) {
   return (
     <div {...props}>
       <Container style={styles.container}>
-        <Text
-          text={R.strings.home.category}
+        {/* <Text
+          text={Strings.home.category}
           serif
           semiBold
           style={styles.panelName}
-        />
+        /> */}
+        <div style={styles.panelName}>{Strings.home.category}</div>
 
         <div style={styles.separator}></div>
 
@@ -32,42 +34,42 @@ export function CategoryPanel(props: Props) {
           <Col>
             <CategoryItem
               imageSource={bookImg}
-              title={R.strings.home.book}
+              title={Strings.home.book}
               style={styles.categoryItem}
             />
           </Col>
           <Col>
             <CategoryItem
               imageSource={schoolSuppliesImg}
-              title={R.strings.home.schoolSupplies}
+              title={Strings.home.schoolSupplies}
               style={styles.categoryItem}
             />
           </Col>
           <Col>
             <CategoryItem
               imageSource={houseHoldImg}
-              title={R.strings.home.houseHold}
+              title={Strings.home.houseHold}
               style={styles.categoryItem}
             />
           </Col>
           <Col>
             <CategoryItem
               imageSource={personalImg}
-              title={R.strings.home.personalUse}
+              title={Strings.home.personalUse}
               style={styles.categoryItem}
             />
           </Col>
           <Col>
             <CategoryItem
               imageSource={electronicImg}
-              title={R.strings.home.electronic}
+              title={Strings.home.electronic}
               style={styles.categoryItem}
             />
           </Col>
           <Col>
             <CategoryItem
               imageSource={clothesImg}
-              title={R.strings.home.other}
+              title={Strings.home.other}
               style={styles.categoryItem}
             />
           </Col>
@@ -96,7 +98,7 @@ const styles: Style = {
     // marginRight: 20
   },
   container: {
-    backgroundColor: R.colors.white,
+    backgroundColor: "#ffffff",
     borderRadius: 5,
     // padding: 10
     paddingTop: 10,
@@ -105,15 +107,17 @@ const styles: Style = {
     // paddingLeft: 30
   },
   panelName: {
+    fontFamily: FontFamily.ibmPlexSerif.semiBold,
+    fontSize: 20,
+
     marginTop: 5,
     marginBottom: 5,
     marginLeft: 10,
-    marginRight: 10,
-    fontSize: 20
+    marginRight: 10
   },
   separator: {
     height: 1,
-    backgroundColor: R.colors.background,
+    backgroundColor: "#f4f4f4",
     width: 99999,
     marginLeft: -100, // Don't know why container has a padding on the left
     marginTop: 5,

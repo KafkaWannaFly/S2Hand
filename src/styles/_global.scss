@@ -1,0 +1,26 @@
+@mixin set-text($font-family, $font-size, $color) {
+  color: $color;
+  font-family: $font-family;
+  font-size: $font-size;
+}
+
+@mixin reset-border-outline {
+  border: none;
+  outline: none;
+}
+
+@mixin reset-button {
+  @include reset-border-outline();
+  @include display-flex(center, center);
+  background-color: transparent;
+}
+
+@mixin reset-input {
+  @include reset-border-outline();
+}
+
+@mixin display-flex($justify-content, $align-items) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

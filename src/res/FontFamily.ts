@@ -1,4 +1,4 @@
-export const fontFamily = {
+export const FontFamily = {
   montserrat: {
     regular: "Montserrat-Regular",
     medium: "Montserrat-Medium",

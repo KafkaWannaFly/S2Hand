@@ -1,4 +1,4 @@
-export const strings = {
+export const Strings = {
   appName: "S2Hand",
   home: {
     home: "Trang chủ",

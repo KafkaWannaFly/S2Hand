@@ -1,19 +1,21 @@
 import React from "react";
-import "./App.css";
-import { Home } from "./screens";
-import { R } from "./shared/res";
+import { Cart, Dashboard, Home, Login, Post } from "./pages";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar } from "./components";
 
-function App(): JSX.Element {
+const App = () => {
   return (
-    <div
-      style={{
-        backgroundColor: R.colors.background,
-        flex: 1
-      }}
-    >
-      <Home />
-    </div>
+    <Router>
+      <Navbar />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/dashboard" component={Dashboard} />
+        <Route path="/cart" component={Cart} />
+        <Route path="/post" component={Post} />
+        <Route path="/login" component={Login} />
+      </Switch>
+    </Router>
   );
-}
+};
 
 export default App;
