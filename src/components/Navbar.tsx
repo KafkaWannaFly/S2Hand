@@ -36,13 +36,17 @@ export const Navbar = () => {
   return (
     <nav className={Styles.navbar}>
       <div className={Styles.navbar__container}>
-        <Link to="/">
+        <Link to="/" className={Styles.nav__logo__container}>
           <img src={Logo} alt="S2Hand Logo" className={Styles.nav__logo} />
         </Link>
-        <Searchbar className={Styles.nav__searchbar} />
-        <div className={Styles.nav__container}>
-          <ul className={Styles.nav__page}>{NavPages}</ul>
-          <ul className={Styles.nav__action}>{NavActions}</ul>
+        <div className={Styles.navbar__nav__container}>
+          <div className={Styles.nav__searchbar__container} tabIndex={1}>
+            <Searchbar className={Styles.nav__searchbar} />
+          </div>
+          <div className={Styles.nav__container}>
+            <ul className={Styles.nav__page}>{NavPages}</ul>
+            <ul className={Styles.nav__action}>{NavActions}</ul>
+          </div>
         </div>
       </div>
     </nav>

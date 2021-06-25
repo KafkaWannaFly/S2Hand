@@ -9,6 +9,14 @@
   align-items: center;
 }
 
+.nav__item__text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
 .nav__item__page {
   @extend .nav__item;
   font-size: $onNavItemPageText;
@@ -24,14 +32,14 @@
   }
 
   .nav__item__icon {
-    font-size: $onNavItemPageIcon;
+    font-size: $onNavItemPageIcon-Large;
     margin-right: 0.75rem;
   }
 }
 
 .nav__item__action {
   @extend .nav__item;
-  font-size: $onNavItemActionText;
+  font-size: $onNavItemActionText-Large;
   background-color: $primaryVariantDark;
   padding: 0.05rem 1.25rem;
   transition: all 0.4s ease-in-out;
@@ -45,7 +53,76 @@
   }
 
   .nav__item__icon {
-    font-size: $onNavItemActionIcon;
+    font-size: $onNavItemActionIcon-Large;
     margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1280px) {
+  .nav__item__page {
+    padding: 0.25rem 0.35rem;
+
+    .nav__item__icon {
+      font-size: $onNavItemPageIcon-Medium;
+      margin-right: 0;
+    }
+
+    .nav__item__text {
+      display: none;
+    }
+  }
+
+  .nav__item__action {
+    padding: 0.1rem 0.85rem;
+    font-size: $onNavItemActionText-Medium;
+
+    .nav__item__icon {
+      margin-right: 0.85rem;
+      font-size: $onNavItemActionIcon-Medium;
+    }
+  }
+}
+
+@media only screen and (max-width: 962px) {
+  .nav__item__page {
+    padding: 0.2rem 0.3rem;
+
+    .nav__item__icon {
+      font-size: $onNavItemPageIcon-Small;
+      margin-right: 0;
+    }
+
+    .nav__item__text {
+      display: none;
+    }
+  }
+
+  .nav__item__action {
+    padding: 0.35rem 0.85rem;
+    font-size: $onNavItemActionText-Small;
+
+    .nav__item__icon {
+      margin-right: 0;
+      font-size: $onNavItemActionIcon-Small;
+    }
+
+    .nav__item__text {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 601px) {
+  .nav__item__page {
+    padding: 0.25rem 0.35rem;
+
+    .nav__item__icon {
+      font-size: $onNavItemPageIcon-ExSmall;
+      margin-right: 0;
+    }
+
+    .nav__item__text {
+      display: none;
+    }
   }
 }

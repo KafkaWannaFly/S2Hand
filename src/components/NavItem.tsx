@@ -6,7 +6,7 @@ import { Icon } from "./Icon";
 import Styles from "./NavItem.module.scss";
 
 interface Props extends DivProps, NavItemType {
-  option: string;
+  option: string; //page or action
 }
 
 export const NavItem: React.FC<Props> = (props) => {
@@ -22,7 +22,7 @@ export const NavItem: React.FC<Props> = (props) => {
       exact={props.to === "/" ? true : false}
     >
       <Icon className={Styles.nav__item__icon} icon={props.icon} />
-      {props.text}
+      <span className={Styles.nav__item__text}>{props.text}</span>
     </NavLink>
   );
 };

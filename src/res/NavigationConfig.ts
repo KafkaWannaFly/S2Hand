@@ -1,10 +1,8 @@
 import { IconType } from "react-icons";
-import { TiHome } from "react-icons/ti";
-import { HiClipboardList } from "react-icons/hi";
-import { FaBell } from "react-icons/fa";
+import { FaBell, FaClipboardList } from "react-icons/fa";
 import { IoBagHandle } from "react-icons/io5";
 import { FiEdit } from "react-icons/fi";
-import { RiAccountCircleFill } from "react-icons/ri";
+import { RiAccountCircleFill, RiHome4Fill } from "react-icons/ri";
 
 export interface NavItemType {
   icon: IconType;
@@ -13,8 +11,8 @@ export interface NavItemType {
 }
 
 export const NavListPages: NavItemType[] = [
-  { icon: TiHome, text: "Trang chủ", to: "/" },
-  { icon: HiClipboardList, text: "Quản lý tin", to: "/dashboard" },
+  { icon: RiHome4Fill, text: "Trang chủ", to: "/" },
+  { icon: FaClipboardList, text: "Quản lý tin", to: "/dashboard" },
   { icon: FaBell, text: "Thông báo", to: "/nofi" },
   { icon: IoBagHandle, text: "Giỏ hàng", to: "/cart" }
 ];
