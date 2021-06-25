@@ -7,13 +7,13 @@
 
   .navbar__container {
     @include display-flex(center, center);
-    width: 80%;
+    width: $width-Large;
     margin: auto;
 
-    .nav__logo__container {
+    .navbar__logo__container {
       @include display-flex(center, center);
 
-      .nav__logo {
+      .navbar__logo {
         width: $onLogo-Large;
         height: $onLogo-Large;
       }
@@ -65,10 +65,10 @@
 @media only screen and (max-width: 1280px) {
   .navbar {
     .navbar__container {
-      width: 85%;
+      width: $width-Medium;
 
-      .nav__logo__container {
-        .nav__logo {
+      .navbar__logo__container {
+        .navbar__logo {
           width: $onLogo-Medium;
           height: $onLogo-Medium;
         }
@@ -111,10 +111,10 @@
 @media only screen and (max-width: 962px) {
   .navbar {
     .navbar__container {
-      width: 90%;
+      width: $width-Small;
 
-      .nav__logo__container {
-        .nav__logo {
+      .navbar__logo__container {
+        .navbar__logo {
           width: $onLogo-Small;
           height: $onLogo-Small;
         }
@@ -161,10 +161,10 @@
 @media only screen and (max-width: 601px) {
   .navbar {
     .navbar__container {
-      width: 85%;
+      width: $width-ExSmall;
 
-      .nav__logo__container {
-        .nav__logo {
+      .navbar__logo__container {
+        .navbar__logo {
           width: $onLogo-ExSmall;
           height: $onLogo-ExSmall;
         }
@@ -193,7 +193,9 @@
           }
 
           .nav__action {
-            display: none;
+            .nav__item:not(:last-child) {
+              display: none;
+            }
           }
         }
       }

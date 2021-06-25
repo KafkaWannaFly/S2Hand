@@ -1,6 +1,6 @@
-import { FontFamily } from "./FontFamily";
+// import { FontFamily } from "./FontFamily";
 import { NavListPages, NavListActions, NavItemType } from "./NavigationConfig";
-import { Strings } from "./Strings";
+import { CategoryList, CategoryItemType } from "./CategoryConfig";
 
-export { NavListPages, NavListActions, FontFamily, Strings };
-export type { NavItemType };
+export { NavListPages, NavListActions, CategoryList };
+export type { NavItemType, CategoryItemType };

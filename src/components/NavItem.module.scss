@@ -125,4 +125,18 @@
       display: none;
     }
   }
+
+  .nav__item__action {
+    padding: 0.35rem 0.5rem;
+    border-radius: 1rem;
+
+    .nav__item__icon {
+      margin-right: 0;
+      font-size: $onNavItemActionIcon-ExSmall;
+    }
+
+    .nav__item__text {
+      display: none;
+    }
+  }
 }
