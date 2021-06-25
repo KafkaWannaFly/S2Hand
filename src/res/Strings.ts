@@ -2,7 +2,6 @@ export const Strings = {
   appName: "S2Hand",
   home: {
     home: "Trang chủ",
-    category: "Danh mục sản phẩm",
     book: "Sách",
     schoolSupplies: "Dụng cụ học tập",
     houseHold: "Đồ gia dụng",
