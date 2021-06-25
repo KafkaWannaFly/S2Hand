@@ -110,11 +110,20 @@
 
     .searchbar__container {
       .searchbar__input {
-        display: none;
+        // display: none;
+        transition: all 0.75s ease-in-out;
+        opacity: 0;
+        flex: 0;
+        padding: 0;
+        width: 0;
         @include set-text($fontSerifRegular, $onSearchbarText-ExSmall, null);
 
         &.searchbar__input__active {
+          opacity: 1;
+          width: auto;
+          flex: 1;
           display: flex;
+          padding: 0.1rem 0.5rem;
         }
       }
 
