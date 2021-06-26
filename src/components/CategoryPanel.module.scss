@@ -8,10 +8,11 @@
   .category__panel__container {
     .category__panel__title {
       @include set-text(
-        $fontSerifMedium,
+        $fontSerifRegular,
         $onCategoryPanelTitle-Large,
         $onSurface
       );
+      font-weight: bold;
       margin-left: 1rem;
       margin-bottom: 0;
     }
