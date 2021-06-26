@@ -37,3 +37,9 @@
   -webkit-line-clamp: $numline; /* number of lines to show */
   -webkit-box-orient: vertical;
 }
+
+@mixin hr($width, $color, $style: solid) {
+  border: none;
+  border-top: $width $style $color;
+  height: 0;
+}
