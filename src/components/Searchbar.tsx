@@ -4,6 +4,7 @@ import { MdClose } from "react-icons/md";
 import Styles from "./Searchbar.module.scss";
 import { Icon } from "./Icon";
 import { DivProps } from "react-html-props";
+import { Strings } from "../res";
 
 type Props = DivProps;
 
@@ -29,7 +30,7 @@ export const Searchbar: React.FC<Props> = (props) => {
               isFocus || !!searchInput ? Styles.searchbar__input__active : ""
             }`}
             type="text"
-            placeholder="Tìm kiếm sản phẩm ..."
+            placeholder={Strings.searchbarPlaceholder}
             name="searchbar-input"
             autoComplete="off"
             spellCheck="false"

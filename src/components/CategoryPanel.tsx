@@ -3,11 +3,12 @@ import { CategoryItem } from "./CategoryItem";
 import { DivProps } from "react-html-props";
 import Styles from "./CategoryPanel.module.scss";
 import { CategoryList } from "../res";
+import { Strings } from "../res";
 
 type Props = DivProps;
 
 export const CategoryPanel: React.FC<Props> = (props) => {
-  const title = "Danh mục sản phẩm";
+  const title = Strings.categoryPanelTitle;
 
   const Categories = CategoryList.map(({ thumbnail, title, to, name }) => {
     return (
