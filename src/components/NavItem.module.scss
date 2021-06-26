@@ -19,6 +19,7 @@
 
 .nav__item__page {
   @extend .nav__item;
+  font-family: $fontSansSerifLight;
   font-size: $onNavItemPageText;
   transition: all 0.4s ease-in-out;
   padding: 0 1rem;
@@ -40,6 +41,7 @@
 .nav__item__action {
   @extend .nav__item;
   font-size: $onNavItemActionText-Large;
+  font-family: $fontSansSerifRegular;
   background-color: $primaryVariantDark;
   padding: 0.05rem 1.25rem;
   transition: all 0.4s ease-in-out;

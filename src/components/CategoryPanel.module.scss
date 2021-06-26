@@ -17,8 +17,9 @@
     }
 
     .hr {
-      @include hr(1px, $hrNormal);
-      margin: 0.5rem 0 0.65rem 0;
+      height: 1px;
+      margin: 0.65rem 0;
+      color: $hrNormal;
     }
 
     .category__list__container {
@@ -56,6 +57,8 @@
 @media only screen and (max-width: 601px) {
   .category__panel {
     .category__panel__container {
+      padding: 0 5%;
+
       .category__panel__title {
         font-size: $onCategoryPanelTitle-ExSmall;
       }
@@ -67,7 +70,7 @@
           flex-basis: 33.33%;
 
           &:nth-child(n + 4) {
-            margin-top: 0.5rem;
+            margin-top: 0.85rem;
           }
         }
       }

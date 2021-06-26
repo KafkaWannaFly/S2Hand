@@ -5,6 +5,11 @@
 }
 
 @font-face {
+  font-family: "Montserrat-Light";
+  src: url("../assets/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
   font-family: "Montserrat-Medium";
   src: url("../assets/fonts/Montserrat-Medium.ttf");
 }
@@ -40,6 +45,7 @@
   src: url("../assets/fonts/IBMPlexSerif-Bold.ttf");
 }
 
+$fontSansSerifLight: Montserrat-Light, sans-serif;
 $fontSansSerifRegular: Montserrat-Regular, sans-serif;
 $fontSansSerifMedium: Montserrat-Regular, sans-serif;
 $fontSansSerifSemibold: Montserrat-Regular, sans-serif;
