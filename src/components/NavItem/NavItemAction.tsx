@@ -3,20 +3,20 @@ import { DivProps } from "react-html-props";
 import { NavItemType } from "../../ui/types";
 import { NavLink } from "react-router-dom";
 import Icon from "../Icon/Icon";
-import Styles from "./NavItemAction.module.scss";
+import styles from "./NavItemAction.module.scss";
 
 interface Props extends DivProps, NavItemType {}
 
-const NavItemAction: React.FC<Props> = (props) => {
+const NavItemAction = (props: Props) => {
   return (
     <NavLink
       to={props.to}
-      className={`${Styles.nav__item__action} ${props.className}`}
-      activeClassName={Styles.active}
+      className={`${styles.nav__item__action} ${props.className}`}
+      activeClassName={styles.active}
       exact={props.to === "/" ? true : false}
     >
-      <Icon className={Styles.nav__item__icon} icon={props.icon} />
-      <span className={Styles.nav__item__text}>{props.label}</span>
+      <Icon className={styles.nav__item__icon} icon={props.icon} />
+      <span className={styles.nav__item__text}>{props.label}</span>
     </NavLink>
   );
 };

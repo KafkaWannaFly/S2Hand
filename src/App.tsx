@@ -2,16 +2,16 @@ import React from "react";
 import { Cart, Dashboard, Home, Login, Post } from "./pages";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar } from "./containers";
-import Styles from "./App.module.scss";
+import styles from "./App.module.scss";
 import { roots } from "./routings";
 
 const App = () => {
   return (
     <Router>
-      <div className={Styles.app}>
-        <div className={Styles.app__container}>
-          <Navbar className={Styles.app__navbar} />
-          <div className={Styles.app__body}>
+      <div className={styles.app}>
+        <div className={styles.app__container}>
+          <Navbar className={styles.app__navbar} />
+          <div className={styles.app__body}>
             <Switch>
               <Route exact path={roots.home} component={Home} />
               <Route path={roots.dashboard} component={Dashboard} />

@@ -32,7 +32,7 @@
 
       .category__item__title__container {
         flex: 1;
-        margin-top: 0.35rem;
+        margin-top: 0.5rem;
         // @include display-flex(center, center);
 
         .category__item__title {
@@ -60,6 +60,7 @@
         }
 
         .category__item__title__container {
+          margin-top: 0.45rem;
           .category__item__title {
             @include set-text(
               $fontSansSerifRegular,
@@ -88,6 +89,7 @@
         }
 
         .category__item__title__container {
+          margin-top: 0.35rem;
           .category__item__title {
             @include set-text(
               $fontSansSerifRegular,
@@ -116,6 +118,7 @@
         }
 
         .category__item__title__container {
+          margin-top: 0.35rem;
           .category__item__title {
             @include set-text(
               $fontSansSerifRegular,

@@ -1,13 +1,17 @@
 import React from "react";
 import { CategoryPanel } from "../../containers";
-import Styles from "./Home.module.scss";
+import styles from "./Home.module.scss";
+import { SeeMore } from "../../components";
+import { DivProps } from "react-html-props";
 
-const Home = () => {
+interface Props extends DivProps {}
+
+const Home = (props: Props) => {
   return (
-    <div className={Styles.home}>
-      <div className={Styles.home__container}>
-        <CategoryPanel />
-        <h1>Home Page</h1>
+    <div className={`${styles.home} ${props.className}`}>
+      <div className={styles.home__container}>
+        <CategoryPanel className={styles.category__panel} />
+        <SeeMore className={styles.seemore__btn} />
       </div>
     </div>
   );

@@ -25,7 +25,7 @@
 
     .category__list__container {
       padding: 0 0.5rem;
-      @include display-flex(space-evenly, stretch);
+      @include display-flex(space-around, stretch);
       // display: flex;
       // align-items: stretch;
       // justify-content: space-evenly;

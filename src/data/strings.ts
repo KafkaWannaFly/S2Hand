@@ -19,3 +19,5 @@ export const categoryLabels = {
   clothes: "Quần áo",
   electronic: "Đồ điện tử"
 };
+
+export const seeMore = "Xem thêm";

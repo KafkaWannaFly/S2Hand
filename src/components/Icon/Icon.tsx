@@ -6,7 +6,7 @@ interface Props extends DivProps {
   icon: IconType;
 }
 
-const Icon: React.FC<Props> = (props) => {
+const Icon = (props: Props) => {
   return (
     <IconContext.Provider value={{ ...props }}>
       {<props.icon />}

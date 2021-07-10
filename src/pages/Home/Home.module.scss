@@ -9,6 +9,14 @@
   .home__container {
     width: $w-xl;
     margin: auto;
+
+    .category__panel {
+      width: 100%;
+    }
+
+    .seemore__btn {
+      margin: 1rem auto;
+    }
   }
 }
 
