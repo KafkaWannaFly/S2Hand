@@ -2,12 +2,32 @@
 
 .seemore__button {
   @include reset-button();
-  @include set-text($fontSansSerifRegular, 1rem, red);
+  @include set-text($fontSansSerifRegular, $onSeeMoreBtnTitle-xl, $onBrandText);
   background-color: $surface;
   padding: 0.35rem 6.5rem;
   border-radius: 0.35rem;
+}
 
-  // &:hover {
-  //   box-shadow: 0 1.5px 3.5px rgba(0, 0, 0, 0.07), 0 1px 4px rgba(0, 0, 0, 0.02);
-  // }
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .seemore__button {
+    font-size: $onSeeMoreBtnTitle-lg;
+    padding: 0.3rem 6rem;
+    border-radius: 0.3rem;
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .seemore__button {
+    font-size: $onSeeMoreBtnTitle-md;
+    padding: 0.25rem 5.5rem;
+    border-radius: 0.25rem;
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .seemore__button {
+    font-size: $onSeeMoreBtnTitle-sm;
+    padding: 0.25rem 4.5rem;
+    border-radius: 0.25rem;
+  }
 }
