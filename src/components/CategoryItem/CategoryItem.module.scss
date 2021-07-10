@@ -33,7 +33,7 @@
       .category__item__title__container {
         flex: 1;
         margin-top: 0.35rem;
-        @include display-flex(center, center);
+        // @include display-flex(center, center);
 
         .category__item__title {
           @include set-text($fontSansSerifRegular, $onCategoryItemTitle-xl, "");
@@ -104,15 +104,15 @@
 @media only screen and (min-width: $sm) and (max-width: $md) {
   .category__item {
     .category__item__container {
-      width: 75%;
+      width: calc(#{$onCategoryItemThumbnail-w-sm} + 0.2rem * 2);
       padding: 0.2rem;
       border-radius: 0.35rem;
 
       .category__item__link {
         .category__item__thumbnail {
-          width: 100%;
+          width: $onCategoryItemThumbnail-w-sm;
           height: $onCategoryItemThumbnail-h-sm;
-          border-radius: 0.35rem;
+          border-radius: 0.3rem;
         }
 
         .category__item__title__container {
