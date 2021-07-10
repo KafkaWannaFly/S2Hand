@@ -1,0 +1,84 @@
+@import "../../styles/standard";
+
+.nav__item {
+  border-radius: 0.45rem;
+  color: $onPrimary !important;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav__item__text {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.nav__item__page {
+  @extend .nav__item;
+  font-family: $fontSansSerifLight;
+  font-size: $onNavItemPageText;
+  transition: all 0.4s ease-in-out;
+  padding: 0.045rem 1rem;
+
+  &:hover {
+    background-color: $primaryVariantLight;
+  }
+
+  &.active {
+    background-color: $primaryVariantLight;
+  }
+
+  .nav__item__icon {
+    font-size: $onNavItemPageIcon-xl;
+    margin-right: 0.75rem;
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .nav__item__page {
+    padding: 0.25rem 0.35rem;
+
+    .nav__item__icon {
+      font-size: $onNavItemPageIcon-lg;
+      margin-right: 0;
+    }
+
+    .nav__item__text {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .nav__item__page {
+    padding: 0.2rem 0.3rem;
+
+    .nav__item__icon {
+      font-size: $onNavItemPageIcon-md;
+      margin-right: 0;
+    }
+
+    .nav__item__text {
+      display: none;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .nav__item__page {
+    padding: 0.25rem 0.35rem;
+
+    .nav__item__icon {
+      font-size: $onNavItemPageIcon-sm;
+      margin-right: 0;
+    }
+
+    .nav__item__text {
+      display: none;
+    }
+  }
+}

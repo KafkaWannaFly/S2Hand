@@ -1,0 +1,150 @@
+@import "../../styles/standard";
+
+.searchbar {
+  width: 80%;
+  background-color: $surface;
+  border-radius: 0.45rem;
+  transition: all 0.5s ease-in-out;
+
+  &.searchbar__active {
+    width: 100%;
+  }
+
+  .searchbar__container {
+    padding: 0.15rem;
+    display: flex;
+
+    .searchbar__input {
+      @include reset-input;
+      @include set-text($fontSerifRegular, $onSearchbarText-xl, null);
+      padding: 0.1rem 0.5rem;
+      flex: 1;
+    }
+
+    .searchbar__delete {
+      @include reset-button();
+      padding: 0.1rem 0.3rem;
+      margin: 0 0.25rem;
+
+      .searchbar__delete__icon {
+        color: $onVariant;
+        font-size: $onSearchbarIcon-xl;
+      }
+    }
+
+    .searchbar__input:placeholder-shown ~ .searchbar__delete {
+      display: none;
+    }
+
+    .searchbar__input:not(:placeholder-shown) ~ .searchbar__delete {
+      display: flex;
+    }
+
+    .searchbar__search {
+      @include reset-button();
+      background-color: $primaryVariantDark;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.4rem;
+
+      .searchbar__search__icon {
+        color: $onPrimary;
+        font-size: $onSearchbarIcon-xl;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .searchbar {
+    width: 70%;
+    .searchbar__container {
+      .searchbar__input {
+        @include set-text($fontSerifRegular, $onSearchbarText-lg, null);
+      }
+
+      .searchbar__delete {
+        .searchbar__delete__icon {
+          font-size: $onSearchbarIcon-lg;
+        }
+      }
+
+      .searchbar__search {
+        .searchbar__search__icon {
+          font-size: $onSearchbarIcon-lg;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .searchbar {
+    width: 100%;
+    .searchbar__container {
+      .searchbar__input {
+        @include set-text($fontSerifRegular, $onSearchbarText-md, null);
+      }
+
+      .searchbar__delete {
+        .searchbar__delete__icon {
+          font-size: $onSearchbarIcon-md;
+        }
+      }
+
+      .searchbar__search {
+        .searchbar__search__icon {
+          font-size: $onSearchbarIcon-md;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .searchbar {
+    width: auto;
+
+    &.searchbar__active {
+      width: 100%;
+    }
+
+    .searchbar__container {
+      .searchbar__input {
+        transition: all 0.75s ease-in;
+        opacity: 0;
+        flex: 0;
+        padding: 0;
+        width: 0;
+        @include set-text($fontSerifRegular, $onSearchbarText-sm, null);
+
+        &.searchbar__input__active {
+          opacity: 1;
+          width: auto;
+          flex: 1;
+          display: flex;
+          padding: 0.1rem 0.5rem;
+        }
+      }
+
+      // .searchbar__delete {
+      //   display: none;
+      //   .searchbar__delete__icon {
+      //     font-size: $onSearchbarIcon-sm;
+      //   }
+      // }
+
+      .searchbar__delete {
+        display: none;
+        .searchbar__delete__icon {
+          display: none;
+        }
+      }
+
+      .searchbar__search {
+        .searchbar__search__icon {
+          font-size: $onSearchbarIcon-sm;
+        }
+      }
+    }
+  }
+}

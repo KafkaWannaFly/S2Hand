@@ -1,0 +1,206 @@
+@import "../../styles/standard";
+
+.navbar {
+  width: 100%;
+  background-color: $primary;
+  padding: 0.35rem 0;
+
+  .navbar__container {
+    @include display-flex(center, center);
+    width: $w-xl;
+    margin: auto;
+
+    .navbar__logo__container {
+      @include display-flex(center, center);
+
+      .navbar__logo {
+        width: $onLogo-xl;
+        height: $onLogo-xl;
+      }
+    }
+
+    .navbar__nav__container {
+      flex: 1;
+      @include display-flex(space-between, center);
+
+      .nav__searchbar__container {
+        flex: 1;
+        display: flex;
+        align-self: flex-end;
+
+        .nav__searchbar {
+          margin: 0 1rem 0 1.5rem;
+        }
+      }
+
+      .nav__container {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .nav__page {
+          list-style-type: none;
+          display: flex;
+
+          .nav__item:not(:last-child) {
+            margin-right: 1.25rem;
+          }
+        }
+
+        .nav__action {
+          margin-top: 0.2rem;
+          list-style-type: none;
+          display: flex;
+
+          .nav__item:not(:last-child) {
+            margin-right: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .navbar {
+    .navbar__container {
+      width: $w-lg;
+
+      .navbar__logo__container {
+        .navbar__logo {
+          width: $onLogo-lg;
+          height: $onLogo-lg;
+        }
+      }
+
+      .navbar__nav__container {
+        .nav__searchbar__container {
+          align-self: center;
+
+          .nav__searchbar {
+            margin: 0 1.5rem 0 1rem;
+          }
+        }
+
+        .nav__container {
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+
+          .nav__page {
+            .nav__item:not(:last-child) {
+              margin-right: 0.85rem;
+            }
+          }
+
+          .nav__action {
+            margin-left: 1rem;
+            margin-top: 0;
+
+            .nav__item:not(:last-child) {
+              margin-right: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .navbar {
+    .navbar__container {
+      width: $w-md;
+
+      .navbar__logo__container {
+        .navbar__logo {
+          width: $onLogo-md;
+          height: $onLogo-md;
+        }
+      }
+
+      .navbar__nav__container {
+        .nav__searchbar__container {
+          align-self: center;
+
+          .nav__searchbar {
+            margin: 0 1.25rem 0 0.85rem;
+          }
+        }
+
+        .nav__container {
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+
+          .nav__page {
+            .nav__item:first-child {
+              display: none;
+            }
+
+            .nav__item:not(:last-child) {
+              margin-right: 0.75rem;
+            }
+          }
+
+          .nav__action {
+            margin-left: 1.5rem;
+            margin-top: 0;
+
+            .nav__item:not(:last-child) {
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .navbar {
+    .navbar__container {
+      width: calc(#{$w-sm} - 5%);
+
+      .navbar__logo__container {
+        .navbar__logo {
+          width: $onLogo-sm;
+          height: $onLogo-sm;
+        }
+      }
+
+      .navbar__nav__container {
+        .nav__searchbar__container {
+          align-self: center;
+          justify-content: flex-end;
+
+          .nav__searchbar {
+            margin: 0 1rem 0 1.5rem;
+          }
+        }
+
+        .nav__container {
+          flex: 0;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+
+          .nav__page {
+            .nav__item:not(:last-child) {
+              display: none;
+            }
+          }
+
+          .nav__action {
+            margin-top: 0;
+            margin-left: 1rem;
+            .nav__item:not(:last-child) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
