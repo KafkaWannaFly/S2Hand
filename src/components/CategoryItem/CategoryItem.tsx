@@ -2,9 +2,13 @@ import React from "react";
 import { DivProps } from "react-html-props";
 import styles from "./CategoryItem.module.scss";
 import { Link } from "react-router-dom";
-import { CategoryItemType } from "../../ui/types";
 
-interface Props extends DivProps, CategoryItemType {}
+export interface Props extends DivProps {
+  thumbnail: string;
+  label: string;
+  to: string;
+  name: string;
+}
 
 const CategoryItem = (props: Props) => {
   return (

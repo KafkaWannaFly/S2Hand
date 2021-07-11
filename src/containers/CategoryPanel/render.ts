@@ -5,10 +5,10 @@ import HouseholdTimg from "../../assets/images/household-category.png";
 import PersonalTimg from "../../assets/images/personal-category.png";
 import SchoolSupplyTimg from "../../assets/images/school-supply-category.png";
 import * as strings from "../../data/strings";
-import { CategoryItemType } from "../types";
+import { CategoryItemProps } from "../../components";
 import { queryCategories } from "../../routings";
 
-export const categoryItems: CategoryItemType[] = [
+export const categoryItems: CategoryItemProps[] = [
   {
     thumbnail: BookTimg,
     label: strings.categoryLabels.book,

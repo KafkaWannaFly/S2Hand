@@ -1,11 +1,8 @@
 import React from "react";
-import { DivProps } from "react-html-props";
-import { NavItemType } from "../../ui/types";
 import { NavLink } from "react-router-dom";
 import Icon from "../Icon/Icon";
 import styles from "./NavItemAction.module.scss";
-
-interface Props extends DivProps, NavItemType {}
+import Props from "./props";
 
 const NavItemAction = (props: Props) => {
   return (

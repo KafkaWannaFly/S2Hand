@@ -17,6 +17,11 @@
     .seemore__btn {
       margin: 1rem auto;
     }
+
+    .product__panel {
+      margin-top: 0.85rem;
+      width: 100%;
+    }
   }
 }
 
@@ -26,6 +31,10 @@
 
     .home__container {
       width: $w-lg;
+
+      .product__panel {
+        margin-top: 0.8rem;
+      }
     }
   }
 }
@@ -36,6 +45,10 @@
 
     .home__container {
       width: $w-md;
+
+      .product__panel {
+        margin-top: 0.75rem;
+      }
     }
   }
 }
@@ -46,6 +59,10 @@
 
     .home__container {
       width: $w-sm;
+
+      .product__panel {
+        margin-top: 0.55rem;
+      }
     }
   }
 }

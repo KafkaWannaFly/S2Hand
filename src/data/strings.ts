@@ -21,3 +21,5 @@ export const categoryLabels = {
 };
 
 export const seeMore = "Xem thêm";
+
+export const productPanelTitle = "Danh sách tất cả sản phẩm";

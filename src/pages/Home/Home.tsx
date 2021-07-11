@@ -3,6 +3,7 @@ import { CategoryPanel } from "../../containers";
 import styles from "./Home.module.scss";
 import { SeeMore } from "../../components";
 import { DivProps } from "react-html-props";
+import { ProductPanel } from "../../containers";
 
 interface Props extends DivProps {}
 
@@ -11,6 +12,7 @@ const Home = (props: Props) => {
     <div className={`${styles.home} ${props.className}`}>
       <div className={styles.home__container}>
         <CategoryPanel className={styles.category__panel} />
+        <ProductPanel className={styles.product__panel} />
         <SeeMore className={styles.seemore__btn} />
       </div>
     </div>

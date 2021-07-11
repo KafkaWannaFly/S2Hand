@@ -3,7 +3,7 @@ import styles from "./Navbar.module.scss";
 import Logo from "../../assets/logos/logo.svg";
 import { Searchbar, NavItemPage, NavItemAction } from "../../components";
 import { Link } from "react-router-dom";
-import { navActionItems, navPageItems } from "../../ui/data";
+import { navActionItems, navPageItems } from "./render";
 import { DivProps } from "react-html-props";
 import { roots } from "../../routings";
 

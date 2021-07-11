@@ -1,11 +1,11 @@
 import { FaBell, FaClipboardList, FaShoppingBag } from "react-icons/fa";
 import { FiEdit } from "react-icons/fi";
 import { RiAccountCircleFill, RiHome4Fill } from "react-icons/ri";
-import { NavItemType } from "../types";
+import { NavItemProps } from "../../components";
 import * as strings from "../../data/strings";
 import { roots } from "../../routings";
 
-export const navPageItems: NavItemType[] = [
+export const navPageItems: NavItemProps[] = [
   { icon: RiHome4Fill, label: strings.navTitles.home, to: roots.home },
   {
     icon: FaClipboardList,
@@ -16,7 +16,7 @@ export const navPageItems: NavItemType[] = [
   { icon: FaShoppingBag, label: strings.navTitles.cart, to: roots.cart }
 ];
 
-export const navActionItems: NavItemType[] = [
+export const navActionItems: NavItemProps[] = [
   { icon: FiEdit, label: strings.navTitles.post, to: roots.post },
   { icon: RiAccountCircleFill, label: strings.navTitles.login, to: roots.login }
 ];

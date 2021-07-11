@@ -2,7 +2,7 @@ import React from "react";
 import { CategoryItem } from "../../components";
 import { DivProps } from "react-html-props";
 import styles from "./CategoryPanel.module.scss";
-import { categoryItems } from "../../ui/data";
+import { categoryItems } from "./render";
 import { strings } from "../../data";
 
 interface Props extends DivProps {}
