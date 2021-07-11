@@ -1,5 +1,5 @@
 import Navbar from "./Navbar/Navbar";
 import CategoryPanel from "./CategoryPanel/CategoryPanel";
-import ProductPanel from "./ProductPanel/ProductPanel";
+import HomeProductPanel from "./ProductPanel/HomeProductPanel";
 
-export { Navbar, CategoryPanel, ProductPanel };
+export { Navbar, CategoryPanel, HomeProductPanel };

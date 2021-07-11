@@ -20,7 +20,12 @@
     }
 
     .product__list__container {
-      padding: 0 0.5rem;
+      @include display-flex(flex-start, initial);
+      flex-wrap: wrap;
+
+      .product__list__item {
+        flex-basis: 16.66%;
+      }
     }
   }
 }
@@ -31,6 +36,12 @@
       .product__panel__title {
         font-size: $onProductPanelTitle-lg;
       }
+
+      .product__list__container {
+        .product__list__item {
+          flex-basis: 20%;
+        }
+      }
     }
   }
 }
@@ -38,8 +49,17 @@
 @media only screen and (min-width: $md) and (max-width: $lg) {
   .product__panel {
     .product__panel__container {
+      .hr {
+        margin: 0.5rem 0;
+      }
       .product__panel__title {
         font-size: $onProductPanelTitle-md;
+      }
+
+      .product__list__container {
+        .product__list__item {
+          flex-basis: 25%;
+        }
       }
     }
   }
@@ -48,12 +68,17 @@
 @media only screen and (min-width: $sm) and (max-width: $md) {
   .product__panel {
     .product__panel__container {
+      .hr {
+        margin: 0.45rem 0;
+      }
       .product__panel__title {
         font-size: $onProductPanelTitle-sm;
       }
 
       .product__list__container {
-        padding: 0 0.75rem;
+        .product__list__item {
+          flex-basis: 33.33%;
+        }
       }
     }
   }
