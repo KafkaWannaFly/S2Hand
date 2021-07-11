@@ -52,6 +52,7 @@
             );
             flex: 1;
             @include text-max-line(1);
+            word-break: break-all;
           }
 
           .product__item__bookmark {
@@ -78,6 +79,7 @@
             margin-left: 0.25rem;
             flex: 1;
             @include text-max-line(1);
+            word-break: break-all;
           }
         }
 
@@ -90,6 +92,7 @@
             $onVariant
           );
           @include text-max-line(1);
+          word-break: break-all;
         }
       }
     }
