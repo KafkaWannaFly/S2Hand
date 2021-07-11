@@ -7,7 +7,16 @@ import CategoryItem, {
   Props as CategoryItemProps
 } from "./CategoryItem/CategoryItem";
 import SeeMore from "./SeeMore/SeeMore";
+import ProductItem from "./ProductItem/ProductItem";
 
-export { Searchbar, NavItemAction, NavItemPage, Icon, CategoryItem, SeeMore };
+export {
+  Searchbar,
+  NavItemAction,
+  NavItemPage,
+  Icon,
+  CategoryItem,
+  SeeMore,
+  ProductItem
+};
 
 export type { CategoryItemProps, NavItemProps };

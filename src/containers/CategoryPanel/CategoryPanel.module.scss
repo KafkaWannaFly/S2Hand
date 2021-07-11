@@ -26,9 +26,6 @@
     .category__list__container {
       padding: 0 0.5rem;
       @include display-flex(space-around, stretch);
-      // display: flex;
-      // align-items: stretch;
-      // justify-content: space-evenly;
 
       .category__list__item {
         flex: 1;
@@ -50,6 +47,9 @@
 @media only screen and (min-width: $md) and (max-width: $lg) {
   .category__panel {
     .category__panel__container {
+      .hr {
+        margin: 0.5rem 0;
+      }
       .category__panel__title {
         font-size: $onCategoryPanelTitle-md;
       }
@@ -61,6 +61,9 @@
   .category__panel {
     // padding-bottom: 0.5rem;
     .category__panel__container {
+      .hr {
+        margin: 0.45rem 0;
+      }
       .category__panel__title {
         font-size: $onCategoryPanelTitle-sm;
       }

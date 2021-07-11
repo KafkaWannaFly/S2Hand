@@ -32,6 +32,7 @@
 
 @mixin text-max-line($numline) {
   overflow: hidden;
+  word-break: break-word;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: $numline; /* number of lines to show */
