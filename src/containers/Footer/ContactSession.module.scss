@@ -1,0 +1,197 @@
+@import "../../styles/standard";
+
+.contact {
+  .contact__container {
+    margin: 0 auto;
+    @include display-flex(space-between, center);
+
+    .contact__label {
+      @include set-text(
+        $fontSansSerifRegular,
+        $onFooterContactLabel-xl,
+        $onBackground
+      );
+      margin-bottom: 0.4rem;
+    }
+
+    .contact__hotline {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .hotline__container {
+        @include display-flex(initial, center);
+
+        .hotline__icon {
+          font-size: $onFooterContactHotlineIcon-xl;
+          color: $onBrandText;
+        }
+
+        .hotline__number {
+          @include set-text(
+            $fontSansSerifRegular,
+            $onFooterContactHotlineNumber-xl,
+            $onBrandText
+          );
+          font-weight: bold;
+          vertical-align: middle;
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    .contact__social {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      .social__container {
+        @include display-flex(flex-end, center);
+
+        .social__link {
+          &:not(:last-child) {
+            margin-right: 0.8rem;
+          }
+
+          .social__icon {
+            font-size: $onFooterContactSocial-xl;
+
+            &.facebook {
+              color: $facebook;
+            }
+
+            &.linkin {
+              color: $linkin;
+            }
+
+            &.twitter {
+              color: $twitter;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .contact {
+    .contact__container {
+      .contact__label {
+        font-size: $onFooterContactLabel-lg;
+        margin-bottom: 0.35rem;
+      }
+
+      .contact__hotline {
+        .hotline__container {
+          .hotline__icon {
+            font-size: $onFooterContactHotlineIcon-lg;
+          }
+
+          .hotline__number {
+            font-size: $onFooterContactHotlineNumber-lg;
+            margin-left: 0.95rem;
+          }
+        }
+      }
+
+      .contact__social {
+        .social__container {
+          .social__link {
+            &:not(:last-child) {
+              margin-right: 0.75rem;
+            }
+
+            .social__icon {
+              font-size: $onFooterContactSocial-lg;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .contact {
+    .contact__container {
+      .contact__label {
+        font-size: $onFooterContactLabel-md;
+        margin-bottom: 0.35rem;
+      }
+
+      .contact__hotline {
+        .hotline__container {
+          .hotline__icon {
+            font-size: $onFooterContactHotlineIcon-md;
+          }
+
+          .hotline__number {
+            font-size: $onFooterContactHotlineNumber-md;
+            margin-left: 0.9rem;
+          }
+        }
+      }
+
+      .contact__social {
+        .social__container {
+          .social__link {
+            &:not(:last-child) {
+              margin-right: 0.7rem;
+            }
+
+            .social__icon {
+              font-size: $onFooterContactSocial-md;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .contact {
+    .contact__container {
+      flex-direction: column;
+      flex-direction: center;
+
+      .contact__label {
+        font-size: $onFooterContactLabel-sm;
+        margin-bottom: 0.3rem;
+      }
+
+      .contact__hotline {
+        .hotline__container {
+          justify-content: center;
+
+          .hotline__icon {
+            font-size: $onFooterContactHotlineIcon-sm;
+          }
+
+          .hotline__number {
+            font-size: $onFooterContactHotlineNumber-sm;
+            margin-left: 0.85rem;
+          }
+        }
+      }
+
+      .contact__social {
+        margin-top: 1rem;
+        .social__container {
+          justify-content: center;
+
+          .social__link {
+            &:not(:last-child) {
+              margin-right: 1rem;
+            }
+
+            .social__icon {
+              font-size: $onFooterContactSocial-sm;
+            }
+          }
+        }
+      }
+    }
+  }
+}

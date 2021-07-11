@@ -1,0 +1,210 @@
+@import "../../styles/standard";
+
+.footer {
+  background-color: $background;
+
+  .footer__container {
+    margin: 0.5rem 0 1rem 0;
+
+    .footer__contact {
+      width: $w-xl;
+      margin: auto;
+    }
+
+    .footer__nav {
+      margin-top: 1rem;
+      background-color: $variant;
+      padding: 0.5rem 0;
+      @include display-flex(center, center);
+
+      .footer__nav__item {
+        @include set-text(
+          $fontSansSerifRegular,
+          $onFooterNavItem-xl,
+          $onSurface
+        );
+        text-decoration: none;
+
+        &:hover {
+          color: $onBrandText;
+        }
+
+        & + .footer__nav__item::before {
+          margin: 2rem;
+          content: "|";
+          color: $onSurface !important;
+        }
+      }
+    }
+
+    .footer__certificate {
+      width: $onFooterCertificate-w-xl;
+      height: auto;
+      margin: auto;
+      margin-top: 1.5rem;
+      display: block;
+    }
+
+    .footer__infor__container {
+      margin-top: 1rem;
+      @include display-flex(center, center);
+      flex-direction: column;
+
+      .footer__infor__label {
+        @include set-text(
+          $fontSerifRegular,
+          $onFooterInforLabel-xl,
+          $onFooterInfor
+        );
+        font-weight: bold;
+      }
+
+      .footer__infor {
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        text-align: center;
+        @include set-text(
+          $fontSansSerifRegular,
+          $onFooterInfor-xl,
+          $onFooterInfor
+        );
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .footer {
+    .footer__container {
+      .footer__contact {
+        width: $w-lg;
+      }
+
+      .footer__nav {
+        margin-top: 1rem;
+        padding: 0.45rem 0;
+
+        .footer__nav__item {
+          font-size: $onFooterNavItem-lg;
+
+          & + .footer__nav__item::before {
+            margin: 1.4rem;
+            content: "|";
+          }
+        }
+      }
+
+      .footer__certificate {
+        margin-top: 1.5rem;
+        width: $onFooterCertificate-w-lg;
+      }
+
+      .footer__infor__container {
+        margin-top: 0.95rem;
+
+        .footer__infor__label {
+          font-size: $onFooterInforLabel-lg;
+        }
+
+        .footer__infor {
+          font-size: $onFooterInfor-lg;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .footer {
+    .footer__container {
+      .footer__contact {
+        width: $w-md;
+      }
+      .footer__nav {
+        margin-top: 0.9rem;
+        padding: 0;
+        flex-direction: column;
+
+        .footer__nav__item {
+          width: 90%;
+          padding: 0.65rem 0;
+          text-align: center;
+          font-size: $onFooterNavItem-md;
+
+          & + .footer__nav__item::before {
+            display: none;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 0.125rem solid $hrLight;
+          }
+        }
+      }
+
+      .footer__certificate {
+        margin-top: 1.5rem;
+        width: $onFooterCertificate-w-md;
+      }
+
+      .footer__infor__container {
+        margin-top: 1rem;
+
+        .footer__infor__label {
+          font-size: $onFooterInforLabel-md;
+        }
+
+        .footer__infor {
+          font-size: $onFooterInfor-md;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .footer {
+    .footer__container {
+      .footer__contact {
+        width: $w-sm;
+      }
+
+      .footer__nav {
+        margin-top: 1rem;
+        padding: 0;
+        flex-direction: column;
+
+        .footer__nav__item {
+          width: 90%;
+          padding: 0.5rem 0;
+          text-align: center;
+          font-size: $onFooterNavItem-sm;
+
+          & + .footer__nav__item::before {
+            display: none;
+          }
+
+          &:not(:last-child) {
+            border-bottom: 0.125rem solid $hrLight;
+          }
+        }
+      }
+
+      .footer__certificate {
+        margin-top: 1.5rem;
+        width: $onFooterCertificate-w-sm;
+      }
+
+      .footer__infor__container {
+        margin-top: 1rem;
+
+        .footer__infor__label {
+          font-size: $onFooterInforLabel-sm;
+        }
+
+        .footer__infor {
+          font-size: $onFooterInfor-sm;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Cart, Dashboard, Home, Login, Post } from "./pages";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Navbar } from "./containers";
+import { Navbar, Footer } from "./containers";
 import styles from "./App.module.scss";
 import { roots } from "./routings";
 
@@ -20,6 +20,7 @@ const App = () => {
               <Route path={roots.login} component={Login} />
             </Switch>
           </div>
+          <Footer className={styles.app__footer} />
         </div>
       </div>
     </Router>
