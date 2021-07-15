@@ -1,0 +1,110 @@
+@import "../../styles/standard";
+
+.category__panel {
+  background-color: $surface;
+  border-radius: 0.55rem;
+  padding: 0.5rem 0 0.75rem 0;
+
+  .category__panel__container {
+    .category__panel__title {
+      @include set-text(
+        $fontSerifRegular,
+        $onCategoryPanelTitle-xl,
+        $onSurface
+      );
+      font-weight: bold;
+      margin-left: 1rem;
+      margin-bottom: 0;
+    }
+
+    .hr {
+      height: 1px;
+      margin: 0.65rem 0;
+      color: $hrNormal;
+    }
+
+    .category__list__container {
+      padding: 0 0.5rem;
+      @include display-flex(space-around, stretch);
+
+      .category__list__item {
+        flex: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .category__panel {
+    .category__panel__container {
+      .category__panel__title {
+        font-size: $onCategoryPanelTitle-lg;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .category__panel {
+    .category__panel__container {
+      .hr {
+        margin: 0.5rem 0;
+      }
+      .category__panel__title {
+        font-size: $onCategoryPanelTitle-md;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .category__panel {
+    // padding-bottom: 0.5rem;
+    .category__panel__container {
+      .hr {
+        margin: 0.45rem 0;
+      }
+      .category__panel__title {
+        font-size: $onCategoryPanelTitle-sm;
+      }
+
+      .category__list__container {
+        padding: 0 0.75rem;
+        // padding-bottom: 0.25rem;
+        overflow-x: auto;
+        @include display-flex(initial, initial);
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        /* Track */
+        // &::-webkit-scrollbar-track {
+        //   // border-radius: 10px;
+        // }
+
+        /* Handle */
+        // &::-webkit-scrollbar-thumb {
+        //   background: $onVariantLight;
+        //   border-radius: 5px;
+        // }
+
+        /* Handle on hover */
+        // &::-webkit-scrollbar-thumb:hover {
+        //   background: #b30000;
+        // }
+
+        .category__list__item {
+          &:not(:last-child) {
+            margin-right: 1.5rem;
+          }
+          // flex-basis: 33.33%;
+
+          // &:nth-child(n + 4) {
+          //   margin-top: 0.85rem;
+          // }
+        }
+      }
+    }
+  }
+}

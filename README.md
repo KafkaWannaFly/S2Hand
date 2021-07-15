@@ -1,4 +1,4 @@
-# S2Hand
+# S2Hand (https://s2hand-dev.web.app/)
 
 Second hand sale site for students. This school project is tended to have Front-End only. Tech stack:
 

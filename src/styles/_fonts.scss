@@ -1,0 +1,57 @@
+/* Montserrat Family */
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("../assets/fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Light";
+  src: url("../assets/fonts/Montserrat-Light.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Medium";
+  src: url("../assets/fonts/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-SemiBold";
+  src: url("../assets/fonts/Montserrat-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Montserrat-Black";
+  src: url("../assets/fonts/Montserrat-Black.ttf");
+}
+
+/* IBM-Plex-Serif Family */
+@font-face {
+  font-family: "IBMPlexSerif-Regular";
+  src: url("../assets/fonts/IBMPlexSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: "IBMPlexSerif-Medium";
+  src: url("../assets/fonts/IBMPlexSerif-Medium.ttf");
+}
+
+@font-face {
+  font-family: "IBMPlexSerif-SemiBold";
+  src: url("../assets/fonts/IBMPlexSerif-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "IBMPlexSerif-Bold";
+  src: url("../assets/fonts/IBMPlexSerif-Bold.ttf");
+}
+
+$fontSansSerifLight: Montserrat-Light, sans-serif;
+$fontSansSerifRegular: Montserrat-Regular, sans-serif;
+$fontSansSerifMedium: Montserrat-Medium, sans-serif;
+$fontSansSerifSemibold: Montserrat-SemiBold, sans-serif;
+$fontSansSerifBold: Montserrat-Bold, sans-serif;
+
+$fontSerifRegular: IBMPlexSerif-Regular, serif;
+$fontSerifMedium: IBMPlexSerif-Medium, serif;
+$fontSerifSemiBold: IBMPlexSerif-SemiBold, serif;
+$fontSerifBold: IBMPlexSerif-Bold, serif;

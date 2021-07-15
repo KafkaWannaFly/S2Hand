@@ -1,36 +1,30 @@
 import React from "react";
-import "./App.css";
-import { Text14 } from "./shared/components";
-import { R } from "./shared/res";
+import { Cart, Dashboard, Home, Login, Post } from "./pages";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Navbar, Footer } from "./containers";
+import styles from "./App.module.scss";
+import { roots } from "./routings";
 
-function App(): JSX.Element {
+const App = () => {
   return (
-    <div className="App">
-      <Text14
-        text={
-          "Sample text have fontSize = 14 and fontFamily = Montserrat Regular"
-        }
-      />
-
-      <Text14 italic underline text={"Italic looks like this"} />
-
-      <Text14 semiBold text={"This is how a semi-bold text look like"} />
-
-      <Text14 black text={"ABC"} style={{ color: "red", fontSize: 24 }} />
-
-      <Text14
-        black
-        text={"Define your callback"}
-        style={{
-          color: R.colors.black,
-          fontSize: 24
-        }}
-        onClick={(e) =>
-          (e.currentTarget.innerHTML = (Math.random() * 100).toFixed(0))
-        }
-      />
-    </div>
+    <Router>
+      <div className={styles.app}>
+        <div className={styles.app__container}>
+          <Navbar className={styles.app__navbar} />
+          <div className={styles.app__body}>
+            <Switch>
+              <Route exact path={roots.home} component={Home} />
+              <Route path={roots.dashboard} component={Dashboard} />
+              <Route path={roots.cart} component={Cart} />
+              <Route path={roots.post} component={Post} />
+              <Route path={roots.login} component={Login} />
+            </Switch>
+          </div>
+          <Footer className={styles.app__footer} />
+        </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;
