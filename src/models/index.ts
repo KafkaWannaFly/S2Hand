@@ -1,3 +1,2 @@
-import Product from "./product";
-
-export type { Product };
+export * from "./product";
+export * from "./user";
