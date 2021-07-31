@@ -14,8 +14,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/prop-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": 0,
-    "@typescript-eslint/no-empty-interface": 0,
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-empty-interface": 0
   },
   "settings": {
     "react": {
