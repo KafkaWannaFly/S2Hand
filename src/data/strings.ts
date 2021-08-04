@@ -147,3 +147,17 @@ export const editForm = {
     cancel: "Huỷ"
   }
 };
+
+export const dashboard = {
+  title: "Quản lý tin",
+  table: {
+    stt: "STT",
+    image: "Hình ảnh",
+    name: "Tên sản phẩm",
+    category: "Loại",
+    price: "Giá sản phẩm",
+    datePost: "Ngày đăng",
+    status: "Trạng thái",
+    action: "Thao tác"
+  }
+};

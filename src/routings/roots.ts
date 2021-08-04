@@ -10,6 +10,7 @@ const roots = {
   policy: "/policy",
   refund: "/refund",
   edit: "/edit",
-  help: "/help"
+  help: "/help",
+  manage: "/manage"
 };
 export default roots;

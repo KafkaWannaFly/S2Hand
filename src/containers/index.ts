@@ -4,5 +4,14 @@ import HomeProductPanel from "./ProductPanel/HomeProductPanel";
 import Footer from "./Footer/Footer";
 import PostForm from "./PostForm/PostForm";
 import EditForm from "./EditForm/EditForm";
+import DashboardList from "./DashboardList/DashboardList";
 
-export { Navbar, CategoryPanel, HomeProductPanel, Footer, PostForm, EditForm };
+export {
+  Navbar,
+  CategoryPanel,
+  HomeProductPanel,
+  Footer,
+  PostForm,
+  EditForm,
+  DashboardList
+};
