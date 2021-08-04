@@ -48,3 +48,102 @@ export const footerAddress_1 =
 
 export const footerAddress_2 =
   "Chi nhánh Tp HCM:<br/>227, Nguyễn Văn Cừ, Quận 5, TP Hồ Chí Minh<br/>Điện thoại: (84.8) 38 353.193";
+
+export const postForm = {
+  generalSession: {
+    title: "Thông tin chung sản phẩm",
+    fields: {
+      name: {
+        label: "Tên sản phẩm",
+        placeholder: "Tên sản phẩm"
+      },
+      price: {
+        label: "Giá sản phẩm",
+        placeholder: "Giá"
+      },
+      category: {
+        label: "Loại sản phẩm",
+        placeholder: "Chọn loại sản phẩm"
+      },
+      status: {
+        label: "Độ mới sản phẩm",
+        placeholder: "Độ mới"
+      }
+    }
+  },
+  detailSession: {
+    title: "Thông tin chi tiết sản phẩm",
+    fields: {
+      describe: {
+        label: "Mô tả sản phẩm",
+        placeholder: "Nhập mô chi tiết sản phẩm"
+      },
+      address: {
+        label: "Địa chỉ",
+        street: "Số nhà, tên đường",
+        ward: "Xã",
+        district: "Huyện",
+        city: "Tỉnh"
+      },
+      images: {
+        label: "Hình ảnh",
+        note: "Vui lòng cung cấp hình ảnh thực sản phẩm. Cung cấp tối đa 5 hình ảnh sản phẩm"
+      }
+    }
+  },
+  note: "Xin hãy cung cấp thông tin trung thực về sản phẩm",
+  actions: {
+    preview: "Xem trước",
+    post: "Đăng tin",
+    cancel: "Huỷ"
+  }
+};
+
+export const editForm = {
+  generalSession: {
+    title: "Thông tin chung sản phẩm",
+    fields: {
+      name: {
+        label: "Tên sản phẩm",
+        placeholder: "Tên sản phẩm"
+      },
+      price: {
+        label: "Giá sản phẩm",
+        placeholder: "Giá"
+      },
+      category: {
+        label: "Loại sản phẩm",
+        placeholder: "Chọn loại sản phẩm"
+      },
+      status: {
+        label: "Độ mới sản phẩm",
+        placeholder: "Độ mới"
+      }
+    }
+  },
+  detailSession: {
+    title: "Thông tin chi tiết sản phẩm",
+    fields: {
+      describe: {
+        label: "Mô tả sản phẩm",
+        placeholder: "Nhập mô chi tiết sản phẩm"
+      },
+      address: {
+        label: "Địa chỉ",
+        street: "Số nhà, tên đường",
+        ward: "Xã",
+        district: "Huyện",
+        city: "Tỉnh"
+      },
+      images: {
+        label: "Hình ảnh",
+        note: "Vui lòng cung cấp hình ảnh thực sản phẩm. Cung cấp tối đa 5 hình ảnh sản phẩm"
+      }
+    }
+  },
+  note: "Xin hãy cung cấp thông tin trung thực về sản phẩm",
+  actions: {
+    save: "Lưu và Thay đổi",
+    cancel: "Huỷ"
+  }
+};

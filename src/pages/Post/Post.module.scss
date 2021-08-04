@@ -1,0 +1,47 @@
+@import "../../styles/standard";
+
+.post {
+  width: 100%;
+  height: 100%;
+  background-color: $background;
+  padding: 0.85rem 0 1rem;
+
+  .post__container {
+    width: $w-xl;
+    margin: auto;
+
+    .post__form {
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .post {
+    padding: 0.8rem 0 0.9rem;
+
+    .post__container {
+      width: $w-lg;
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .post {
+    padding: 0.75rem 0 0.85rem;
+
+    .post__container {
+      width: $w-md;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .post {
+    padding: 0.55rem 0 0.75rem;
+
+    .post__container {
+      width: $w-sm;
+    }
+  }
+}

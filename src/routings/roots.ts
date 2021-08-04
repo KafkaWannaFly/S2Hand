@@ -9,6 +9,7 @@ const roots = {
   recruitment: "/recruitment",
   policy: "/policy",
   refund: "/refund",
+  edit: "/edit",
   help: "/help"
 };
 export default roots;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Cart, Dashboard, Home, Login, Post } from "./pages";
+import { Cart, Dashboard, Home, Login, Post, Edit } from "./pages";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Navbar, Footer } from "./containers";
 import styles from "./App.module.scss";
@@ -16,6 +16,7 @@ const App = () => {
               <Route exact path={roots.home} component={Home} />
               <Route path={roots.dashboard} component={Dashboard} />
               <Route path={roots.cart} component={Cart} />
+              <Route path={roots.edit} component={Edit} />
               <Route path={roots.post} component={Post} />
               <Route path={roots.login} component={Login} />
             </Switch>

@@ -8,6 +8,7 @@ import CategoryItem, {
 } from "./CategoryItem/CategoryItem";
 import SeeMore from "./SeeMore/SeeMore";
 import ProductItem from "./ProductItem/ProductItem";
+import UploadImage from "./UploadImage/UploadImage";
 
 export {
   Searchbar,
@@ -16,7 +17,8 @@ export {
   Icon,
   CategoryItem,
   SeeMore,
-  ProductItem
+  ProductItem,
+  UploadImage
 };
 
 export type { CategoryItemProps, NavItemProps };

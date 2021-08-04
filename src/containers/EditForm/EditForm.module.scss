@@ -1,0 +1,460 @@
+@import "../../styles/standard";
+
+.edit__form {
+  .edit__form__container {
+    .form__session__container {
+      background-color: $surface;
+      border-radius: 0.55rem;
+      padding: 0.5rem 0 1rem 0;
+      margin-bottom: 1rem;
+
+      .form__session__title {
+        @include set-text(
+          $fontSerifRegular,
+          $onEditFormSessionTitle-xl,
+          $onSurface
+        );
+        font-weight: bold;
+        margin-left: 1rem;
+        margin-bottom: 0;
+      }
+
+      .hr {
+        height: 1px;
+        margin: 0.65rem 0;
+        color: $hrNormal;
+      }
+
+      .form__field__container {
+        margin: 0 2.5rem;
+        padding-top: 0.25rem;
+
+        .form__field {
+          margin-bottom: 1.5rem;
+        }
+
+        .double__line__field {
+          display: flex;
+          justify-content: space-between;
+
+          .form__field {
+            &:first-child {
+              flex: 9;
+              margin-right: 5rem;
+            }
+
+            &:last-child {
+              flex: 3;
+            }
+          }
+        }
+
+        .form__field {
+          .note__img__upload {
+            @include set-text(
+              $fontSansSerifRegular,
+              $onEditFormNote-xl,
+              $warning
+            );
+            margin-top: 0.5rem;
+          }
+
+          .form__upload__container {
+            @include display-flex(flex-start, center);
+            flex-wrap: wrap;
+
+            .upload__field {
+              flex-basis: 10.5rem;
+              height: 8.5rem;
+              margin-top: 0.45rem;
+
+              &:not(:last-child) {
+                margin-right: 1.5rem;
+              }
+            }
+          }
+        }
+
+        .form__field__address {
+          display: flex;
+          justify-content: space-between;
+
+          .form__field {
+            flex: 1;
+            margin-top: 0.4rem;
+            margin-bottom: 0;
+            // margin-bottom: 0.75rem;
+
+            &:not(:last-child) {
+              margin-right: 3.5rem;
+            }
+          }
+        }
+
+        .form__field__label {
+          @include set-text(
+            $fontSansSerifRegular,
+            $onEditFormFieldLabel-xl,
+            $onSurface
+          );
+        }
+
+        .form__field__input {
+          @include reset-input;
+          @include set-text(
+            $fontSansSerifRegular,
+            $onEditFormFieldInputText-xl,
+            $onSurface
+          );
+          margin-top: 0.4rem;
+          width: 100%;
+          border: 1px solid $borderNormal;
+          padding: 0.45rem 0.5rem;
+          border-radius: 4px;
+          resize: none;
+        }
+      }
+    }
+
+    .form__actions__container {
+      @include display-flex(flex-end, center);
+      margin: 1rem 0 2.5rem;
+
+      .form__action__save {
+        @include reset-button();
+        @include set-text(
+          $fontSansSerifRegular,
+          $onEditFormActionBtnTitle-xl,
+          $onPrimary
+        );
+        background-color: $primary;
+        padding: 0.5rem 2.5rem;
+        border-radius: 0.5rem;
+        margin-left: 1.5rem;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+
+      .form__action__cancel {
+        @include reset-button();
+        @include set-text(
+          $fontSansSerifRegular,
+          $onEditFormActionBtnTitle-xl,
+          $onVariant
+        );
+        background-color: $variant;
+        padding: 0.5rem 2.5rem;
+        border-radius: 0.5rem;
+        margin-left: 1.5rem;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          background-color: $onVariantLight;
+          color: black;
+        }
+      }
+    }
+
+    .note__form {
+      @include set-text($fontSansSerifRegular, $onEditFormNote-xl, $warning);
+      margin-top: 0.5rem;
+      text-align: end;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .edit__form {
+    .edit__form__container {
+      .form__session__container {
+        .form__session__title {
+          font-size: $onEditFormSessionTitle-lg;
+        }
+
+        .form__field__container {
+          margin: 0 2.25rem;
+          padding-top: 0.2rem;
+
+          .form__field {
+            margin-bottom: 1.25rem;
+          }
+
+          .double__line__field {
+            .form__field {
+              &:first-child {
+                flex: 8.5;
+                margin-right: 3.5rem;
+              }
+
+              &:last-child {
+                flex: 3.5;
+              }
+            }
+          }
+
+          .form__field {
+            .note__img__upload {
+              font-size: $onEditFormNote-lg;
+            }
+
+            .form__upload__container {
+              .upload__field {
+                flex-basis: 8.25rem;
+                height: 7.5rem;
+                margin-top: 0.45rem;
+
+                &:not(:last-child) {
+                  margin-right: 1.25rem;
+                }
+              }
+            }
+          }
+
+          .form__field__address {
+            .form__field {
+              flex: 1;
+              margin-top: 0.4rem;
+              margin-bottom: 0;
+              // margin-bottom: 0.75rem;
+
+              &:not(:last-child) {
+                margin-right: 2.5rem;
+              }
+            }
+          }
+
+          .form__field__label {
+            font-size: $onEditFormFieldLabel-lg;
+          }
+
+          .form__field__input {
+            font-size: $onEditFormFieldInputText-lg;
+          }
+        }
+      }
+
+      .form__actions__container {
+        margin: 1rem 0 2rem;
+
+        .form__action__save {
+          font-size: $onEditFormActionBtnTitle-lg;
+          padding: 0.45rem 2.25rem;
+          border-radius: 0.45rem;
+        }
+
+        .form__action__cancel {
+          font-size: $onEditFormActionBtnTitle-lg;
+          padding: 0.45rem 2.25rem;
+          border-radius: 0.45rem;
+        }
+      }
+
+      .note__form {
+        font-size: $onEditFormNote-lg;
+        margin-top: 0.45rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .edit__form {
+    .edit__form__container {
+      .form__session__container {
+        .form__session__title {
+          font-size: $onEditFormSessionTitle-md;
+        }
+
+        .form__field__container {
+          margin: 0 1.85rem;
+          padding-top: 0.15rem;
+
+          .form__field {
+            margin-bottom: 0.95rem;
+          }
+
+          .double__line__field {
+            .form__field {
+              &:first-child {
+                flex: 7.75;
+                margin-right: 2rem;
+              }
+
+              &:last-child {
+                flex: 4.25;
+              }
+            }
+          }
+
+          .form__field {
+            .note__img__upload {
+              font-size: $onEditFormNote-md;
+            }
+
+            .form__upload__container {
+              .upload__field {
+                flex-basis: 7rem;
+                height: 7rem;
+                margin-top: 0.45rem;
+                margin-bottom: 0.5rem;
+
+                &:not(:last-child) {
+                  margin-right: 1rem;
+                }
+              }
+            }
+          }
+
+          .form__field__address {
+            flex-wrap: wrap;
+
+            .form__field {
+              flex: 0;
+              flex-basis: 47.5%;
+              margin-top: 0.4rem;
+              margin-bottom: 0;
+              // margin-bottom: 0.75rem;
+
+              &:not(:last-child) {
+                margin-right: 0rem;
+              }
+            }
+          }
+
+          .form__field__label {
+            font-size: $onEditFormFieldLabel-md;
+          }
+
+          .form__field__input {
+            font-size: $onEditFormFieldInputText-md;
+          }
+        }
+      }
+
+      .form__actions__container {
+        margin: 1rem 0 2rem;
+
+        .form__action__save {
+          font-size: $onEditFormActionBtnTitle-md;
+          padding: 0.4rem 2.15rem;
+          border-radius: 0.35rem;
+        }
+
+        .form__action__cancel {
+          font-size: $onEditFormActionBtnTitle-md;
+          padding: 0.4rem 2.15rem;
+          border-radius: 0.35rem;
+        }
+      }
+
+      .note__form {
+        font-size: $onEditFormNote-md;
+        margin-top: 0.4rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .edit__form {
+    .edit__form__container {
+      .form__session__container {
+        .form__session__title {
+          font-size: $onEditFormSessionTitle-sm;
+        }
+
+        .form__field__container {
+          margin: 0 1.5rem;
+          padding-top: 0.15rem;
+
+          .form__field {
+            margin-bottom: 0.65rem;
+          }
+
+          .double__line__field {
+            flex-direction: column;
+            .form__field {
+              &:first-child {
+                flex: 1;
+                margin-right: 0rem;
+              }
+
+              &:last-child {
+                flex: 1;
+              }
+            }
+          }
+
+          .form__field {
+            .note__img__upload {
+              font-size: $onEditFormNote-sm;
+            }
+
+            .form__upload__container {
+              .upload__field {
+                flex-basis: 6.25rem;
+                height: 6.25rem;
+                margin-top: 0.45rem;
+                margin-bottom: 0.25rem;
+
+                &:not(:last-child) {
+                  margin-right: 0.75rem;
+                }
+              }
+            }
+          }
+
+          .form__field__address {
+            flex-wrap: wrap;
+            flex-direction: column;
+
+            .form__field {
+              flex: 0;
+              flex-basis: 47.5%;
+              margin-top: 0.4rem;
+              margin-bottom: 0;
+              // margin-bottom: 0.75rem;
+
+              &:not(:last-child) {
+                margin-right: 0rem;
+              }
+            }
+          }
+
+          .form__field__label {
+            font-size: $onEditFormFieldLabel-sm;
+          }
+
+          .form__field__input {
+            font-size: $onEditFormFieldInputText-sm;
+          }
+        }
+      }
+
+      .form__actions__container {
+        margin: 1rem 0 2rem;
+
+        .form__action__save {
+          font-size: $onEditFormActionBtnTitle-sm;
+          padding: 0.35rem 1.5rem;
+          border-radius: 0.25rem;
+        }
+
+        .form__action__cancel {
+          font-size: $onEditFormActionBtnTitle-sm;
+          padding: 0.35rem 1.5rem;
+          border-radius: 0.35rem;
+        }
+      }
+
+      .note__form {
+        font-size: $onEditFormNote-sm;
+        margin-top: 0.4rem;
+      }
+    }
+  }
+}
