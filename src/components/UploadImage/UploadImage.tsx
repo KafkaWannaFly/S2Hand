@@ -10,12 +10,7 @@ interface Props extends DivProps {
   maximumSize?: number;
 }
 
-const UploadImage = ({
-  onUploadChange,
-  maximumSize,
-  className,
-  ...props
-}: Props) => {
+const UploadImage = ({ onUploadChange, className, ...props }: Props) => {
   const [file, setFile] = useState<File | undefined>(undefined);
   const [filePath, setFilePath] = useState<string>("");
   const uploadField = useRef<HTMLInputElement>(null);
