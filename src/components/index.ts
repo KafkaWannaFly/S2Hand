@@ -3,11 +3,9 @@ import NavItemAction from "./NavItem/NavItemAction";
 import NavItemPage from "./NavItem/NavItemPage";
 import NavItemProps from "./NavItem/props";
 import Icon from "./Icon/Icon";
-import CategoryItem, {
-  Props as CategoryItemProps
-} from "./CategoryItem/CategoryItem";
+import CategoryCard from "./CategoryCard/CategoryCard";
 import SeeMore from "./SeeMore/SeeMore";
-import ProductItem from "./ProductItem/ProductItem";
+import ProductCard from "./ProductCard/ProductCard";
 import UploadImage from "./UploadImage/UploadImage";
 
 export {
@@ -15,10 +13,10 @@ export {
   NavItemAction,
   NavItemPage,
   Icon,
-  CategoryItem,
+  CategoryCard,
   SeeMore,
-  ProductItem,
+  ProductCard,
   UploadImage
 };
 
-export type { CategoryItemProps, NavItemProps };
+export type { NavItemProps };

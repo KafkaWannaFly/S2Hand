@@ -5,18 +5,20 @@ import { NavItemProps } from "../../components";
 import * as strings from "../../data/strings";
 import { roots } from "../../routings";
 
-export const navPageItems: NavItemProps[] = [
-  { icon: RiHome4Fill, label: strings.navTitles.home, to: roots.home },
+const contents = strings.navigations;
+
+export const pageNavigations: NavItemProps[] = [
+  { icon: RiHome4Fill, label: contents.home, to: roots.home },
   {
     icon: FaClipboardList,
-    label: strings.navTitles.dashboard,
+    label: contents.dashboard,
     to: roots.dashboard
   },
-  { icon: FaBell, label: strings.navTitles.nofi, to: roots.nofi },
-  { icon: FaShoppingBag, label: strings.navTitles.cart, to: roots.cart }
+  { icon: FaBell, label: contents.nofi, to: roots.nofi },
+  { icon: FaShoppingBag, label: contents.cart, to: roots.cart }
 ];
 
-export const navActionItems: NavItemProps[] = [
-  { icon: FiEdit, label: strings.navTitles.post, to: roots.post },
-  { icon: RiAccountCircleFill, label: strings.navTitles.login, to: roots.login }
+export const actionNavigations: NavItemProps[] = [
+  { icon: FiEdit, label: contents.post, to: roots.post },
+  { icon: RiAccountCircleFill, label: contents.login, to: roots.login }
 ];

@@ -8,7 +8,9 @@ import { strings } from "../../data";
 
 interface Props extends DivProps {}
 
-const Searchbar = (props: Props) => {
+const Searchbar = ({ className, ...props }: Props) => {
+  const contents = strings.searchbar;
+
   const [isFocus, setIsFocus] = useState(false);
   const [searchInput, setSearchInput] = useState("");
 
@@ -19,9 +21,10 @@ const Searchbar = (props: Props) => {
 
   return (
     <div
-      className={`${props.className} ${styles.searchbar} ${
+      className={`${className} ${styles.searchbar} ${
         isFocus || !!searchInput ? styles.searchbar__active : ""
       }`}
+      {...props}
     >
       <form>
         <div className={styles.searchbar__container}>
@@ -30,7 +33,7 @@ const Searchbar = (props: Props) => {
               isFocus || !!searchInput ? styles.searchbar__input__active : ""
             }`}
             type="text"
-            placeholder={strings.searchbarPlaceholder}
+            placeholder={contents.placeholder}
             name="searchbar-input"
             autoComplete="off"
             spellCheck="false"

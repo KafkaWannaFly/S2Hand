@@ -3,39 +3,15 @@ import styles from "./Navbar.module.scss";
 import Logo from "../../assets/logos/logo.svg";
 import { Searchbar, NavItemPage, NavItemAction } from "../../components";
 import { Link } from "react-router-dom";
-import { navActionItems, navPageItems } from "./render";
+import { pageNavigations, actionNavigations } from "./render";
 import { DivProps } from "react-html-props";
 import { roots } from "../../routings";
 
 interface Props extends DivProps {}
 
-const Navbar = (props: Props) => {
-  const navPages = navPageItems.map(({ icon, label, to }) => {
-    return (
-      <NavItemPage
-        to={to}
-        icon={icon}
-        label={label}
-        key={label}
-        className={`${styles.nav__item}`}
-      />
-    );
-  });
-
-  const navActions = navActionItems.map(({ icon, label, to }) => {
-    return (
-      <NavItemAction
-        to={to}
-        icon={icon}
-        label={label}
-        key={label}
-        className={`${styles.nav__item}`}
-      />
-    );
-  });
-
+const Navbar = ({ className, ...props }: Props) => {
   return (
-    <nav className={`${styles.navbar} ${props.className}`}>
+    <nav className={`${styles.navbar} ${className}`} {...props}>
       <div className={styles.navbar__container}>
         <Link to={roots.home} className={styles.navbar__logo__container}>
           <img src={Logo} alt="S2Hand Logo" className={styles.navbar__logo} />
@@ -45,8 +21,20 @@ const Navbar = (props: Props) => {
             <Searchbar className={styles.nav__searchbar} />
           </div>
           <div className={styles.nav__container}>
-            <ul className={styles.nav__page}>{navPages}</ul>
-            <ul className={styles.nav__action}>{navActions}</ul>
+            <ul className={styles.nav__page}>
+              {pageNavigations.map(({ icon, label, to }) => (
+                <li key={label} className={`${styles.nav__item}`}>
+                  <NavItemPage to={to} icon={icon} label={label} />
+                </li>
+              ))}
+            </ul>
+            <ul className={styles.nav__action}>
+              {actionNavigations.map(({ icon, label, to }) => (
+                <li key={label} className={`${styles.nav__item}`}>
+                  <NavItemAction to={to} icon={icon} label={label} />
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

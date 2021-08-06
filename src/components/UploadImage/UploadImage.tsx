@@ -10,17 +10,22 @@ interface Props extends DivProps {
   maximumSize?: number;
 }
 
-const UploadImage = (props: Props) => {
+const UploadImage = ({
+  onUploadChange,
+  maximumSize,
+  className,
+  ...props
+}: Props) => {
   const [file, setFile] = useState<File | undefined>(undefined);
   const [filePath, setFilePath] = useState<string>("");
   const uploadField = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    props.onUploadChange(file);
+    onUploadChange(file);
   });
 
   return (
-    <div className={`${styles.upload__image} ${props.className}`}>
+    <div className={`${styles.upload__image} ${className}`} {...props}>
       <div className={styles.upload__image__container}>
         {!file ? (
           <div

@@ -1,27 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { CategoryPanel } from "../../containers";
 import styles from "./Home.module.scss";
 import { SeeMore } from "../../components";
 import { DivProps } from "react-html-props";
-import { HomeProductPanel } from "../../containers";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux";
+import { ProductPanel } from "../../containers";
+import { useAppSelector } from "../../hooks";
+import { Product } from "../../models";
 
 interface Props extends DivProps {}
 
-const Home = (props: Props) => {
-  const items = useSelector((state: RootState) => state.home);
-  console.log(JSON.stringify(items, null, 2));
+const CAPACITY = 24;
 
-  const users = useSelector((state: RootState) => state.users);
-  console.log(JSON.stringify(users, null, 2));
+const Home = ({ className, ...props }: Props) => {
+  const categories = useAppSelector((state) => state.categories);
+  const products = useAppSelector((state) => state.products);
+
+  const [displayProducts, setDisplayProducts] = useState<Product[]>([]);
+  const [seeMore, setSeeMore] = useState(0);
+
+  useEffect(() => {
+    setDisplayProducts(products.slice(0, CAPACITY * seeMore));
+  }, [seeMore, products]);
+
+  useEffect(() => {
+    setDisplayProducts(products.slice(0, CAPACITY));
+    setSeeMore(1);
+  }, [products]);
 
   return (
-    <div className={`${styles.home} ${props.className}`}>
+    <div className={`${styles.home} ${className}`} {...props}>
       <div className={styles.home__container}>
-        <CategoryPanel className={styles.category__panel} />
-        <HomeProductPanel className={styles.product__panel} />
-        <SeeMore className={styles.seemore__btn} />
+        <CategoryPanel className={styles.category__panel} items={categories} />
+        <ProductPanel
+          className={styles.product__panel}
+          items={displayProducts}
+        />
+        {products.length > seeMore * CAPACITY ? (
+          <SeeMore
+            className={styles.seemore__btn}
+            onClick={() => setSeeMore(seeMore + 1)}
+          />
+        ) : undefined}
       </div>
     </div>
   );

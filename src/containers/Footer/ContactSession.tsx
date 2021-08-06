@@ -13,20 +13,22 @@ import styles from "./ContactSession.module.scss";
 interface Props extends DivProps {}
 
 const ContactSession = (props: Props) => {
+  const contents = strings.footer.contact;
+
   return (
     <div className={`${styles.contact} ${props.className}`}>
       <div className={styles.contact__container}>
         <div className={styles.contact__hotline}>
-          <p className={styles.contact__label}>{strings.contactHotlineLabel}</p>
+          <p className={styles.contact__label}>{contents.hotline.label}</p>
           <div className={styles.hotline__container}>
             <Icon icon={FaPhoneAlt} className={styles.hotline__icon} />
             <span className={styles.hotline__number}>
-              {strings.contactHotlineNumber}
+              {contents.hotline.number}
             </span>
           </div>
         </div>
         <div className={styles.contact__social}>
-          <p className={styles.contact__label}>{strings.contactSocialLabel}</p>
+          <p className={styles.contact__label}>{contents.social.label}</p>
           <div className={styles.social__container}>
             <a
               href="https://www.facebook.com/"

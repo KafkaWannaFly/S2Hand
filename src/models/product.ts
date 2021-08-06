@@ -1,19 +1,20 @@
 import { User } from "./user";
+import { CategoryTitle } from "./category";
 
 export class Product {
-  id?: string;
-  name?: string;
-  price?: string;
-  newPercentage?: number;
+  id: string;
+  name: string;
+  price: string;
+  newPercentage: number;
   description?: string;
-  images?: string[];
-  category?: Category;
-  time?: Date;
+  images: string[];
+  category: CategoryTitle;
+  time: Date;
   city?: string;
   district?: string;
   ward?: string;
   street?: string;
-  state?: ProductState;
+  state: ProductState;
   amount?: number;
   author?: User;
   isViewed?: boolean;
@@ -46,13 +47,4 @@ export class Product {
 export enum ProductState {
   NEW = "NEW",
   SOLD = "SOLD"
-}
-
-export enum Category {
-  BOOK = "Sách",
-  SCHOOL_SUPPLY = "Dụng cụ học tập",
-  CLOTHES = "Quần áo",
-  ELECTRONIC = "Đồ điện tử",
-  HOUSEHOLD = "Đồ gia dụng",
-  OTHER = "Khác"
 }
