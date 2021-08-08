@@ -3,7 +3,7 @@ import { DivProps } from "react-html-props";
 import styles from "./EditForm.module.scss";
 import { strings } from "../../data";
 import Select, { StylesConfig } from "react-select";
-import { UploadImage } from "../../components";
+// import { UploadImage } from "../../components";
 
 interface Props extends DivProps {}
 
