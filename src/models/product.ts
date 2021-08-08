@@ -45,6 +45,6 @@ export class Product {
 }
 
 export enum ProductState {
-  NEW = "NEW",
-  SOLD = "SOLD"
+  ON_SALE = "Đang đăng bán",
+  SOLD = "Đã bán"
 }

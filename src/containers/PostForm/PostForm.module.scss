@@ -59,6 +59,11 @@
             margin-top: 0.5rem;
           }
 
+          .err__img__upload {
+            @include set-text($fontSansSerifRegular, $onPostFormNote-xl, red);
+            margin-top: 0.5rem;
+          }
+
           .form__upload__container {
             @include display-flex(flex-start, center);
             flex-wrap: wrap;
@@ -112,6 +117,10 @@
           padding: 0.45rem 0.5rem;
           border-radius: 4px;
           resize: none;
+
+          &.err {
+            border-color: red;
+          }
         }
       }
     }
@@ -182,6 +191,12 @@
       margin-top: 0.5rem;
       text-align: end;
     }
+
+    .err__form {
+      @include set-text($fontSansSerifRegular, $onPostFormNote-xl, red);
+      margin-top: 0.5rem;
+      text-align: end;
+    }
   }
 }
 
@@ -216,6 +231,10 @@
 
           .form__field {
             .note__img__upload {
+              font-size: $onPostFormNote-lg;
+            }
+
+            .err__img__upload {
               font-size: $onPostFormNote-lg;
             }
 
@@ -281,6 +300,11 @@
         font-size: $onPostFormNote-lg;
         margin-top: 0.45rem;
       }
+
+      .err__form {
+        font-size: $onPostFormNote-lg;
+        margin-top: 0.45rem;
+      }
     }
   }
 }
@@ -316,6 +340,10 @@
 
           .form__field {
             .note__img__upload {
+              font-size: $onPostFormNote-md;
+            }
+
+            .err__img__upload {
               font-size: $onPostFormNote-md;
             }
 
@@ -385,6 +413,11 @@
         font-size: $onPostFormNote-md;
         margin-top: 0.4rem;
       }
+
+      .err__form {
+        font-size: $onPostFormNote-md;
+        margin-top: 0.4rem;
+      }
     }
   }
 }
@@ -421,6 +454,10 @@
 
           .form__field {
             .note__img__upload {
+              font-size: $onPostFormNote-sm;
+            }
+
+            .err__img__upload {
               font-size: $onPostFormNote-sm;
             }
 
@@ -488,6 +525,11 @@
       }
 
       .note__form {
+        font-size: $onPostFormNote-sm;
+        margin-top: 0.4rem;
+      }
+
+      .err__form {
         font-size: $onPostFormNote-sm;
         margin-top: 0.4rem;
       }

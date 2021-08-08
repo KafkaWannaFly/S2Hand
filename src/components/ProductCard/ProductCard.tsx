@@ -28,7 +28,7 @@ const ProductCard = ({ item, className, ...props }: Props) => {
           <div className={styles.product__card__des}>
             <div className={styles.product__card__price__container}>
               <p className={styles.product__card__price}>
-                {item.price?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}đ
+                {parseFloat(item.price).toLocaleString("da-DK")}đ
               </p>
               <button
                 className={styles.product__card__bookmark}

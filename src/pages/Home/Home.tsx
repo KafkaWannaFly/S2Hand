@@ -19,13 +19,15 @@ const Home = ({ className, ...props }: Props) => {
   const [seeMore, setSeeMore] = useState(0);
 
   useEffect(() => {
-    setDisplayProducts(products.slice(0, CAPACITY * seeMore));
-  }, [seeMore, products]);
+    // setDisplayProducts(products.slice(0, CAPACITY));
+    setSeeMore(1);
+    console.log("products change");
+  }, [products]);
 
   useEffect(() => {
-    setDisplayProducts(products.slice(0, CAPACITY));
-    setSeeMore(1);
-  }, [products]);
+    setDisplayProducts(products.slice(0, CAPACITY * seeMore));
+    console.log("seemore change");
+  }, [seeMore, products]);
 
   return (
     <div className={`${styles.home} ${className}`} {...props}>

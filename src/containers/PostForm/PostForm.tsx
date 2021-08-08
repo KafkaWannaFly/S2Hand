@@ -1,226 +1,417 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { DivProps } from "react-html-props";
 import styles from "./PostForm.module.scss";
 import { strings } from "../../data";
-import Select, { StylesConfig } from "react-select";
+import Select from "react-select";
 import { UploadImage } from "../../components";
+import { useAppSelector, useAppDispatch } from "../../hooks";
+import { validations } from "../../utils";
+import { selectStyle, selectStyleErr } from "../../styles/select";
+import { locationsService } from "../../services";
+import { CategoryTitle, Product, ProductState } from "../../models";
+import { productsActions } from "../../redux/slices";
+
+const NUM_IMAGES = 5;
+
+interface FormInput {
+  name: string;
+  price: number;
+  category: string;
+  newPercentage: number;
+  description: string;
+  street: string;
+  city: string;
+  district: string;
+  ward: string;
+  images: string[];
+}
+
+const initFormInput: FormInput = {
+  name: "",
+  price: NaN,
+  category: "",
+  newPercentage: NaN,
+  description: "",
+  street: "",
+  city: "",
+  district: "",
+  ward: "",
+  images: []
+};
+
+interface FormValidate {
+  errName: boolean;
+  errPrice: boolean;
+  errCategory: boolean;
+  errNewPercentage: boolean;
+  errDescription: boolean;
+  errStreet: boolean;
+  errCity: boolean;
+  errDistrict: boolean;
+  errWard: boolean;
+  errImages: boolean;
+}
+
+const initFormValidate: FormValidate = {
+  errName: false,
+  errPrice: false,
+  errCategory: false,
+  errNewPercentage: false,
+  errDescription: false,
+  errStreet: false,
+  errCity: false,
+  errDistrict: false,
+  errWard: false,
+  errImages: false
+};
 
 interface Props extends DivProps {}
 
 const PostForm = (props: Props) => {
   const contents = strings.postForm;
-  const categories = [
-    { value: "book", label: "Sách" },
-    { value: "schoolSupply", label: "Đồ dùng học tập" },
-    { value: "houseHold", label: "Đồ gia dụng" },
-    { value: "personal", label: "Đồ dùng cá nhân" },
-    { value: "clothes", label: "Quần áo" },
-    { value: "electronic", label: "Đồ điện tử" }
-  ];
 
-  const selectStyle: StylesConfig<{ value: string; label: string }, false> = {
-    control: (base) => ({
-      ...base,
-      border: "1px solid #dbdada",
-      padding: "0.11rem 0.05rem",
-      fontSize: "1rem",
-      boxShadow: "none",
-      "&:hover": {
-        border: "1px solid #dbdada"
-      },
-      fontFamily: "Montserrat-Regular",
-      marginTop: "0.4rem"
-    }),
-    menu: (base) => ({
-      ...base,
-      fontFamily: "Montserrat-Regular"
-    })
+  const user = useAppSelector((state) => state.user);
+
+  const [id] = useState((Math.floor(Math.random() * 1000) + 100).toString());
+  const [formInput, setFormInput] = useState<FormInput>(initFormInput);
+  const [formValidate, setFormValidate] =
+    useState<FormValidate>(initFormValidate);
+  const [formErr, setFormErr] = useState(false);
+  useEffect(() => {
+    const err = Object.values(formValidate).find((item) => item === true);
+    if (err) setFormErr(true);
+    else setFormErr(false);
+  }, [formValidate]);
+
+  const dispatch = useAppDispatch();
+
+  const categories = useAppSelector((state) => state.categories);
+  const categoriesInput = categories.map((category) => ({
+    value: category.name,
+    label: category.title
+  }));
+
+  const citiesInput = locationsService.getCities().map((city) => ({
+    value: city,
+    label: city
+  }));
+
+  const districtsInput = locationsService
+    .getDistricts(formInput.city)
+    .map((district) => ({
+      value: district,
+      label: district
+    }));
+
+  const wardsInput = locationsService
+    .getWards(formInput.city, formInput.district)
+    .map((ward) => ({
+      value: ward,
+      label: ward
+    }));
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const validateResult = validations.validatePostForm(formInput);
+    const err = Object.values(validateResult).find((item) => item === true);
+    if (!err) {
+      const product = new Product({
+        id: id,
+        name: formInput.name,
+        price: formInput.price.toString(),
+        newPercentage: formInput.newPercentage,
+        description: formInput.description,
+        images: formInput.images,
+        category: formInput.category as CategoryTitle,
+        time: new Date(),
+        city: formInput.city,
+        district: formInput.district,
+        ward: formInput.ward,
+        street: formInput.street,
+        state: ProductState.ON_SALE,
+        amount: 1,
+        author: user
+      });
+
+      dispatch(productsActions.addNewProduct(product));
+    }
+    setFormValidate(validateResult);
   };
 
   return (
     <div className={`${styles.post__form} ${props.className}`}>
       <div className={styles.post__form__container}>
-        <div className={styles.form__session__container}>
-          <h1 className={styles.form__session__title}>
-            {contents.generalSession.title}
-          </h1>
-          <hr className={styles.hr} />
-          <div className={styles.form__field__container}>
-            <div className={styles.double__line__field}>
-              <div className={styles.form__field}>
-                <label htmlFor="name" className={styles.form__field__label}>
-                  {contents.generalSession.fields.name.label}
-                </label>
-                <br />
-                <input
-                  type="text"
-                  autoComplete="none"
-                  placeholder={contents.generalSession.fields.name.placeholder}
-                  id="name"
-                  name="name"
-                  className={styles.form__field__input}
-                />
+        <form onSubmit={handleSubmit}>
+          <div className={styles.form__session__container}>
+            <h1 className={styles.form__session__title}>
+              {contents.generalSession.title}
+            </h1>
+            <hr className={styles.hr} />
+            <div className={styles.form__field__container}>
+              <div className={styles.double__line__field}>
+                <div className={styles.form__field}>
+                  <label htmlFor="name" className={styles.form__field__label}>
+                    {contents.generalSession.fields.name.label}
+                  </label>
+                  <br />
+                  <input
+                    type="text"
+                    onChange={(e) =>
+                      setFormInput({ ...formInput, name: e.target.value })
+                    }
+                    autoComplete="none"
+                    placeholder={
+                      contents.generalSession.fields.name.placeholder
+                    }
+                    id="name"
+                    name="name"
+                    className={`${styles.form__field__input} ${
+                      formValidate.errName ? styles.err : undefined
+                    }`}
+                  />
+                </div>
+
+                <div className={styles.form__field}>
+                  <label htmlFor="price" className={styles.form__field__label}>
+                    {contents.generalSession.fields.price.label}
+                  </label>
+                  <br />
+                  <input
+                    type="number"
+                    onChange={(e) =>
+                      setFormInput({
+                        ...formInput,
+                        price: parseFloat(e.target.value)
+                      })
+                    }
+                    autoComplete="none"
+                    placeholder={
+                      contents.generalSession.fields.price.placeholder
+                    }
+                    id="price"
+                    name="price"
+                    className={`${styles.form__field__input} ${
+                      formValidate.errPrice ? styles.err : undefined
+                    }`}
+                  />
+                </div>
               </div>
 
-              <div className={styles.form__field}>
-                <label htmlFor="price" className={styles.form__field__label}>
-                  {contents.generalSession.fields.price.label}
-                </label>
-                <br />
-                <input
-                  type="text"
-                  autoComplete="none"
-                  placeholder={contents.generalSession.fields.price.placeholder}
-                  id="price"
-                  name="price"
-                  className={styles.form__field__input}
-                />
-              </div>
-            </div>
+              <div className={styles.double__line__field}>
+                <div className={styles.form__field}>
+                  <label
+                    htmlFor="category"
+                    className={styles.form__field__label}
+                  >
+                    {contents.generalSession.fields.category.label}
+                  </label>
+                  <br />
 
-            <div className={styles.double__line__field}>
-              <div className={styles.form__field}>
-                <label htmlFor="category" className={styles.form__field__label}>
-                  {contents.generalSession.fields.category.label}
-                </label>
-                <br />
+                  <Select
+                    onChange={(option) =>
+                      setFormInput({
+                        ...formInput,
+                        category: option?.value ? option?.value : ""
+                      })
+                    }
+                    autoComplete="none"
+                    options={categoriesInput}
+                    placeholder={
+                      contents.generalSession.fields.category.placeholder
+                    }
+                    id="category"
+                    name="category"
+                    styles={
+                      formValidate.errCategory ? selectStyleErr : selectStyle
+                    }
+                  />
+                </div>
 
-                <Select
-                  options={categories}
-                  placeholder={
-                    contents.generalSession.fields.category.placeholder
-                  }
-                  styles={selectStyle}
-                />
-              </div>
-
-              <div className={styles.form__field}>
-                <label htmlFor="status" className={styles.form__field__label}>
-                  {contents.generalSession.fields.status.label}
-                </label>
-                <br />
-                <input
-                  type="text"
-                  autoComplete="none"
-                  placeholder={
-                    contents.generalSession.fields.status.placeholder
-                  }
-                  id="status"
-                  name="status"
-                  className={styles.form__field__input}
-                />
+                <div className={styles.form__field}>
+                  <label
+                    htmlFor="newPercentage"
+                    className={styles.form__field__label}
+                  >
+                    {contents.generalSession.fields.status.label}
+                  </label>
+                  <br />
+                  <input
+                    type="number"
+                    onChange={(e) =>
+                      setFormInput({
+                        ...formInput,
+                        newPercentage: parseFloat(e.target.value)
+                      })
+                    }
+                    autoComplete="none"
+                    placeholder={
+                      contents.generalSession.fields.status.placeholder
+                    }
+                    id="newPercentage"
+                    name="newPercentage"
+                    className={`${styles.form__field__input} ${
+                      formValidate.errNewPercentage ? styles.err : undefined
+                    }`}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.form__session__container}>
-          <h1 className={styles.form__session__title}>
-            {contents.detailSession.title}
-          </h1>
-          <hr className={styles.hr} />
-          <div className={styles.form__field__container}>
-            <div className={styles.form__field}>
-              <label htmlFor="describe" className={styles.form__field__label}>
-                {contents.detailSession.fields.describe.label}
-              </label>
-              <br />
-              <textarea
-                rows={5}
-                autoComplete="none"
-                placeholder={contents.detailSession.fields.describe.placeholder}
-                id="describe"
-                name="describe"
-                className={styles.form__field__input}
-              />
-            </div>
+          <div className={styles.form__session__container}>
+            <h1 className={styles.form__session__title}>
+              {contents.detailSession.title}
+            </h1>
+            <hr className={styles.hr} />
+            <div className={styles.form__field__container}>
+              <div className={styles.form__field}>
+                <label htmlFor="describe" className={styles.form__field__label}>
+                  {contents.detailSession.fields.describe.label}
+                </label>
+                <br />
+                <textarea
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, description: e.target.value })
+                  }
+                  rows={5}
+                  autoComplete="none"
+                  placeholder={
+                    contents.detailSession.fields.describe.placeholder
+                  }
+                  id="describe"
+                  name="describe"
+                  className={`${styles.form__field__input} ${
+                    formValidate.errDescription ? styles.err : undefined
+                  }`}
+                />
+              </div>
 
-            <div className={styles.form__field}>
-              <label htmlFor="street" className={styles.form__field__label}>
-                {contents.detailSession.fields.address.label}
-              </label>
-              <br />
-              <input
-                type="text"
-                autoComplete="none"
-                placeholder={contents.detailSession.fields.address.street}
-                id="street"
-                name="street"
-                className={styles.form__field__input}
-              />
+              <div className={styles.form__field}>
+                <label htmlFor="street" className={styles.form__field__label}>
+                  {contents.detailSession.fields.address.label}
+                </label>
+                <br />
+                <input
+                  type="text"
+                  onChange={(e) =>
+                    setFormInput({ ...formInput, street: e.target.value })
+                  }
+                  autoComplete="none"
+                  placeholder={contents.detailSession.fields.address.street}
+                  id="street"
+                  name="street"
+                  className={`${styles.form__field__input} ${
+                    formValidate.errStreet ? styles.err : undefined
+                  }`}
+                />
 
-              <div className={styles.form__field__address}>
-                <div className={styles.form__field}>
-                  <Select
-                    options={[]}
-                    placeholder={contents.detailSession.fields.address.city}
-                    styles={selectStyle}
-                  />
-                </div>
+                <div className={styles.form__field__address}>
+                  <div className={styles.form__field}>
+                    <Select
+                      options={citiesInput}
+                      placeholder={contents.detailSession.fields.address.city}
+                      styles={
+                        formValidate.errCity ? selectStyleErr : selectStyle
+                      }
+                      onChange={(option) =>
+                        setFormInput({
+                          ...formInput,
+                          city: option?.value ? option.value : ""
+                        })
+                      }
+                    />
+                  </div>
 
-                <div className={styles.form__field}>
-                  <Select
-                    options={[]}
-                    placeholder={contents.detailSession.fields.address.district}
-                    styles={selectStyle}
-                  />
-                </div>
+                  <div className={styles.form__field}>
+                    <Select
+                      options={formInput.city ? districtsInput : []}
+                      placeholder={
+                        contents.detailSession.fields.address.district
+                      }
+                      onChange={(option) =>
+                        setFormInput({
+                          ...formInput,
+                          district: option?.value ? option.value : ""
+                        })
+                      }
+                      styles={
+                        formValidate.errDistrict ? selectStyleErr : selectStyle
+                      }
+                    />
+                  </div>
 
-                <div className={styles.form__field}>
-                  <Select
-                    options={[]}
-                    placeholder={contents.detailSession.fields.address.ward}
-                    styles={selectStyle}
-                  />
+                  <div className={styles.form__field}>
+                    <Select
+                      options={formInput.district ? wardsInput : []}
+                      placeholder={contents.detailSession.fields.address.ward}
+                      onChange={(option) =>
+                        setFormInput({
+                          ...formInput,
+                          ward: option?.value ? option.value : ""
+                        })
+                      }
+                      styles={
+                        formValidate.errWard ? selectStyleErr : selectStyle
+                      }
+                    />
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className={styles.form__field}>
-              <label className={styles.form__field__label}>
-                {contents.detailSession.fields.images.label}
-              </label>
-              <br />
-              <p className={styles.note__img__upload}>
-                {contents.detailSession.fields.images.note}
-              </p>
-              <div className={styles.form__upload__container}>
-                <UploadImage
-                  onUploadChange={() => {}}
-                  className={styles.upload__field}
-                />
-                <UploadImage
-                  onUploadChange={() => {}}
-                  className={styles.upload__field}
-                />
-                <UploadImage
-                  onUploadChange={() => {}}
-                  className={styles.upload__field}
-                />
-                <UploadImage
-                  onUploadChange={() => {}}
-                  className={styles.upload__field}
-                />
-                <UploadImage
-                  onUploadChange={() => {}}
-                  className={styles.upload__field}
-                />
+              <div className={styles.form__field}>
+                <label className={styles.form__field__label}>
+                  {contents.detailSession.fields.images.label}
+                </label>
+                <br />
+                <p className={styles.note__img__upload}>
+                  {contents.detailSession.fields.images.note}
+                </p>
+                <div className={styles.form__upload__container}>
+                  {Array.from(new Array(NUM_IMAGES)).map((index) => (
+                    <UploadImage
+                      onUpload={(img: string) => {
+                        const images = formInput.images;
+                        images.push(img);
+                        setFormInput({ ...formInput, images: images });
+                      }}
+                      onRemove={(img: string) => {
+                        const images = formInput.images;
+                        const index = images.indexOf(img);
+                        if (index !== -1) images.splice(index, 1);
+                        console.log(images.length);
+                        console.log(index);
+                        console.log(images.length);
+                        setFormInput({ ...formInput, images: images });
+                      }}
+                      key={index}
+                      className={styles.upload__field}
+                    />
+                  ))}
+                </div>
+                {formValidate.errImages ? (
+                  <p className={styles.err__img__upload}>
+                    {contents.detailSession.fields.images.err}
+                  </p>
+                ) : undefined}
               </div>
             </div>
           </div>
-        </div>
 
-        <p className={styles.note__form}>{contents.note}</p>
-        <div className={styles.form__actions__container}>
-          <button className={styles.form__action__preview}>
-            {contents.actions.preview}
-          </button>
-          <button className={styles.form__action__post}>
-            {contents.actions.post}
-          </button>
-          <button className={styles.form__action__cancel}>
-            {contents.actions.cancel}
-          </button>
-        </div>
+          <p className={styles.note__form}>{contents.note}</p>
+          {formErr ? (
+            <p className={styles.err__form}>{contents.err}</p>
+          ) : undefined}
+          <div className={styles.form__actions__container}>
+            <button className={styles.form__action__preview}>
+              {contents.actions.preview}
+            </button>
+            <button className={styles.form__action__post} type="submit">
+              {contents.actions.post}
+            </button>
+            <button className={styles.form__action__cancel}>
+              {contents.actions.cancel}
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   );

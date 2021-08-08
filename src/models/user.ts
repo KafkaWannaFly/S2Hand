@@ -1,10 +1,10 @@
 import { Product } from ".";
 
 export class User {
-  id?: number;
-  email?: string;
-  password?: string;
-  name?: string;
+  id: number;
+  email: string;
+  password: string;
+  name: string;
   postedItems?: Product[];
   purchasedItems?: Product[];
 

@@ -4,7 +4,11 @@ import { Navbar, Footer } from "./containers";
 import styles from "./App.module.scss";
 import { AppRoute } from "./routings";
 import { useAppDispatch } from "./hooks";
-import { fetchDataCategories, fetchDataProducts } from "./redux/thunks";
+import {
+  fetchDataCategories,
+  fetchDataProducts,
+  fetchUserByLogin
+} from "./redux/thunks";
 
 const App = () => {
   const dispatch = useAppDispatch();
@@ -13,6 +17,9 @@ const App = () => {
     (async () => {
       await dispatch(fetchDataCategories());
       await dispatch(fetchDataProducts());
+
+      const accountLogin = { email: "phatduong@hcmus.edu.vn", password: "123" };
+      await dispatch(fetchUserByLogin(accountLogin));
     })();
   }, [dispatch]);
 

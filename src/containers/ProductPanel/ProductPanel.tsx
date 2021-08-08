@@ -4,6 +4,7 @@ import styles from "./ProductPanel.module.scss";
 import { strings } from "../../data";
 import { Product } from "../../models";
 import { ProductCard } from "../../components";
+import { getTimeDuration } from "../../utils";
 
 interface Props extends DivProps {
   items: Product[];
@@ -11,6 +12,13 @@ interface Props extends DivProps {
 
 const ProductPanel = ({ items, className, ...props }: Props) => {
   const contents = strings.productPanel;
+
+  items = items.map((item) => {
+    if (!item.thumbnail && item.images?.length) item.thumbnail = item.images[0];
+    if (!item.duration && item.time)
+      item.duration = getTimeDuration(new Date(item.time), new Date());
+    return item;
+  });
 
   return (
     <div className={`${styles.product__panel} ${className}`} {...props}>

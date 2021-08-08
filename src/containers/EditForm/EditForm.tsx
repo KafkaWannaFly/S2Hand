@@ -184,7 +184,7 @@ const EditForm = (props: Props) => {
                 {contents.detailSession.fields.images.note}
               </p>
               <div className={styles.form__upload__container}>
-                <UploadImage
+                {/* <UploadImage
                   onUploadChange={() => {}}
                   className={styles.upload__field}
                 />
@@ -203,7 +203,7 @@ const EditForm = (props: Props) => {
                 <UploadImage
                   onUploadChange={() => {}}
                   className={styles.upload__field}
-                />
+                /> */}
               </div>
             </div>
           </div>

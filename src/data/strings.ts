@@ -90,11 +90,13 @@ export const postForm = {
       },
       images: {
         label: "Hình ảnh",
-        note: "Vui lòng cung cấp hình ảnh thực sản phẩm. Cung cấp tối đa 5 hình ảnh sản phẩm"
+        note: "Vui lòng cung cấp hình ảnh thực sản phẩm. Cung cấp tối đa 5 hình ảnh sản phẩm",
+        err: "Vui lòng cung cấp ít nhất một hình ảnh cho sản phẩm"
       }
     }
   },
   note: "Xin hãy cung cấp thông tin trung thực về sản phẩm",
+  err: "Vui lòng kiểm tra lại thông tin sản phẩm",
   actions: {
     preview: "Xem trước",
     post: "Đăng tin",
