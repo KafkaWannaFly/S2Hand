@@ -12,6 +12,10 @@ export const productsSlice = createSlice({
       if (state.find((item) => item.id === product.id))
         state.map((item) => (item.id === product.id ? product : item));
       else state.unshift(product);
+    },
+    deleteProduct: (state, action: PayloadAction<Product>) => {
+      const product = action.payload;
+      return state.filter((item) => item.id !== product.id);
     }
   },
   extraReducers: (builder) => {

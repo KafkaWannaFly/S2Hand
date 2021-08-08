@@ -9,7 +9,7 @@ import { validations } from "../../utils";
 import { selectStyle, selectStyleErr } from "../../styles/select";
 import { locationsService } from "../../services";
 import { CategoryTitle, Product, ProductState } from "../../models";
-import { productsActions } from "../../redux/slices";
+import { productsActions, userActions } from "../../redux/slices";
 import PostSuccessDialog from "../PostSuccessDialog/PostSuccessDialog";
 import { useHistory } from "react-router-dom";
 import { Routes } from "../../routings";
@@ -93,7 +93,7 @@ const PostForm = (props: Props) => {
 
   const categories = useAppSelector((state) => state.categories);
   const categoriesInput = categories.map((category) => ({
-    value: category.name,
+    value: category.title,
     label: category.title
   }));
 
@@ -140,6 +140,7 @@ const PostForm = (props: Props) => {
       });
 
       dispatch(productsActions.addNewProduct(product));
+      dispatch(userActions.addPostProduct(product));
       setDislogSuccess(true);
     }
     setFormValidate(validateResult);

@@ -6,6 +6,7 @@ import PostForm from "./PostForm/PostForm";
 import EditForm from "./EditForm/EditForm";
 import DashboardList from "./DashboardList/DashboardList";
 import PostSuccessDialog from "./PostSuccessDialog/PostSuccessDialog";
+import DeletePostDialog from "./DeletePostDialog/DeletePostDialog";
 
 export {
   Navbar,
@@ -15,5 +16,6 @@ export {
   PostForm,
   EditForm,
   DashboardList,
-  PostSuccessDialog
+  PostSuccessDialog,
+  DeletePostDialog
 };

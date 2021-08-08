@@ -37,7 +37,7 @@ const Home = ({ className, ...props }: Props) => {
           className={styles.product__panel}
           items={displayProducts}
         />
-        {products.length > seeMore * CAPACITY ? (
+        {products.length > displayProducts.length ? (
           <SeeMore
             className={styles.seemore__btn}
             onClick={() => setSeeMore(seeMore + 1)}

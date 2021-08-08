@@ -19,7 +19,8 @@ export const productPanel = {
   title: "Danh sách tất cả sản phẩm",
   card: {
     currencyUnit: "đ"
-  }
+  },
+  empty: "Không tìm thấy bất kỳ sản phẩm nào"
 };
 
 export const seeMore = "Xem thêm";
@@ -173,5 +174,16 @@ export const dashboard = {
     datePost: "Ngày đăng",
     status: "Trạng thái",
     action: "Thao tác"
+  },
+  empty: "Bạn chưa đăng bất cứ sản phẩm nào lên hệ thống",
+  dialog: {
+    delete: {
+      title: "Bạn có chắc muốn xoá bài đăng ?",
+      body: "Sản phẩm của bạn sẽ bị xoá khỏi hệ thống và sẽ không thể tìm kiếm. Thao tác này không thể khôi phục!",
+      actions: {
+        confirm: "Xoá sản phẩm",
+        cacel: "Huỷ"
+      }
+    }
   }
 };

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { DivProps } from "react-html-props";
 import styles from "./DashboardList.module.scss";
 import { strings } from "../../data";
@@ -8,11 +8,24 @@ import { FaTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { roots } from "../../routings";
+import { Product } from "../../models";
+import { format } from "date-fns";
+import DeletePostDialog from "../DeletePostDialog/DeletePostDialog";
+import { userActions, productsActions } from "../../redux/slices";
+import { useAppDispatch } from "../../hooks";
 
-interface Props extends DivProps {}
+interface Props extends DivProps {
+  items: Product[];
+}
 
-const DashboardList = (props: Props) => {
+const DashboardList = ({ items, className, ...props }: Props) => {
   const contents = strings.dashboard;
+
+  const dispatch = useAppDispatch();
+
+  const [focusItem, setFocusItem] = useState<Product | undefined>(undefined);
+  const [deleteDialog, setDeleteDialog] = useState(false);
+
   const columns = [
     contents.table.stt,
     contents.table.image,
@@ -34,20 +47,29 @@ const DashboardList = (props: Props) => {
     </tr>
   );
 
-  const renderData = (
-    <tr className={styles.dashboard__table__data}>
-      <td className={styles.data}>01</td>
+  const renderRows = items.map((item, index) => (
+    <tr className={styles.dashboard__table__data} key={item.id}>
+      <td className={styles.data}>
+        {(index + 1).toLocaleString("en-US", {
+          minimumIntegerDigits: 2,
+          useGrouping: false
+        })}
+      </td>
       <td className={styles.data}>
         <img
-          src={ThumbnailPlaceholder}
+          src={item.images.length ? item.images[0] : ThumbnailPlaceholder}
           className={styles.dashboard__thumbnail}
         />
       </td>
-      <td className={styles.data}>Name Product</td>
-      <td className={styles.data}>Category</td>
-      <td className={styles.data}>150.000</td>
-      <td className={styles.data}>12/07/2021</td>
-      <td className={styles.data}>Status</td>
+      <td className={styles.data}>{item.name}</td>
+      <td className={styles.data}>{item.category}</td>
+      <td className={styles.data}>
+        {item.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}đ
+      </td>
+      <td className={styles.data}>
+        {format(new Date(item.time), "dd/MM/yyyy HH:mm")}
+      </td>
+      <td className={styles.data}>{item.state}</td>
       <td className={styles.data}>
         <div className={styles.actions__container}>
           <Link to={roots.edit}>
@@ -55,29 +77,47 @@ const DashboardList = (props: Props) => {
               <Icon icon={MdEdit} className={styles.icon__edit} />
             </button>
           </Link>
-          <button className={styles.action__delete}>
+          <button
+            className={styles.action__delete}
+            onClick={() => {
+              setFocusItem(item);
+              setDeleteDialog(true);
+            }}
+          >
             <Icon icon={FaTrashAlt} className={styles.icon__delete} />
           </button>
         </div>
       </td>
     </tr>
-  );
+  ));
 
   return (
-    <div className={`${styles.dashboard} ${props.className}`}>
+    <div className={`${styles.dashboard} ${className}`} {...props}>
+      <DeletePostDialog
+        open={deleteDialog}
+        onConfirm={() => {
+          if (focusItem) {
+            dispatch(userActions.deletePostProduct(focusItem));
+            dispatch(productsActions.deleteProduct(focusItem));
+          }
+          setDeleteDialog(false);
+        }}
+        onCancel={() => setDeleteDialog(false)}
+      />
       <div className={styles.dashboard__container}>
         <h1 className={styles.dashboard__title}>{contents.title}</h1>
         <hr className={styles.hr} />
         <div className={styles.dashboard__list__container}>
-          <div className={styles.table__overflow}>
-            <table className={styles.dashboard__table}>
-              {renderHeader}
-
-              {renderData}
-              {renderData}
-              {renderData}
-            </table>
-          </div>
+          {items.length ? (
+            <div className={styles.table__overflow}>
+              <table className={styles.dashboard__table}>
+                {renderHeader}
+                {renderRows}
+              </table>
+            </div>
+          ) : (
+            <p className={styles.dashboard__list__empty}>{contents.empty}</p>
+          )}
         </div>
       </div>
     </div>

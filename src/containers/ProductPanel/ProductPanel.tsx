@@ -26,13 +26,17 @@ const ProductPanel = ({ items, className, ...props }: Props) => {
         <h1 className={styles.product__panel__title}>{contents.title}</h1>
         <hr className={styles.hr} />
         <div className={styles.product__list__container}>
-          {items.map((item) => (
-            <ProductCard
-              item={item}
-              className={styles.product__list__item}
-              key={item.id}
-            />
-          ))}
+          {items.length ? (
+            items.map((item) => (
+              <ProductCard
+                item={item}
+                className={styles.product__list__item}
+                key={item.id}
+              />
+            ))
+          ) : (
+            <p className={styles.product__list__empty}>{contents.empty}</p>
+          )}
         </div>
       </div>
     </div>
