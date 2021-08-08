@@ -17,7 +17,11 @@ class Validations {
     if (isNaN(formInput.price) || formInput.price <= 0)
       result = { ...result, errPrice: true };
     if (!formInput.category) result = { ...result, errCategory: true };
-    if (!formInput.newPercentage || formInput.newPercentage <= 0)
+    if (
+      !formInput.newPercentage ||
+      formInput.newPercentage <= 0 ||
+      formInput.newPercentage > 100
+    )
       result = { ...result, errNewPercentage: true };
     if (!formInput.description) result = { ...result, errDescription: true };
     if (!formInput.street) result = { ...result, errStreet: true };

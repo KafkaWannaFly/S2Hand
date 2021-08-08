@@ -10,6 +10,9 @@ import { selectStyle, selectStyleErr } from "../../styles/select";
 import { locationsService } from "../../services";
 import { CategoryTitle, Product, ProductState } from "../../models";
 import { productsActions } from "../../redux/slices";
+import PostSuccessDialog from "../PostSuccessDialog/PostSuccessDialog";
+import { useHistory } from "react-router-dom";
+import { Routes } from "../../routings";
 
 const NUM_IMAGES = 5;
 
@@ -82,8 +85,11 @@ const PostForm = (props: Props) => {
     if (err) setFormErr(true);
     else setFormErr(false);
   }, [formValidate]);
+  const [dialogSuccess, setDislogSuccess] = useState(false);
 
   const dispatch = useAppDispatch();
+
+  const history = useHistory();
 
   const categories = useAppSelector((state) => state.categories);
   const categoriesInput = categories.map((category) => ({
@@ -134,12 +140,20 @@ const PostForm = (props: Props) => {
       });
 
       dispatch(productsActions.addNewProduct(product));
+      setDislogSuccess(true);
     }
     setFormValidate(validateResult);
   };
 
   return (
     <div className={`${styles.post__form} ${props.className}`}>
+      <PostSuccessDialog
+        open={dialogSuccess}
+        onClose={() => {
+          setDislogSuccess(false);
+          setTimeout(() => history.replace(Routes.DASHBOARD), 500);
+        }}
+      />
       <div className={styles.post__form__container}>
         <form onSubmit={handleSubmit}>
           <div className={styles.form__session__container}>
@@ -401,13 +415,13 @@ const PostForm = (props: Props) => {
             <p className={styles.err__form}>{contents.err}</p>
           ) : undefined}
           <div className={styles.form__actions__container}>
-            <button className={styles.form__action__preview}>
+            <button className={styles.form__action__preview} type="button">
               {contents.actions.preview}
             </button>
             <button className={styles.form__action__post} type="submit">
               {contents.actions.post}
             </button>
-            <button className={styles.form__action__cancel}>
+            <button className={styles.form__action__cancel} type="button">
               {contents.actions.cancel}
             </button>
           </div>

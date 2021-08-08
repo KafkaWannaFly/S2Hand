@@ -101,6 +101,15 @@ export const postForm = {
     preview: "Xem trước",
     post: "Đăng tin",
     cancel: "Huỷ"
+  },
+  dialog: {
+    success: {
+      title: "Sản phẩm của bạn đã được đăng thành công",
+      body: "Sản phẩm của bạn đã được đăng trên hệ thống thành công. Bạn có thể quản lý sản phẩm trong mục <b>'Quản lý tin'</b>",
+      actions: {
+        confirm: "Xác nhận"
+      }
+    }
   }
 };
 

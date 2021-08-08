@@ -5,6 +5,7 @@ import Footer from "./Footer/Footer";
 import PostForm from "./PostForm/PostForm";
 import EditForm from "./EditForm/EditForm";
 import DashboardList from "./DashboardList/DashboardList";
+import PostSuccessDialog from "./PostSuccessDialog/PostSuccessDialog";
 
 export {
   Navbar,
@@ -13,5 +14,6 @@ export {
   Footer,
   PostForm,
   EditForm,
-  DashboardList
+  DashboardList,
+  PostSuccessDialog
 };
