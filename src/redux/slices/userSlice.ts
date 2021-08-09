@@ -16,7 +16,12 @@ export const userSlice = createSlice({
   initialState: initialUser,
   reducers: {
     addPostProduct: (state, action: PayloadAction<Product>) => {
-      state.postedItems?.unshift(action.payload);
+      const product = action.payload;
+      if (state.postedItems?.find((item) => item.id === product.id))
+        state.postedItems.map((item) =>
+          item.id === product.id ? product : item
+        );
+      else state.postedItems?.unshift(action.payload);
     },
     deletePostProduct: (state, action: PayloadAction<Product>) => {
       const product = action.payload;
@@ -26,6 +31,12 @@ export const userSlice = createSlice({
       // if (index && index !== -1) state.postedItems?.splice(index, 1);
       state.postedItems = state.postedItems?.filter(
         (item) => item.id !== product.id
+      );
+    },
+    updatePostProduct: (state, action: PayloadAction<Product>) => {
+      const product = action.payload;
+      state.postedItems = state.postedItems?.map((item) =>
+        item.id === product.id ? product : item
       );
     }
   },

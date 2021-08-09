@@ -7,8 +7,8 @@ import { Icon } from "../../components";
 import { FaTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { Link } from "react-router-dom";
-import { roots } from "../../routings";
-import { Product } from "../../models";
+import { Routes } from "../../routings";
+import { Product, ProductState } from "../../models";
 import { format } from "date-fns";
 import DeletePostDialog from "../DeletePostDialog/DeletePostDialog";
 import { userActions, productsActions } from "../../redux/slices";
@@ -69,10 +69,20 @@ const DashboardList = ({ items, className, ...props }: Props) => {
       <td className={styles.data}>
         {format(new Date(item.time), "dd/MM/yyyy HH:mm")}
       </td>
-      <td className={styles.data}>{item.state}</td>
+      <td className={styles.data}>
+        <p
+          className={
+            item.state === ProductState.ON_SALE
+              ? styles.state__active
+              : styles.state__close
+          }
+        >
+          {item.state}
+        </p>
+      </td>
       <td className={styles.data}>
         <div className={styles.actions__container}>
-          <Link to={roots.edit}>
+          <Link to={Routes.EDIT.replace(":id", item.id)}>
             <button className={styles.action__edit}>
               <Icon icon={MdEdit} className={styles.icon__edit} />
             </button>

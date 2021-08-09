@@ -9,7 +9,7 @@ enum Routes {
   RECRUITMENT = "/recruitment",
   POLICY = "/policy",
   REFUND = "/refund",
-  EDIT = "/edit",
+  EDIT = "/edit/:id",
   HELP = "/help",
   MANAGE = "/manage",
   CATEGORY = "/categories?category="

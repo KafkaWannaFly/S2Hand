@@ -75,8 +75,13 @@ const PostForm = (props: Props) => {
 
   const user = useAppSelector((state) => state.user);
 
-  const [id] = useState((Math.floor(Math.random() * 1000) + 100).toString());
-  const [formInput, setFormInput] = useState<FormInput>(initFormInput);
+  const [formInput, setFormInput] = useState<FormInput>({
+    ...initFormInput,
+    images: []
+  });
+
+  console.log(JSON.stringify(formInput)); //Log
+
   const [formValidate, setFormValidate] =
     useState<FormValidate>(initFormValidate);
   const [formErr, setFormErr] = useState(false);
@@ -122,7 +127,7 @@ const PostForm = (props: Props) => {
     const err = Object.values(validateResult).find((item) => item === true);
     if (!err) {
       const product = new Product({
-        id: id,
+        id: (Math.floor(Math.random() * 1000) + 100).toString(),
         name: formInput.name,
         price: formInput.price.toString(),
         newPercentage: formInput.newPercentage,
@@ -381,7 +386,7 @@ const PostForm = (props: Props) => {
                   {contents.detailSession.fields.images.note}
                 </p>
                 <div className={styles.form__upload__container}>
-                  {Array.from(new Array(NUM_IMAGES)).map((index) => (
+                  {Array.from(new Array(NUM_IMAGES)).map((_, index) => (
                     <UploadImage
                       onUpload={(img: string) => {
                         const images = formInput.images;
@@ -392,9 +397,6 @@ const PostForm = (props: Props) => {
                         const images = formInput.images;
                         const index = images.indexOf(img);
                         if (index !== -1) images.splice(index, 1);
-                        console.log(images.length);
-                        console.log(index);
-                        console.log(images.length);
                         setFormInput({ ...formInput, images: images });
                       }}
                       key={index}

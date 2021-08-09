@@ -5,7 +5,7 @@ import { Searchbar, NavItemPage, NavItemAction } from "../../components";
 import { Link } from "react-router-dom";
 import { pageNavigations, actionNavigations } from "./render";
 import { DivProps } from "react-html-props";
-import { roots } from "../../routings";
+import { Routes } from "../../routings";
 
 interface Props extends DivProps {}
 
@@ -13,7 +13,7 @@ const Navbar = ({ className, ...props }: Props) => {
   return (
     <nav className={`${styles.navbar} ${className}`} {...props}>
       <div className={styles.navbar__container}>
-        <Link to={roots.home} className={styles.navbar__logo__container}>
+        <Link to={Routes.HOME} className={styles.navbar__logo__container}>
           <img src={Logo} alt="S2Hand Logo" className={styles.navbar__logo} />
         </Link>
         <div className={styles.navbar__nav__container}>

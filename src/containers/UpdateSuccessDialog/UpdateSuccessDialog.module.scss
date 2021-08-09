@@ -1,0 +1,81 @@
+@import "../../styles/standard";
+
+.dialog__title {
+  @include set-text($fontSansSerifRegular, $onDialogTitle-xl, $primary);
+  font-weight: bold;
+}
+
+.dialog__body {
+  @include set-text($fontSansSerifRegular, $onDialogBody-xl, $onSurface);
+}
+
+.dialog__confirm {
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  .dialog__confirm__text {
+    @include set-text($fontSansSerifRegular, $onDialogAction-xl, $onPrimary);
+    background-color: $primary;
+    border-radius: 0.35rem;
+    transition: all 0.5s ease-in-out;
+    padding: 0.5rem 2.5rem;
+
+    &:hover {
+      background-color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .dialog__title {
+    font-size: $onDialogTitle-lg;
+  }
+
+  .dialog__body {
+    font-size: $onDialogBody-lg;
+  }
+
+  .dialog__confirm {
+    .dialog__confirm__text {
+      font-size: $onDialogAction-md;
+      padding: 0.45rem 2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .dialog__title {
+    font-size: $onDialogTitle-md;
+  }
+
+  .dialog__body {
+    font-size: $onDialogBody-md;
+  }
+
+  .dialog__confirm {
+    .dialog__confirm__text {
+      font-size: $onDialogAction-md;
+      padding: 0.4rem 1.75rem;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .dialog__title {
+    font-size: $onDialogTitle-sm;
+  }
+
+  .dialog__body {
+    font-size: $onDialogBody-sm;
+  }
+
+  .dialog__confirm {
+    .dialog__confirm__text {
+      font-size: $onDialogAction-sm;
+      padding: 0.35rem 1.5rem;
+    }
+  }
+}

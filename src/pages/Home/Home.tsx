@@ -20,6 +20,7 @@ const Home = ({ className, ...props }: Props) => {
 
   useEffect(() => {
     // setDisplayProducts(products.slice(0, CAPACITY));
+    window.scrollTo(0, 0);
     setSeeMore(1);
     console.log("products change");
   }, [products]);

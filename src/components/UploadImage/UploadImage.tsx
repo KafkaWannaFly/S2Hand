@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { DivProps } from "react-html-props";
 import { IoIosImages } from "react-icons/io";
 import { TiDelete } from "react-icons/ti";
@@ -6,13 +6,21 @@ import Icon from "../Icon/Icon";
 import styles from "./UploadImage.module.scss";
 
 interface Props extends DivProps {
+  placeholder?: string;
   onUpload: Function;
   onRemove: Function;
   maximumSize?: number;
 }
 
-const UploadImage = ({ onUpload, onRemove, className, ...props }: Props) => {
-  const [file, setFile] = useState<string>("");
+const UploadImage = ({
+  placeholder = "",
+  onUpload,
+  onRemove,
+  className,
+  ...props
+}: Props) => {
+  const [file, setFile] = useState<string>(placeholder);
+
   const uploadField = useRef<HTMLInputElement>(null);
 
   const readImageFile = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,14 +28,15 @@ const UploadImage = ({ onUpload, onRemove, className, ...props }: Props) => {
       const FR = new FileReader();
       FR.addEventListener("load", (e) => {
         setFile(e.target?.result as string);
+        onUpload(e.target?.result as string);
       });
       FR.readAsDataURL(e.target.files[0]);
     }
   };
 
-  useEffect(() => {
-    if (file) onUpload(file);
-  }, [file]);
+  // useEffect(() => {
+  //   if (file) onUpload(file);
+  // }, [file]);
 
   return (
     <div className={`${styles.upload__image} ${className}`} {...props}>

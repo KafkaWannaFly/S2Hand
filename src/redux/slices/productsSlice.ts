@@ -16,6 +16,10 @@ export const productsSlice = createSlice({
     deleteProduct: (state, action: PayloadAction<Product>) => {
       const product = action.payload;
       return state.filter((item) => item.id !== product.id);
+    },
+    updateProduct: (state, action: PayloadAction<Product>) => {
+      const product = action.payload;
+      return state.map((item) => (item.id === product.id ? product : item));
     }
   },
   extraReducers: (builder) => {

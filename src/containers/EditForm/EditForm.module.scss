@@ -11,7 +11,7 @@
       .form__session__title {
         @include set-text(
           $fontSerifRegular,
-          $onEditFormSessionTitle-xl,
+          $onPostFormSessionTitle-xl,
           $onSurface
         );
         font-weight: bold;
@@ -53,9 +53,14 @@
           .note__img__upload {
             @include set-text(
               $fontSansSerifRegular,
-              $onEditFormNote-xl,
+              $onPostFormNote-xl,
               $warning
             );
+            margin-top: 0.5rem;
+          }
+
+          .err__img__upload {
+            @include set-text($fontSansSerifRegular, $onPostFormNote-xl, red);
             margin-top: 0.5rem;
           }
 
@@ -94,7 +99,7 @@
         .form__field__label {
           @include set-text(
             $fontSansSerifRegular,
-            $onEditFormFieldLabel-xl,
+            $onPostFormFieldLabel-xl,
             $onSurface
           );
         }
@@ -103,7 +108,7 @@
           @include reset-input;
           @include set-text(
             $fontSansSerifRegular,
-            $onEditFormFieldInputText-xl,
+            $onPostFormFieldInputText-xl,
             $onSurface
           );
           margin-top: 0.4rem;
@@ -112,6 +117,10 @@
           padding: 0.45rem 0.5rem;
           border-radius: 4px;
           resize: none;
+
+          &.err {
+            border-color: red;
+          }
         }
       }
     }
@@ -120,11 +129,29 @@
       @include display-flex(flex-end, center);
       margin: 1rem 0 2.5rem;
 
-      .form__action__save {
+      .form__action__preview {
         @include reset-button();
         @include set-text(
           $fontSansSerifRegular,
-          $onEditFormActionBtnTitle-xl,
+          $onPostFormActionBtnTitle-xl,
+          $onBrandText
+        );
+        background-color: $surface;
+        padding: 0.5rem 2.5rem;
+        border-radius: 0.5rem;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          background-color: $primaryVariantDark;
+          color: white;
+        }
+      }
+
+      .form__action__post {
+        @include reset-button();
+        @include set-text(
+          $fontSansSerifRegular,
+          $onPostFormActionBtnTitle-xl,
           $onPrimary
         );
         background-color: $primary;
@@ -143,7 +170,7 @@
         @include reset-button();
         @include set-text(
           $fontSansSerifRegular,
-          $onEditFormActionBtnTitle-xl,
+          $onPostFormActionBtnTitle-xl,
           $onVariant
         );
         background-color: $variant;
@@ -160,7 +187,13 @@
     }
 
     .note__form {
-      @include set-text($fontSansSerifRegular, $onEditFormNote-xl, $warning);
+      @include set-text($fontSansSerifRegular, $onPostFormNote-xl, $warning);
+      margin-top: 0.5rem;
+      text-align: end;
+    }
+
+    .err__form {
+      @include set-text($fontSansSerifRegular, $onPostFormNote-xl, red);
       margin-top: 0.5rem;
       text-align: end;
     }
@@ -172,7 +205,7 @@
     .edit__form__container {
       .form__session__container {
         .form__session__title {
-          font-size: $onEditFormSessionTitle-lg;
+          font-size: $onPostFormSessionTitle-lg;
         }
 
         .form__field__container {
@@ -198,7 +231,11 @@
 
           .form__field {
             .note__img__upload {
-              font-size: $onEditFormNote-lg;
+              font-size: $onPostFormNote-lg;
+            }
+
+            .err__img__upload {
+              font-size: $onPostFormNote-lg;
             }
 
             .form__upload__container {
@@ -228,11 +265,11 @@
           }
 
           .form__field__label {
-            font-size: $onEditFormFieldLabel-lg;
+            font-size: $onPostFormFieldLabel-lg;
           }
 
           .form__field__input {
-            font-size: $onEditFormFieldInputText-lg;
+            font-size: $onPostFormFieldInputText-lg;
           }
         }
       }
@@ -240,21 +277,32 @@
       .form__actions__container {
         margin: 1rem 0 2rem;
 
-        .form__action__save {
-          font-size: $onEditFormActionBtnTitle-lg;
+        .form__action__preview {
+          font-size: $onPostFormActionBtnTitle-lg;
+          padding: 0.45rem 2.25rem;
+          border-radius: 0.45rem;
+        }
+
+        .form__action__post {
+          font-size: $onPostFormActionBtnTitle-lg;
           padding: 0.45rem 2.25rem;
           border-radius: 0.45rem;
         }
 
         .form__action__cancel {
-          font-size: $onEditFormActionBtnTitle-lg;
+          font-size: $onPostFormActionBtnTitle-lg;
           padding: 0.45rem 2.25rem;
           border-radius: 0.45rem;
         }
       }
 
       .note__form {
-        font-size: $onEditFormNote-lg;
+        font-size: $onPostFormNote-lg;
+        margin-top: 0.45rem;
+      }
+
+      .err__form {
+        font-size: $onPostFormNote-lg;
         margin-top: 0.45rem;
       }
     }
@@ -266,7 +314,7 @@
     .edit__form__container {
       .form__session__container {
         .form__session__title {
-          font-size: $onEditFormSessionTitle-md;
+          font-size: $onPostFormSessionTitle-md;
         }
 
         .form__field__container {
@@ -292,7 +340,11 @@
 
           .form__field {
             .note__img__upload {
-              font-size: $onEditFormNote-md;
+              font-size: $onPostFormNote-md;
+            }
+
+            .err__img__upload {
+              font-size: $onPostFormNote-md;
             }
 
             .form__upload__container {
@@ -326,11 +378,11 @@
           }
 
           .form__field__label {
-            font-size: $onEditFormFieldLabel-md;
+            font-size: $onPostFormFieldLabel-md;
           }
 
           .form__field__input {
-            font-size: $onEditFormFieldInputText-md;
+            font-size: $onPostFormFieldInputText-md;
           }
         }
       }
@@ -338,21 +390,32 @@
       .form__actions__container {
         margin: 1rem 0 2rem;
 
-        .form__action__save {
-          font-size: $onEditFormActionBtnTitle-md;
+        .form__action__preview {
+          font-size: $onPostFormActionBtnTitle-md;
+          padding: 0.4rem 2.15rem;
+          border-radius: 0.35rem;
+        }
+
+        .form__action__post {
+          font-size: $onPostFormActionBtnTitle-md;
           padding: 0.4rem 2.15rem;
           border-radius: 0.35rem;
         }
 
         .form__action__cancel {
-          font-size: $onEditFormActionBtnTitle-md;
+          font-size: $onPostFormActionBtnTitle-md;
           padding: 0.4rem 2.15rem;
           border-radius: 0.35rem;
         }
       }
 
       .note__form {
-        font-size: $onEditFormNote-md;
+        font-size: $onPostFormNote-md;
+        margin-top: 0.4rem;
+      }
+
+      .err__form {
+        font-size: $onPostFormNote-md;
         margin-top: 0.4rem;
       }
     }
@@ -364,7 +427,7 @@
     .edit__form__container {
       .form__session__container {
         .form__session__title {
-          font-size: $onEditFormSessionTitle-sm;
+          font-size: $onPostFormSessionTitle-sm;
         }
 
         .form__field__container {
@@ -391,7 +454,11 @@
 
           .form__field {
             .note__img__upload {
-              font-size: $onEditFormNote-sm;
+              font-size: $onPostFormNote-sm;
+            }
+
+            .err__img__upload {
+              font-size: $onPostFormNote-sm;
             }
 
             .form__upload__container {
@@ -426,11 +493,11 @@
           }
 
           .form__field__label {
-            font-size: $onEditFormFieldLabel-sm;
+            font-size: $onPostFormFieldLabel-sm;
           }
 
           .form__field__input {
-            font-size: $onEditFormFieldInputText-sm;
+            font-size: $onPostFormFieldInputText-sm;
           }
         }
       }
@@ -438,21 +505,32 @@
       .form__actions__container {
         margin: 1rem 0 2rem;
 
-        .form__action__save {
-          font-size: $onEditFormActionBtnTitle-sm;
+        .form__action__preview {
+          font-size: $onPostFormActionBtnTitle-sm;
+          padding: 0.35rem 1.5rem;
+          border-radius: 0.35rem;
+        }
+
+        .form__action__post {
+          font-size: $onPostFormActionBtnTitle-sm;
           padding: 0.35rem 1.5rem;
           border-radius: 0.25rem;
         }
 
         .form__action__cancel {
-          font-size: $onEditFormActionBtnTitle-sm;
+          font-size: $onPostFormActionBtnTitle-sm;
           padding: 0.35rem 1.5rem;
           border-radius: 0.35rem;
         }
       }
 
       .note__form {
-        font-size: $onEditFormNote-sm;
+        font-size: $onPostFormNote-sm;
+        margin-top: 0.4rem;
+      }
+
+      .err__form {
+        font-size: $onPostFormNote-sm;
         margin-top: 0.4rem;
       }
     }

@@ -82,6 +82,22 @@
               border-radius: 0.5rem;
             }
 
+            .state__active {
+              background-color: $active;
+              text-align: center;
+              padding: 0.05rem;
+              color: white;
+              border-radius: 0.5rem;
+            }
+
+            .state__close {
+              background-color: $variantDark;
+              text-align: center;
+              padding: 0.05rem;
+              color: $onVariantDark;
+              border-radius: 0.5rem;
+            }
+
             .actions__container {
               @include display-flex(center, center);
 

@@ -6,17 +6,17 @@ export class Product {
   name: string;
   price: string;
   newPercentage: number;
-  description?: string;
+  description: string;
   images: string[];
   category: CategoryTitle;
   time: Date;
-  city?: string;
-  district?: string;
-  ward?: string;
-  street?: string;
+  city: string;
+  district: string;
+  ward: string;
+  street: string;
   state: ProductState;
   amount?: number;
-  author?: User;
+  author: User;
   isViewed?: boolean;
   isSaved?: boolean;
   thumbnail?: string; // Should be disposed

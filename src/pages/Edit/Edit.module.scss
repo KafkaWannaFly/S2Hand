@@ -16,6 +16,28 @@
       width: 100%;
       height: 100%;
     }
+
+    .empty__container {
+      width: 100%;
+      height: 100%;
+      background-color: $surface;
+      border-radius: 0.55rem;
+      padding: 0.5rem 0 0.75rem 0;
+      display: flex;
+
+      .empty__text {
+        flex: 1;
+        align-self: center;
+        text-align: center;
+        flex: 1;
+        @include set-text(
+          $fontSansSerifRegular,
+          $onEmptyList-xl,
+          $onVariantLight
+        );
+        font-weight: bold;
+      }
+    }
   }
 }
 
@@ -26,6 +48,12 @@
 
     .edit__container {
       width: $w-lg;
+    }
+
+    .empty__container {
+      .empty__text {
+        font-size: $onEmptyList-lg;
+      }
     }
   }
 }
@@ -38,6 +66,12 @@
     .edit__container {
       width: $w-md;
     }
+
+    .empty__container {
+      .empty__text {
+        font-size: $onEmptyList-lg;
+      }
+    }
   }
 }
 
@@ -48,6 +82,12 @@
 
     .edit__container {
       width: $w-sm;
+    }
+
+    .empty__container {
+      .empty__text {
+        font-size: $onEmptyList-lg;
+      }
     }
   }
 }

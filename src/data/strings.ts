@@ -150,16 +150,31 @@ export const editForm = {
         district: "Huyện",
         city: "Tỉnh"
       },
+      state: {
+        title: "Trạng thái sản phẩm"
+      },
       images: {
         label: "Hình ảnh",
-        note: "Vui lòng cung cấp hình ảnh thực sản phẩm. Cung cấp tối đa 5 hình ảnh sản phẩm"
+        note: "Vui lòng cung cấp hình ảnh thực sản phẩm. Cung cấp tối đa 5 hình ảnh sản phẩm",
+        err: "Vui lòng cung cấp ít nhất một hình ảnh cho sản phẩm"
       }
     }
   },
   note: "Xin hãy cung cấp thông tin trung thực về sản phẩm",
+  err: "Vui lòng kiểm tra lại thông tin sản phẩm",
   actions: {
     save: "Lưu và Thay đổi",
     cancel: "Huỷ"
+  },
+  empty: "Không tìm thấy sản phẩm này trên hệ thống",
+  dialog: {
+    success: {
+      title: "Sản phẩm của bạn đã được cập nhật thành công",
+      body: "Sản phẩm của bạn đã được cập nhật trên hệ thống thành công. Bạn có thể quản lý sản phẩm trong mục <b>'Quản lý tin'</b>",
+      actions: {
+        confirm: "Xác nhận"
+      }
+    }
   }
 };
 
