@@ -110,6 +110,14 @@ export const postForm = {
       actions: {
         confirm: "Xác nhận"
       }
+    },
+    cancel: {
+      title: "Bạn có muốn thoát khỏi đăng sản phẩm ?",
+      body: "Bạn sẽ thoát khỏi trang đăng sản phẩm. Các thông tin đã nhập sẽ bị mất đi và không được lưu",
+      actions: {
+        confirm: "Xác nhận",
+        cancel: "Huỷ"
+      }
     }
   }
 };
@@ -173,6 +181,14 @@ export const editForm = {
       body: "Sản phẩm của bạn đã được cập nhật trên hệ thống thành công. Bạn có thể quản lý sản phẩm trong mục <b>'Quản lý tin'</b>",
       actions: {
         confirm: "Xác nhận"
+      }
+    },
+    cancel: {
+      title: "Bạn có muốn thoát khỏi chỉnh sửa sản phẩm ?",
+      body: "Bạn sẽ thoát khỏi trang chỉnh sửa sản phẩm. Các thông tin đã chỉnh sửa sẽ bị mất đi và không được lưu",
+      actions: {
+        confirm: "Xác nhận",
+        cancel: "Huỷ"
       }
     }
   }

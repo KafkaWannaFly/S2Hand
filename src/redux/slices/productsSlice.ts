@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { product } from "../../data/strings";
 import { Product } from "../../models";
 import { fetchDataProducts } from "../thunks";
 // import { getTimeDuration } from "../../utils";

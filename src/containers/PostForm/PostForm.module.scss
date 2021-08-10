@@ -46,6 +46,7 @@
               $onPostFormNote-xl,
               $warning
             );
+            font-style: italic;
             margin-top: 0.5rem;
           }
 
@@ -181,6 +182,7 @@
       @include set-text($fontSansSerifRegular, $onPostFormNote-xl, $warning);
       margin-top: 0.5rem;
       text-align: end;
+      font-style: italic;
     }
   }
 }

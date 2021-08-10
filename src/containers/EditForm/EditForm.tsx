@@ -11,6 +11,7 @@ import { locationsService } from "../../services";
 import { CategoryTitle, Product, ProductState } from "../../models";
 import { productsActions, userActions } from "../../redux/slices";
 import UpdateSuccessDialog from "../UpdateSuccessDialog/UpdateSuccessDialog";
+import CancelEditDialog from "../CancelEditDialog/CancelEditDialog";
 import { useHistory } from "react-router-dom";
 import { Routes } from "../../routings";
 import Panel from "../Panel/Panel";
@@ -91,7 +92,9 @@ const PostForm = ({ item, ...props }: Props) => {
     if (err) setFormErr(true);
     else setFormErr(false);
   }, [formValidate]);
+
   const [dialogSuccess, setDislogSuccess] = useState(false);
+  const [dialogCancel, setDialogCancel] = useState(false);
 
   const dispatch = useAppDispatch();
 
@@ -165,6 +168,13 @@ const PostForm = ({ item, ...props }: Props) => {
           setDislogSuccess(false);
           setTimeout(() => history.replace(Routes.DASHBOARD), 500);
         }}
+      />
+      <CancelEditDialog
+        open={dialogCancel}
+        onConfirm={() =>
+          setTimeout(() => history.replace(Routes.DASHBOARD), 500)
+        }
+        onCancel={() => setDialogCancel(false)}
       />
       <div className={styles.edit__form__container}>
         <form onSubmit={handleSubmit}>
@@ -439,7 +449,11 @@ const PostForm = ({ item, ...props }: Props) => {
                 <div className={styles.form__upload__container}>
                   {Array.from(new Array(NUM_IMAGES)).map((_, index) => (
                     <UploadImage
-                      placeholder={formInput.images[index]}
+                      placeholder={
+                        formInput.images?.length > index
+                          ? formInput?.images[index]
+                          : ""
+                      }
                       onUpload={(img: string) => {
                         const images = formInput.images;
                         console.log(images.length);
@@ -480,7 +494,11 @@ const PostForm = ({ item, ...props }: Props) => {
             <button className={styles.form__action__post} type="submit">
               {contents.actions.save}
             </button>
-            <button className={styles.form__action__cancel} type="button">
+            <button
+              className={styles.form__action__cancel}
+              type="button"
+              onClick={() => setDialogCancel(true)}
+            >
               {contents.actions.cancel}
             </button>
           </div>

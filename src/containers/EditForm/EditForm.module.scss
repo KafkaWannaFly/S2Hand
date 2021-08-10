@@ -34,13 +34,19 @@
             @include set-text(
               $fontSansSerifRegular,
               $onPostFormNote-xl,
-              $warning
+              $onSurface
             );
             margin-top: 0.5rem;
+            font-style: italic;
           }
 
           .err__img__upload {
-            @include set-text($fontSansSerifRegular, $onPostFormNote-xl, red);
+            @include set-text(
+              $fontSansSerifRegular,
+              $onPostFormNote-xl,
+              $warning
+            );
+            font-style: italic;
             margin-top: 0.5rem;
           }
 
@@ -167,15 +173,17 @@
     }
 
     .note__form {
-      @include set-text($fontSansSerifRegular, $onPostFormNote-xl, $warning);
+      @include set-text($fontSansSerifRegular, $onPostFormNote-xl, $onSurface);
       margin-top: 0.5rem;
       text-align: end;
+      font-style: italic;
     }
 
     .err__form {
-      @include set-text($fontSansSerifRegular, $onPostFormNote-xl, red);
+      @include set-text($fontSansSerifRegular, $onPostFormNote-xl, $warning);
       margin-top: 0.5rem;
       text-align: end;
+      font-style: italic;
     }
   }
 }

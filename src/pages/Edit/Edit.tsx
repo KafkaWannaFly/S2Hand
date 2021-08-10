@@ -24,7 +24,8 @@ const Edit = (props: Props) => {
 
   const postedProducts = useAppSelector((state) => state.user.postedItems);
   useEffect(() => {
-    setItem(postedProducts?.find((item) => item.id === id));
+    const product = postedProducts?.find((item) => item.id === id);
+    if (product) setItem(JSON.parse(JSON.stringify(product)));
   }, [postedProducts]);
 
   return (

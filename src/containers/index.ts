@@ -9,6 +9,8 @@ import PostSuccessDialog from "./PostSuccessDialog/PostSuccessDialog";
 import DeletePostDialog from "./DeletePostDialog/DeletePostDialog";
 import Panel from "./Panel/Panel";
 import ImagesSlider from "./ImagesSlicer/ImagesSlider";
+import CancelEditDialog from "./CancelEditDialog/CancelEditDialog";
+import CancelPostDialog from "./CancelPostDialog/CancelPostDialog";
 
 export {
   Navbar,
@@ -21,5 +23,7 @@ export {
   PostSuccessDialog,
   DeletePostDialog,
   Panel,
-  ImagesSlider
+  ImagesSlider,
+  CancelEditDialog,
+  CancelPostDialog
 };

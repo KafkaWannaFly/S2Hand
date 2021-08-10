@@ -5,7 +5,7 @@ import { SeeMore } from "../../components";
 import { DivProps } from "react-html-props";
 import { ProductPanel } from "../../containers";
 import { useAppSelector } from "../../hooks";
-import { Product } from "../../models";
+import { Product, ProductState } from "../../models";
 
 interface Props extends DivProps {}
 
@@ -25,7 +25,10 @@ const Home = ({ className, ...props }: Props) => {
   }, [products]);
 
   useEffect(() => {
-    setDisplayProducts(products.slice(0, CAPACITY * seeMore));
+    const productFilter = products.filter(
+      (item) => item.state != ProductState.SOLD
+    );
+    setDisplayProducts(productFilter.slice(0, CAPACITY * seeMore));
   }, [seeMore, products]);
 
   return (

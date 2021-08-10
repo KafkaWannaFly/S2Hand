@@ -11,6 +11,7 @@ import { locationsService } from "../../services";
 import { CategoryTitle, Product, ProductState } from "../../models";
 import { productsActions, userActions } from "../../redux/slices";
 import PostSuccessDialog from "../PostSuccessDialog/PostSuccessDialog";
+import CancelPostDialog from "../CancelPostDialog/CancelPostDialog";
 import { useHistory } from "react-router-dom";
 import { Routes } from "../../routings";
 import Panel from "../Panel/Panel";
@@ -89,7 +90,9 @@ const PostForm = (props: Props) => {
     if (err) setFormErr(true);
     else setFormErr(false);
   }, [formValidate]);
+
   const [dialogSuccess, setDislogSuccess] = useState(false);
+  const [dialogCancel, setDialogCancel] = useState(false);
 
   const dispatch = useAppDispatch();
 
@@ -158,6 +161,11 @@ const PostForm = (props: Props) => {
           setDislogSuccess(false);
           setTimeout(() => history.replace(Routes.DASHBOARD), 500);
         }}
+      />
+      <CancelPostDialog
+        open={dialogCancel}
+        onConfirm={() => setTimeout(() => history.replace(Routes.HOME), 500)}
+        onCancel={() => setDialogCancel(false)}
       />
       <div className={styles.post__form__container}>
         <form onSubmit={handleSubmit}>
@@ -415,13 +423,17 @@ const PostForm = (props: Props) => {
             <p className={styles.err__form}>{contents.err}</p>
           ) : undefined}
           <div className={styles.form__actions__container}>
-            <button className={styles.form__action__preview} type="button">
+            {/* <button className={styles.form__action__preview} type="button">
               {contents.actions.preview}
-            </button>
+            </button> */}
             <button className={styles.form__action__post} type="submit">
               {contents.actions.post}
             </button>
-            <button className={styles.form__action__cancel} type="button">
+            <button
+              className={styles.form__action__cancel}
+              type="button"
+              onClick={() => setDialogCancel(true)}
+            >
               {contents.actions.cancel}
             </button>
           </div>
