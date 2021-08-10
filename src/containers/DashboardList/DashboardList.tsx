@@ -50,33 +50,36 @@ const DashboardList = ({ items, className, ...props }: Props) => {
     </tr>
   );
 
+  const navigateProduct = (item: Product) =>
+    history.push(Routes.PRODUCT.replace(":id", item.id));
+
   const renderRows = items.map((item, index) => (
-    <tr
-      className={styles.dashboard__table__data}
-      key={item.id}
-      onClick={() => history.push(Routes.PRODUCT.replace(":id", item.id))}
-    >
-      <td className={styles.data}>
+    <tr className={styles.dashboard__table__data} key={item.id}>
+      <td className={styles.data} onClick={() => navigateProduct(item)}>
         {(index + 1).toLocaleString("en-US", {
           minimumIntegerDigits: 2,
           useGrouping: false
         })}
       </td>
-      <td className={styles.data}>
+      <td className={styles.data} onClick={() => navigateProduct(item)}>
         <img
           src={item.images.length ? item.images[0] : ThumbnailPlaceholder}
           className={styles.dashboard__thumbnail}
         />
       </td>
-      <td className={styles.data}>{item.name}</td>
-      <td className={styles.data}>{item.category}</td>
-      <td className={styles.data}>
+      <td className={styles.data} onClick={() => navigateProduct(item)}>
+        {item.name}
+      </td>
+      <td className={styles.data} onClick={() => navigateProduct(item)}>
+        {item.category}
+      </td>
+      <td className={styles.data} onClick={() => navigateProduct(item)}>
         {item.price.replace(/\B(?=(\d{3})+(?!\d))/g, ",")}đ
       </td>
-      <td className={styles.data}>
+      <td className={styles.data} onClick={() => navigateProduct(item)}>
         {format(new Date(item.time), "dd/MM/yyyy HH:mm")}
       </td>
-      <td className={styles.data}>
+      <td className={styles.data} onClick={() => navigateProduct(item)}>
         <p
           className={
             item.state === ProductState.ON_SALE
