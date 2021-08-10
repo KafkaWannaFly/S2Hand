@@ -7,6 +7,8 @@ import EditForm from "./EditForm/EditForm";
 import DashboardList from "./DashboardList/DashboardList";
 import PostSuccessDialog from "./PostSuccessDialog/PostSuccessDialog";
 import DeletePostDialog from "./DeletePostDialog/DeletePostDialog";
+import Panel from "./Panel/Panel";
+import ImagesSlider from "./ImagesSlicer/ImagesSlider";
 
 export {
   Navbar,
@@ -17,5 +19,7 @@ export {
   EditForm,
   DashboardList,
   PostSuccessDialog,
-  DeletePostDialog
+  DeletePostDialog,
+  Panel,
+  ImagesSlider
 };

@@ -202,3 +202,60 @@ export const dashboard = {
     }
   }
 };
+
+export const product = {
+  generalSession: {
+    title: "Thông tin chung sản phẩm",
+    fields: {
+      date: {
+        title: "Ngày đăng"
+      },
+      user: {
+        name: "Người dùng ẩn danh",
+        posted: "Sản phẩm đã đăng",
+        rate: "Đánh giá"
+      },
+      name: {
+        title: "Tên sản phẩm"
+      },
+      images: {
+        title: "Hình ảnh"
+      },
+      price: {
+        title: "Giá sản phẩm"
+      },
+      category: {
+        title: "Loại sản phẩm"
+      },
+      status: {
+        title: "Độ mới sản phẩm"
+      }
+    }
+  },
+  detailSession: {
+    title: "Thông tin chi tiết sản phẩm",
+    fields: {
+      newPercentage: {
+        title: "Tình trạng độ mới",
+        content: "Thông tin chưa được cập nhật"
+      },
+      address: {
+        title: "Địa chỉ",
+        content: "Thông tin chưa được cập nhật"
+      },
+      state: {
+        title: "Trạng thái sản phẩm",
+        content: "Thông tin chưa được cập nhật"
+      }
+    }
+  },
+  description: {
+    title: "Thông tin mô tả sản phẩm",
+    content: "Thông tin chưa được cập nhật"
+  },
+  empty: "Không tìm thấy sản phẩm trên hệ thống",
+  actions: {
+    addToCart: "Thêm vào giỏ hàng",
+    buyNow: "Mua ngay"
+  }
+};

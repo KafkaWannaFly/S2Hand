@@ -1,0 +1,700 @@
+@import "../../styles/standard";
+
+.detail__product {
+  width: 100%;
+  min-height: 25rem;
+  height: 100%;
+  background-color: $background;
+  padding: 0.85rem 0 1rem;
+
+  .detail__product__container {
+    width: $w-xl;
+    height: 100%;
+    margin: auto;
+
+    .general__container {
+      .general__content__container {
+        @include display-flex(initial, initial);
+        padding: 0 2.5rem;
+
+        .images {
+          flex: 7.5;
+
+          .images__slider {
+            width: 90%;
+          }
+        }
+
+        .general__content {
+          flex: 4.5;
+
+          .bookmark {
+            @include reset-button();
+            padding: 0;
+            margin-left: auto;
+
+            .bookmark__icon {
+              font-size: $onDetailProductBookmark-xl;
+              color: $bookmark;
+            }
+          }
+
+          .name {
+            @include set-text(
+              $fontSansSerifRegular,
+              $onDetailProductName-xl,
+              $primary
+            );
+            font-weight: bold;
+          }
+
+          .category {
+            @include set-text(
+              $fontSansSerifRegular,
+              $onDetailProductCategory-xl,
+              $onVariantDark
+            );
+            margin-top: 0.5rem;
+            font-weight: bold;
+          }
+
+          .date {
+            @include set-text(
+              $fontSansSerifRegular,
+              $onDetailProductDateDuration-xl,
+              $onVariant
+            );
+            margin-top: 0.85rem;
+          }
+
+          .duration {
+            @include set-text(
+              $fontSansSerifRegular,
+              $onDetailProductDateDuration-xl,
+              $onVariant
+            );
+            margin-top: 0.05rem;
+          }
+
+          .price {
+            @include set-text(
+              $fontSansSerifRegular,
+              $onDetailProductPrice-xl,
+              $primaryVariantDark
+            );
+            margin-top: 0.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+          }
+
+          .user__container {
+            background-color: $variantLight;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            padding: 0.25rem 1.5rem;
+            cursor: pointer;
+
+            &:hover {
+              box-shadow: 0 0px 5px rgba(0, 0, 0, 0.1),
+                0 0px 7.5px rgba(0, 0, 0, 0.05);
+              z-index: 1;
+            }
+
+            @include display-flex(initial, center);
+            .avatar {
+              font-size: $onDetailProductUserAvatar-xl;
+              color: $onVariantLight;
+            }
+
+            .right {
+              margin-left: 1.5rem;
+              margin-top: 0.5rem;
+
+              .user__name {
+                @include set-text(
+                  $fontSansSerifRegular,
+                  $onDetailProductUserName-xl,
+                  $onVariantDark
+                );
+
+                font-weight: bold;
+              }
+
+              .num__posted {
+                @include set-text(
+                  $fontSansSerifRegular,
+                  $onDetailProductUserPostedRate-xl,
+                  $onVariantDark
+                );
+                margin-top: 0.25rem;
+              }
+            }
+          }
+
+          .actions__container {
+            @include display-flex(initial, stretch);
+            margin-top: 1.5rem;
+
+            .add__to__cart,
+            .buy__now {
+              @include reset-button();
+              border-radius: 0.5rem;
+              padding: 0.5rem 0.5rem;
+              font-size: $onDetailProductActions-xl;
+              transition: all 0.25s ease-in-out;
+            }
+
+            .add__to__cart {
+              flex: 8;
+              color: $onPrimary;
+              background-color: $primary;
+              margin-right: 1rem;
+
+              &:hover {
+                background-color: $primaryVariantDark;
+              }
+
+              .cart__icon {
+                font-size: $onDetailProductActions-xl;
+                margin-right: 1rem;
+              }
+            }
+
+            .buy__now {
+              flex: 4;
+              background-color: black;
+              color: white;
+
+              &:hover {
+                background-color: $primaryVariantDark;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .detail__container {
+      margin-top: 1rem;
+
+      .detail__content__container {
+        padding: 0 2.5rem;
+
+        .detail__row {
+          @include display-flex(initial, initial);
+          width: 100%;
+
+          .detail__title {
+            @include set-text(
+              $fontSansSerifRegular,
+              $onDetailProductDetailTitle-xl,
+              $onSurface
+            );
+            // text-align: end;
+            // font-weight: 600;
+            flex: 2;
+          }
+
+          .detail__content {
+            flex: 10;
+            @include set-text(
+              $fontSansSerifRegular,
+              $onDetailProductDetailContent-xl,
+              $onSurface
+            );
+            margin-left: 2.5rem;
+          }
+        }
+      }
+    }
+
+    .description__container {
+      margin-top: 1rem;
+
+      .description__content__container {
+        padding: 0 2.5rem;
+
+        .description {
+          @include set-text(
+            $fontSansSerifRegular,
+            $onDetailProductDescription-xl,
+            $onSurface
+          );
+        }
+      }
+    }
+
+    .empty__container {
+      width: 100%;
+      height: 100%;
+      background-color: $surface;
+      border-radius: 0.55rem;
+      padding: 0.5rem 0 0.75rem 0;
+      display: flex;
+
+      .empty__text {
+        flex: 1;
+        align-self: center;
+        text-align: center;
+        flex: 1;
+        @include set-text(
+          $fontSansSerifRegular,
+          $onEmptyList-xl,
+          $onVariantLight
+        );
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .detail__product {
+    padding: 0.8rem 0 0.9rem;
+    min-height: 22.5rem;
+
+    .detail__product__container {
+      width: $w-lg;
+
+      .general__container {
+        .general__content__container {
+          padding: 0 1.5rem;
+
+          .images {
+            flex: 7;
+            margin-right: 0.95rem;
+
+            .images__slider {
+              width: 95%;
+            }
+          }
+
+          .general__content {
+            flex: 5;
+            .bookmark {
+              .bookmark__icon {
+                font-size: $onDetailProductBookmark-lg;
+              }
+            }
+
+            .name {
+              font-size: $onDetailProductName-lg;
+            }
+
+            .category {
+              font-size: $onDetailProductCategory-lg;
+              margin-top: 0.45rem;
+            }
+
+            .date {
+              font-size: $onDetailProductDateDuration-lg;
+              margin-top: 0.8rem;
+            }
+
+            .duration {
+              font-size: $onDetailProductDateDuration-lg;
+              margin-top: 0.05rem;
+            }
+
+            .price {
+              font-size: $onDetailProductPrice-lg;
+              margin-top: 0.45rem;
+            }
+
+            .user__container {
+              border-radius: 0.45rem;
+              margin-top: 0.95rem;
+              padding: 0.2rem 1.45rem;
+
+              @include display-flex(initial, center);
+              .avatar {
+                font-size: $onDetailProductUserAvatar-lg;
+              }
+
+              .right {
+                margin-left: 1.45rem;
+                margin-top: 0.45rem;
+
+                .user__name {
+                  font-size: $onDetailProductUserName-lg;
+                }
+
+                .num__posted {
+                  font-size: $onDetailProductUserPostedRate-lg;
+                }
+              }
+            }
+
+            .actions__container {
+              margin-top: 1.45rem;
+
+              .add__to__cart,
+              .buy__now {
+                border-radius: 0.45rem;
+                padding: 0.45rem 0.45rem;
+                font-size: $onDetailProductActions-lg;
+              }
+
+              .add__to__cart {
+                flex: 7.5;
+
+                margin-right: 0.95rem;
+
+                .cart__icon {
+                  font-size: $onDetailProductActions-lg;
+                  margin-right: 0.95rem;
+                }
+              }
+
+              .buy__now {
+                flex: 4.5;
+              }
+            }
+          }
+        }
+      }
+
+      .detail__container {
+        margin-top: 0.95rem;
+
+        .detail__content__container {
+          padding: 0 1.5rem;
+
+          .detail__row {
+            .detail__title {
+              font-size: $onDetailProductDetailTitle-lg;
+              flex: 3;
+            }
+
+            .detail__content {
+              flex: 9;
+
+              font-size: $onDetailProductDetailContent-lg;
+              margin-left: 2.25rem;
+            }
+          }
+        }
+      }
+
+      .description__container {
+        margin-top: 0.95rem;
+
+        .description__content__container {
+          padding: 0 1.5rem;
+
+          .description {
+            font-size: $onDetailProductDescription-lg;
+          }
+        }
+      }
+
+      .empty__container {
+        .empty__text {
+          font-size: $onEmptyList-lg;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .detail__product {
+    padding: 0.75rem 0 0.85rem;
+    min-height: 20rem;
+
+    .detail__product__container {
+      width: $w-md;
+
+      .general__container {
+        .general__content__container {
+          padding: 0 1.5rem;
+          flex-direction: column;
+
+          .images {
+            flex: 0;
+            margin-right: 0rem;
+
+            .images__slider {
+              width: 100%;
+            }
+          }
+
+          .general__content {
+            flex: 0;
+            .bookmark {
+              .bookmark__icon {
+                font-size: $onDetailProductBookmark-md;
+              }
+            }
+
+            .name {
+              margin-top: 1rem;
+              font-size: $onDetailProductName-md;
+            }
+
+            .category {
+              font-size: $onDetailProductCategory-md;
+              margin-top: 0.4rem;
+            }
+
+            .date {
+              font-size: $onDetailProductDateDuration-md;
+              margin-top: 0.75rem;
+            }
+
+            .duration {
+              font-size: $onDetailProductDateDuration-md;
+              margin-top: 0.05rem;
+            }
+
+            .price {
+              font-size: $onDetailProductPrice-md;
+              margin-top: 0.4rem;
+            }
+
+            .user__container {
+              border-radius: 0.4rem;
+              margin-top: 0.9rem;
+              padding: 0.2rem 1.5rem;
+
+              @include display-flex(initial, center);
+              .avatar {
+                font-size: $onDetailProductUserAvatar-md;
+              }
+
+              .right {
+                margin-left: 1.45rem;
+                margin-top: 0.45rem;
+
+                .user__name {
+                  font-size: $onDetailProductUserName-md;
+                }
+
+                .num__posted {
+                  font-size: $onDetailProductUserPostedRate-md;
+                }
+              }
+            }
+
+            .actions__container {
+              margin-top: 1.45rem;
+
+              .add__to__cart,
+              .buy__now {
+                border-radius: 0.4rem;
+                padding: 0.5rem 0.45rem;
+                font-size: $onDetailProductActions-md;
+              }
+
+              .add__to__cart {
+                flex: 7.5;
+                margin-right: 1.5rem;
+
+                .cart__icon {
+                  font-size: $onDetailProductActions-md;
+                  margin-right: 1rem;
+                }
+              }
+
+              .buy__now {
+                flex: 4.5;
+              }
+            }
+          }
+        }
+      }
+
+      .detail__container {
+        margin-top: 0.95rem;
+
+        .detail__content__container {
+          padding: 0 1.5rem;
+
+          .detail__row {
+            .detail__title {
+              font-size: $onDetailProductDetailTitle-md;
+              flex: 4.5;
+            }
+
+            .detail__content {
+              flex: 7.5;
+
+              font-size: $onDetailProductDetailContent-md;
+              margin-left: 1.75rem;
+            }
+          }
+        }
+      }
+
+      .description__container {
+        margin-top: 0.95rem;
+
+        .description__content__container {
+          padding: 0 1.5rem;
+
+          .description {
+            font-size: $onDetailProductDescription-md;
+          }
+        }
+      }
+
+      .empty__container {
+        .empty__text {
+          font-size: $onEmptyList-md;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .detail__product {
+    padding: 0.55rem 0 0.75rem;
+    min-height: 17.5rem;
+
+    .detail__product__container {
+      width: $w-sm;
+
+      .general__container {
+        .general__content__container {
+          padding: 0 1.25rem;
+          flex-direction: column;
+
+          .images {
+            flex: 0;
+            margin-right: 0rem;
+
+            .images__slider {
+              width: 100%;
+            }
+          }
+
+          .general__content {
+            flex: 0;
+            .bookmark {
+              .bookmark__icon {
+                font-size: $onDetailProductBookmark-sm;
+              }
+            }
+
+            .name {
+              margin-top: 0.85rem;
+              font-size: $onDetailProductName-sm;
+            }
+
+            .category {
+              font-size: $onDetailProductCategory-sm;
+              margin-top: 0.45rem;
+            }
+
+            .date {
+              font-size: $onDetailProductDateDuration-sm;
+              margin-top: 0.85rem;
+            }
+
+            .duration {
+              font-size: $onDetailProductDateDuration-sm;
+              margin-top: 0.05rem;
+            }
+
+            .price {
+              font-size: $onDetailProductPrice-sm;
+              margin-top: 0.45rem;
+            }
+
+            .user__container {
+              border-radius: 0.4rem;
+              margin-top: 0.85rem;
+              padding: 0.2rem 1.5rem;
+
+              @include display-flex(initial, center);
+              .avatar {
+                font-size: $onDetailProductUserAvatar-sm;
+              }
+
+              .right {
+                margin-left: 1.45rem;
+                margin-top: 0.45rem;
+
+                .user__name {
+                  font-size: $onDetailProductUserName-sm;
+                }
+
+                .num__posted {
+                  font-size: $onDetailProductUserPostedRate-sm;
+                }
+              }
+            }
+
+            .actions__container {
+              margin-top: 1.35rem;
+              flex-direction: column;
+
+              .add__to__cart,
+              .buy__now {
+                border-radius: 0.4rem;
+                padding: 0.5rem 0.45rem;
+                font-size: $onDetailProductActions-sm;
+              }
+
+              .add__to__cart {
+                flex: 7.5;
+                margin-right: 0rem;
+                margin-bottom: 0.85rem;
+
+                .cart__icon {
+                  font-size: $onDetailProductActions-sm;
+                  margin-right: 1rem;
+                }
+              }
+
+              .buy__now {
+                flex: 4.5;
+              }
+            }
+          }
+        }
+      }
+
+      .detail__container {
+        margin-top: 0.95rem;
+
+        .detail__content__container {
+          padding: 0 1.25rem;
+
+          .detail__row {
+            .detail__title {
+              font-size: $onDetailProductDetailTitle-sm;
+              flex: 5;
+            }
+
+            .detail__content {
+              flex: 7;
+
+              font-size: $onDetailProductDetailContent-sm;
+              margin-left: 1rem;
+            }
+          }
+        }
+      }
+
+      .description__container {
+        margin-top: 0.95rem;
+
+        .description__content__container {
+          padding: 0 1.25rem;
+
+          .description {
+            font-size: $onDetailProductDescription-sm;
+          }
+        }
+      }
+
+      .empty__container {
+        .empty__text {
+          font-size: $onEmptyList-sm;
+        }
+      }
+    }
+  }
+}
