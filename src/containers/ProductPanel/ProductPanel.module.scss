@@ -1,65 +1,40 @@
 @import "../../styles/standard";
 
 .product__panel {
-  background-color: $surface;
-  border-radius: 0.55rem;
-  padding: 0.5rem 0 0.75rem 0;
+  .product__list__container {
+    @include display-flex(flex-start, initial);
+    min-height: 10rem;
+    flex-wrap: wrap;
 
-  .product__panel__container {
-    .product__panel__title {
-      @include set-text($fontSerifRegular, $onProductPanelTitle-xl, $onSurface);
+    .product__list__empty {
+      align-self: center;
+      text-align: center;
+      flex: 1;
+      @include set-text(
+        $fontSansSerifRegular,
+        $onEmptyList-xl,
+        $onVariantLight
+      );
       font-weight: bold;
-      margin-left: 1rem;
-      margin-bottom: 0;
     }
 
-    .hr {
-      height: 1px;
-      margin: 0.65rem 0;
-      color: $hrNormal;
-    }
-
-    .product__list__container {
-      @include display-flex(flex-start, initial);
-      min-height: 10rem;
-      flex-wrap: wrap;
-
-      .product__list__empty {
-        align-self: center;
-        text-align: center;
-        flex: 1;
-        @include set-text(
-          $fontSansSerifRegular,
-          $onEmptyList-xl,
-          $onVariantLight
-        );
-        font-weight: bold;
-      }
-
-      .product__list__item {
-        flex-basis: 16.66%;
-      }
+    .product__list__item {
+      flex-basis: 16.66%;
     }
   }
 }
 
 @media only screen and (min-width: $lg) and (max-width: $xl) {
   .product__panel {
-    .product__panel__container {
-      .product__panel__title {
-        font-size: $onProductPanelTitle-lg;
+    .product__list__container {
+      min-height: 9rem;
+
+      .product__list__empty {
+        font-size: $onEmptyList-lg;
       }
 
-      .product__list__container {
-        min-height: 9rem;
-
-        .product__list__empty {
-          font-size: $onEmptyList-lg;
-        }
-
-        .product__list__item {
-          flex-basis: 20%;
-        }
+      .product__list__item {
+        flex-basis: 20%;
       }
     }
   }
@@ -67,24 +42,15 @@
 
 @media only screen and (min-width: $md) and (max-width: $lg) {
   .product__panel {
-    .product__panel__container {
-      .hr {
-        margin: 0.5rem 0;
+    .product__list__container {
+      min-height: 8.5rem;
+
+      .product__list__empty {
+        font-size: $onEmptyList-md;
       }
-      .product__panel__title {
-        font-size: $onProductPanelTitle-md;
-      }
 
-      .product__list__container {
-        min-height: 8.5rem;
-
-        .product__list__empty {
-          font-size: $onEmptyList-md;
-        }
-
-        .product__list__item {
-          flex-basis: 25%;
-        }
+      .product__list__item {
+        flex-basis: 25%;
       }
     }
   }
@@ -92,24 +58,15 @@
 
 @media only screen and (min-width: $sm) and (max-width: $md) {
   .product__panel {
-    .product__panel__container {
-      .hr {
-        margin: 0.45rem 0;
+    .product__list__container {
+      min-height: 8rem;
+
+      .product__list__empty {
+        font-size: $onEmptyList-sm;
       }
-      .product__panel__title {
-        font-size: $onProductPanelTitle-sm;
-      }
 
-      .product__list__container {
-        min-height: 8rem;
-
-        .product__list__empty {
-          font-size: $onEmptyList-sm;
-        }
-
-        .product__list__item {
-          flex-basis: 33.33%;
-        }
+      .product__list__item {
+        flex-basis: 33.33%;
       }
     }
   }

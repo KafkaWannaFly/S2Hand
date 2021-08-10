@@ -5,6 +5,7 @@ import { strings } from "../../data";
 import { Product } from "../../models";
 import { ProductCard } from "../../components";
 import { getTimeDuration } from "../../utils";
+import Panel from "../Panel/Panel";
 
 interface Props extends DivProps {
   items: Product[];
@@ -21,25 +22,25 @@ const ProductPanel = ({ items, className, ...props }: Props) => {
   });
 
   return (
-    <div className={`${styles.product__panel} ${className}`} {...props}>
-      <div className={styles.product__panel__container}>
-        <h1 className={styles.product__panel__title}>{contents.title}</h1>
-        <hr className={styles.hr} />
-        <div className={styles.product__list__container}>
-          {items.length ? (
-            items.map((item) => (
-              <ProductCard
-                item={item}
-                className={styles.product__list__item}
-                key={item.id}
-              />
-            ))
-          ) : (
-            <p className={styles.product__list__empty}>{contents.empty}</p>
-          )}
-        </div>
+    <Panel
+      className={`${styles.product__panel} ${className}`}
+      title={contents.title}
+      {...props}
+    >
+      <div className={styles.product__list__container}>
+        {items.length ? (
+          items.map((item) => (
+            <ProductCard
+              item={item}
+              className={styles.product__list__item}
+              key={item.id}
+            />
+          ))
+        ) : (
+          <p className={styles.product__list__empty}>{contents.empty}</p>
+        )}
       </div>
-    </div>
+    </Panel>
   );
 };
 

@@ -14,7 +14,11 @@ const CategoryPanel = ({ items, className, ...props }: Props) => {
   const contents = strings.categoryPanel;
 
   return (
-    <Panel title={contents.title} className={styles.category__panel}>
+    <Panel
+      title={contents.title}
+      className={`${styles.category__panel} ${className}`}
+      {...props}
+    >
       <div className={styles.category__list__container}>
         <div className={styles.category__list__overflow}>
           {items.map((item) => (

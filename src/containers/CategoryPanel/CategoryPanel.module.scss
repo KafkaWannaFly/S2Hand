@@ -4,6 +4,7 @@
   width: 100%;
 
   .category__list__container {
+    padding: 0 0.5rem;
     @include display-flex(center, initial);
 
     .category__list__overflow {
