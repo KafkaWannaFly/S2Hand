@@ -1,62 +1,40 @@
 @import "../../styles/standard";
 
 .category__panel {
-  background-color: $surface;
-  border-radius: 0.55rem;
-  padding: 0.5rem 0 0.75rem 0;
+  width: 100%;
 
-  .category__panel__container {
-    .category__panel__title {
-      @include set-text(
-        $fontSerifRegular,
-        $onCategoryPanelTitle-xl,
-        $onSurface
-      );
-      font-weight: bold;
-      margin-left: 1rem;
-      margin-bottom: 0;
-    }
+  .category__list__container {
+    @include display-flex(center, initial);
 
-    .hr {
-      height: 1px;
-      margin: 0.65rem 0;
-      color: $hrNormal;
-    }
+    .category__list__overflow {
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      @include display-flex(initial, initial);
 
-    .category__list__container {
-      padding: 0 0.5rem;
-      @include display-flex(center, initial);
+      &::-webkit-scrollbar {
+        height: 0.35rem;
+      }
 
-      .category__list__overflow {
-        overflow-x: auto;
-        padding-bottom: 0.5rem;
-        @include display-flex(initial, initial);
+      /* Track */
+      &::-webkit-scrollbar-track {
+        border-radius: 1rem;
+        background-color: $variant;
+      }
 
-        &::-webkit-scrollbar {
-          height: 0.35rem;
-        }
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        background: $onVariantLight;
+        border-radius: 5px;
+      }
 
-        /* Track */
-        &::-webkit-scrollbar-track {
-          border-radius: 1rem;
-          background-color: $variant;
-        }
+      /* Handle on hover */
+      &::-webkit-scrollbar-thumb:hover {
+        background: $onVariant;
+      }
 
-        /* Handle */
-        &::-webkit-scrollbar-thumb {
-          background: $onVariantLight;
-          border-radius: 5px;
-        }
-
-        /* Handle on hover */
-        &::-webkit-scrollbar-thumb:hover {
-          background: $onVariant;
-        }
-
-        .category__list__item {
-          &:not(:last-child) {
-            margin-right: 2.25rem;
-          }
+      .category__list__item {
+        &:not(:last-child) {
+          margin-right: 2.25rem;
         }
       }
     }
@@ -65,21 +43,13 @@
 
 @media only screen and (min-width: $lg) and (max-width: $xl) {
   .category__panel {
-    .category__panel__container {
-      .category__panel__title {
-        font-size: $onCategoryPanelTitle-lg;
-      }
+    .category__list__container {
+      .category__list__overflow {
+        padding-bottom: 0.5rem;
 
-      .category__list__container {
-        padding: 0 0.5rem;
-
-        .category__list__overflow {
-          padding-bottom: 0.5rem;
-
-          .category__list__item {
-            &:not(:last-child) {
-              margin-right: 2rem;
-            }
+        .category__list__item {
+          &:not(:last-child) {
+            margin-right: 2rem;
           }
         }
       }
@@ -89,28 +59,17 @@
 
 @media only screen and (min-width: $md) and (max-width: $lg) {
   .category__panel {
-    .category__panel__container {
-      .hr {
-        margin: 0.5rem 0;
-      }
-      .category__panel__title {
-        font-size: $onCategoryPanelTitle-md;
-      }
+    .category__list__container {
+      .category__list__overflow {
+        padding-bottom: 0.45rem;
 
-      .category__list__container {
-        padding: 0 0.5rem;
+        &::-webkit-scrollbar {
+          height: 0.3rem;
+        }
 
-        .category__list__overflow {
-          padding-bottom: 0.45rem;
-
-          &::-webkit-scrollbar {
-            height: 0.3rem;
-          }
-
-          .category__list__item {
-            &:not(:last-child) {
-              margin-right: 1.85rem;
-            }
+        .category__list__item {
+          &:not(:last-child) {
+            margin-right: 1.85rem;
           }
         }
       }
@@ -120,29 +79,17 @@
 
 @media only screen and (min-width: $sm) and (max-width: $md) {
   .category__panel {
-    // padding-bottom: 0.5rem;
-    .category__panel__container {
-      .hr {
-        margin: 0.45rem 0;
-      }
-      .category__panel__title {
-        font-size: $onCategoryPanelTitle-sm;
-      }
+    .category__list__container {
+      .category__list__overflow {
+        padding-bottom: 0.45rem;
 
-      .category__list__container {
-        padding: 0 0.5rem;
+        &::-webkit-scrollbar {
+          height: 0.25rem;
+        }
 
-        .category__list__overflow {
-          padding-bottom: 0.45rem;
-
-          &::-webkit-scrollbar {
-            height: 0.25rem;
-          }
-
-          .category__list__item {
-            &:not(:last-child) {
-              margin-right: 1.5rem;
-            }
+        .category__list__item {
+          &:not(:last-child) {
+            margin-right: 1.5rem;
           }
         }
       }
