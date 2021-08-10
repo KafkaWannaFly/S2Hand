@@ -63,7 +63,7 @@ export const postForm = {
       },
       price: {
         label: "Giá sản phẩm",
-        placeholder: "Giá"
+        placeholder: "Giá (VND)"
       },
       category: {
         label: "Loại sản phẩm",
@@ -71,7 +71,7 @@ export const postForm = {
       },
       status: {
         label: "Độ mới sản phẩm",
-        placeholder: "Độ mới"
+        placeholder: "0-100"
       }
     }
   },

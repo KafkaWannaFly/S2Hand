@@ -12,7 +12,7 @@ enum Routes {
   EDIT = "/edit/:id",
   HELP = "/help",
   MANAGE = "/manage",
-  CATEGORY = "/categories?category=",
+  CATEGORY = "/:name",
   PRODUCT = "/product/:id"
 }
 
