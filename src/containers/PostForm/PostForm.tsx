@@ -13,6 +13,7 @@ import { productsActions, userActions } from "../../redux/slices";
 import PostSuccessDialog from "../PostSuccessDialog/PostSuccessDialog";
 import { useHistory } from "react-router-dom";
 import { Routes } from "../../routings";
+import Panel from "../Panel/Panel";
 
 const NUM_IMAGES = 5;
 
@@ -79,8 +80,6 @@ const PostForm = (props: Props) => {
     ...initFormInput,
     images: []
   });
-
-  console.log(JSON.stringify(formInput)); //Log
 
   const [formValidate, setFormValidate] =
     useState<FormValidate>(initFormValidate);
@@ -162,11 +161,10 @@ const PostForm = (props: Props) => {
       />
       <div className={styles.post__form__container}>
         <form onSubmit={handleSubmit}>
-          <div className={styles.form__session__container}>
-            <h1 className={styles.form__session__title}>
-              {contents.generalSession.title}
-            </h1>
-            <hr className={styles.hr} />
+          <Panel
+            className={styles.form__session__container}
+            title={contents.generalSession.title}
+          >
             <div className={styles.form__field__container}>
               <div className={styles.double__line__field}>
                 <div className={styles.form__field}>
@@ -276,12 +274,11 @@ const PostForm = (props: Props) => {
                 </div>
               </div>
             </div>
-          </div>
-          <div className={styles.form__session__container}>
-            <h1 className={styles.form__session__title}>
-              {contents.detailSession.title}
-            </h1>
-            <hr className={styles.hr} />
+          </Panel>
+          <Panel
+            className={styles.form__session__container}
+            title={contents.detailSession.title}
+          >
             <div className={styles.form__field__container}>
               <div className={styles.form__field}>
                 <label htmlFor="describe" className={styles.form__field__label}>
@@ -411,7 +408,7 @@ const PostForm = (props: Props) => {
                 ) : undefined}
               </div>
             </div>
-          </div>
+          </Panel>
 
           <p className={styles.note__form}>{contents.note}</p>
           {formErr ? (
