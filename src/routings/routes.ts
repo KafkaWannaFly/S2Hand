@@ -12,7 +12,8 @@ enum Routes {
   EDIT = "/edit/:id",
   HELP = "/help",
   MANAGE = "/manage",
-  CATEGORY = "/categories?category="
+  CATEGORY = "/categories?category=",
+  PRODUCT = "/product/:id"
 }
 
 export default Routes;

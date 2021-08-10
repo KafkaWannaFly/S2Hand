@@ -6,7 +6,7 @@ import ThumbnailPlaceholder from "../../assets/images/product-placeholder.png";
 import { Icon } from "../../components";
 import { FaTrashAlt } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Routes } from "../../routings";
 import { Product, ProductState } from "../../models";
 import { format } from "date-fns";
@@ -23,6 +23,8 @@ const DashboardList = ({ items, className, ...props }: Props) => {
   const contents = strings.dashboard;
 
   const dispatch = useAppDispatch();
+
+  const history = useHistory();
 
   const [focusItem, setFocusItem] = useState<Product | undefined>(undefined);
   const [deleteDialog, setDeleteDialog] = useState(false);
@@ -49,7 +51,11 @@ const DashboardList = ({ items, className, ...props }: Props) => {
   );
 
   const renderRows = items.map((item, index) => (
-    <tr className={styles.dashboard__table__data} key={item.id}>
+    <tr
+      className={styles.dashboard__table__data}
+      key={item.id}
+      onClick={() => history.push(Routes.PRODUCT.replace(":id", item.id))}
+    >
       <td className={styles.data}>
         {(index + 1).toLocaleString("en-US", {
           minimumIntegerDigits: 2,

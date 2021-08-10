@@ -1,5 +1,5 @@
 import React from "react";
-import { Cart, Dashboard, Home, Login, Post, Edit } from "../pages";
+import { Cart, Dashboard, Home, Login, Post, Edit, Product } from "../pages";
 import { Route } from "react-router-dom";
 import Routes from "./routes";
 
@@ -12,6 +12,7 @@ const AppRoute = () => {
       <Route path={Routes.EDIT} component={Edit} />
       <Route path={Routes.POST} component={Post} />
       <Route path={Routes.LOGIN} component={Login} />
+      <Route path={Routes.PRODUCT} component={Product} />
     </>
   );
 };

@@ -22,12 +22,10 @@ const Home = ({ className, ...props }: Props) => {
     // setDisplayProducts(products.slice(0, CAPACITY));
     window.scrollTo(0, 0);
     setSeeMore(1);
-    console.log("products change");
   }, [products]);
 
   useEffect(() => {
     setDisplayProducts(products.slice(0, CAPACITY * seeMore));
-    console.log("seemore change");
   }, [seeMore, products]);
 
   return (

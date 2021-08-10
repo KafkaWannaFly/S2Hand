@@ -7,6 +7,7 @@ import { BsBookmark, BsBookmarkFill } from "react-icons/bs";
 import { MdLocationOn } from "react-icons/md";
 import { Product } from "../../models";
 import Placeholder from "../../assets/images/product-placeholder.png";
+import { Routes } from "../../routings";
 
 interface Props extends DivProps {
   item: Product;
@@ -18,7 +19,10 @@ const ProductCard = ({ item, className, ...props }: Props) => {
   return (
     <div className={`${styles.product__card} ${className}`} {...props}>
       <div className={styles.product__card__container}>
-        <Link to="/" className={styles.product__card__link}>
+        <Link
+          to={Routes.PRODUCT.replace(":id", item.id)}
+          className={styles.product__card__link}
+        >
           <img
             src={item.thumbnail ? item.thumbnail : Placeholder}
             alt=""
