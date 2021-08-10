@@ -1,0 +1,282 @@
+@import "../../styles/standard";
+
+.dashboard {
+  .dashboard__container {
+    height: 100%;
+
+    .dashboard__list__container {
+      padding: 0 0.5rem;
+      width: 100%;
+      height: 100%;
+      display: flex;
+
+      .dashboard__list__empty {
+        flex: 1;
+        align-self: center;
+        text-align: center;
+        flex: 1;
+        @include set-text(
+          $fontSansSerifRegular,
+          $onEmptyList-xl,
+          $onVariantLight
+        );
+        font-weight: bold;
+      }
+
+      .table__overflow {
+        overflow-x: auto;
+        flex: 1;
+      }
+
+      .dashboard__table {
+        border-collapse: collapse;
+        width: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+        border-radius: 0.5rem;
+        font-family: $fontSansSerifRegular;
+        margin-bottom: 0.5rem;
+
+        .dashboard__table__header {
+          background-color: #395185;
+          font-size: $onDashboardHeader-xl;
+          color: white;
+
+          .header {
+            padding: 0.5rem 0.85rem;
+          }
+        }
+
+        .dashboard__table__data {
+          border-top: 0.25rem solid white;
+          font-size: $onDashboardData-xl;
+          background-color: $variantLight;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $variant;
+          }
+
+          .data {
+            padding: 0.5rem 0.85rem;
+
+            .dashboard__thumbnail {
+              width: 6.5rem;
+              height: 6.5rem;
+              border-radius: 0.5rem;
+            }
+
+            .state__active {
+              background-color: $active;
+              text-align: center;
+              padding: 0.05rem;
+              color: white;
+              border-radius: 0.5rem;
+            }
+
+            .state__close {
+              background-color: $variantDark;
+              text-align: center;
+              padding: 0.05rem;
+              color: $onVariantDark;
+              border-radius: 0.5rem;
+            }
+
+            .actions__container {
+              @include display-flex(center, center);
+
+              .action__edit,
+              .action__delete {
+                @include reset-button();
+                padding: 0.75rem 0.5rem;
+                background-color: rgba(0, 0, 0, 0.125);
+                border-radius: 0.5rem;
+                transition: all 0.5s ease-out;
+
+                &:hover {
+                  // background-color: rgba(0, 0, 0, 0.25);
+                  background-color: black;
+
+                  .icon__delete,
+                  .icon__edit {
+                    color: white;
+                  }
+                }
+
+                .icon__delete,
+                .icon__edit {
+                  font-size: $onDashboardActionIcon-xl;
+                }
+
+                .icon__edit {
+                  color: $primaryVariantDark;
+                }
+
+                .icon__delete {
+                  color: $warning;
+                }
+              }
+
+              .action__delete {
+                margin-left: 1rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .dashboard {
+    .dashboard__container {
+      .dashboard__list__container {
+        padding: 0 0.45rem;
+
+        .dashboard__table {
+          border-radius: 0.45rem;
+
+          margin-bottom: 0.45rem;
+
+          .dashboard__table__header {
+            font-size: $onDashboardHeader-lg;
+
+            .header {
+              padding: 0.45rem 0.75rem;
+            }
+          }
+
+          .dashboard__table__data {
+            font-size: $onDashboardData-lg;
+
+            .data {
+              padding: 0.45rem 0.75rem;
+
+              .dashboard__thumbnail {
+                width: 6rem;
+                height: 6rem;
+                border-radius: 0.5rem;
+              }
+
+              .actions__container {
+                .action__edit,
+                .action__delete {
+                  padding: 0.7rem 0.45rem;
+                  border-radius: 0.45rem;
+
+                  .icon__delete,
+                  .icon__edit {
+                    font-size: $onDashboardActionIcon-lg;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .dashboard {
+    .dashboard__container {
+      .dashboard__list__container {
+        padding: 0 0.4rem;
+
+        .dashboard__table {
+          border-radius: 0.4rem;
+
+          margin-bottom: 0.4rem;
+
+          .dashboard__table__header {
+            font-size: $onDashboardHeader-md;
+
+            .header {
+              padding: 0.4rem 0.7rem;
+            }
+          }
+
+          .dashboard__table__data {
+            font-size: $onDashboardData-md;
+
+            .data {
+              padding: 0.4rem 0.7rem;
+
+              .dashboard__thumbnail {
+                width: 5.5rem;
+                height: 5.5rem;
+                border-radius: 0.45rem;
+              }
+
+              .actions__container {
+                .action__edit,
+                .action__delete {
+                  padding: 0.65rem 0.4rem;
+                  border-radius: 0.4rem;
+
+                  .icon__delete,
+                  .icon__edit {
+                    font-size: $onDashboardActionIcon-md;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .dashboard {
+    .dashboard__container {
+      .dashboard__list__container {
+        padding: 0 0.35rem;
+
+        .dashboard__table {
+          border-radius: 0.35rem;
+
+          margin-bottom: 0.35rem;
+
+          .dashboard__table__header {
+            font-size: $onDashboardHeader-sm;
+
+            .header {
+              padding: 0.35rem 0.65rem;
+            }
+          }
+
+          .dashboard__table__data {
+            font-size: $onDashboardData-sm;
+
+            .data {
+              padding: 0.35rem 0.65rem;
+
+              .dashboard__thumbnail {
+                width: 5rem;
+                height: 5rem;
+                border-radius: 0.4rem;
+              }
+
+              .actions__container {
+                .action__edit,
+                .action__delete {
+                  padding: 0.6rem 0.35rem;
+                  border-radius: 0.35rem;
+
+                  .icon__delete,
+                  .icon__edit {
+                    font-size: $onDashboardActionIcon-sm;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

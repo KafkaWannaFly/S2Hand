@@ -1,0 +1,73 @@
+@import "../../styles/standard";
+
+.product__panel {
+  .product__list__container {
+    @include display-flex(flex-start, initial);
+    min-height: 10rem;
+    flex-wrap: wrap;
+
+    .product__list__empty {
+      align-self: center;
+      text-align: center;
+      flex: 1;
+      @include set-text(
+        $fontSansSerifRegular,
+        $onEmptyList-xl,
+        $onVariantLight
+      );
+      font-weight: bold;
+    }
+
+    .product__list__item {
+      flex-basis: 16.66%;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .product__panel {
+    .product__list__container {
+      min-height: 9rem;
+
+      .product__list__empty {
+        font-size: $onEmptyList-lg;
+      }
+
+      .product__list__item {
+        flex-basis: 20%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .product__panel {
+    .product__list__container {
+      min-height: 8.5rem;
+
+      .product__list__empty {
+        font-size: $onEmptyList-md;
+      }
+
+      .product__list__item {
+        flex-basis: 25%;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .product__panel {
+    .product__list__container {
+      min-height: 8rem;
+
+      .product__list__empty {
+        font-size: $onEmptyList-sm;
+      }
+
+      .product__list__item {
+        flex-basis: 33.33%;
+      }
+    }
+  }
+}

@@ -1,0 +1,196 @@
+@import "../../styles/standard";
+
+.slider {
+  height: 100%;
+  width: 100%;
+  .slider__container {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    position: relative;
+    @include display-flex(center, center);
+
+    .left__arrow,
+    .right__arrow {
+      @include reset-button();
+      position: absolute;
+      top: 50%;
+      z-index: 999;
+
+      .left__arrow__icon,
+      .right__arrow__icon {
+        font-size: 2rem;
+        color: $variant;
+
+        &:hover {
+          color: $variantDark;
+        }
+      }
+    }
+
+    .left__arrow {
+      left: 0;
+      transform: translate(0, -50%);
+    }
+
+    .right__arrow {
+      right: 0;
+      transform: translate(0, -50%);
+    }
+
+    .slide {
+      opacity: 0;
+      transition-duration: 1s ease;
+    }
+
+    .slide__active {
+      opacity: 1;
+      transition-duration: 1s;
+
+      transform: scale(1.05);
+    }
+
+    .image {
+      width: 100%;
+      box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25), 0 0px 10px rgba(0, 0, 0, 0.1);
+      object-fit: cover;
+      border-radius: 0.5rem;
+      height: $onSliderImage-xl;
+    }
+  }
+
+  .slider__smalll__container {
+    margin-top: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    @include display-flex(center, center);
+
+    .slide__small,
+    .slide__small__active {
+      @include reset-button();
+      opacity: 0.5;
+      transition: all 0.45s ease-in;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      .image__small {
+        height: $onSliderSmallImage-xl;
+        width: auto;
+        border-radius: 0.25rem;
+      }
+    }
+
+    .slide__small__active {
+      opacity: 1;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .slider {
+    .slider__container {
+      padding: 0.7rem 0.95rem;
+
+      .left__arrow,
+      .right__arrow {
+        .left__arrow__icon,
+        .right__arrow__icon {
+          font-size: 1.95rem;
+        }
+      }
+
+      .image {
+        border-radius: 0.45rem;
+        height: $onSliderImage-lg;
+      }
+    }
+
+    .slider__smalll__container {
+      margin-top: 0.45rem;
+
+      padding: 0.45rem 0.95rem;
+
+      .slide__small,
+      .slide__small__active {
+        .image__small {
+          height: $onSliderSmallImage-lg;
+
+          border-radius: 0.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .slider {
+    .slider__container {
+      padding: 0.65rem 0.9rem;
+
+      .left__arrow,
+      .right__arrow {
+        .left__arrow__icon,
+        .right__arrow__icon {
+          font-size: 1.9rem;
+        }
+      }
+
+      .image {
+        border-radius: 0.4rem;
+        height: $onSliderImage-md;
+      }
+    }
+
+    .slider__smalll__container {
+      margin-top: 0.4rem;
+
+      padding: 0.4rem 0.9rem;
+
+      .slide__small,
+      .slide__small__active {
+        .image__small {
+          height: $onSliderSmallImage-md;
+
+          border-radius: 0.15rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .slider {
+    .slider__container {
+      padding: 0.6rem 0.85rem;
+
+      .left__arrow,
+      .right__arrow {
+        .left__arrow__icon,
+        .right__arrow__icon {
+          font-size: 1.85rem;
+        }
+      }
+
+      .image {
+        border-radius: 0.35rem;
+        height: $onSliderImage-sm;
+      }
+    }
+
+    .slider__smalll__container {
+      margin-top: 0.35rem;
+
+      padding: 0.35rem 0.85rem;
+
+      .slide__small,
+      .slide__small__active {
+        .image__small {
+          height: $onSliderSmallImage-sm;
+
+          border-radius: 0.1rem;
+        }
+      }
+    }
+  }
+}

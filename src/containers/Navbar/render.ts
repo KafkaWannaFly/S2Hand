@@ -3,20 +3,22 @@ import { FiEdit } from "react-icons/fi";
 import { RiAccountCircleFill, RiHome4Fill } from "react-icons/ri";
 import { NavItemProps } from "../../components";
 import * as strings from "../../data/strings";
-import { roots } from "../../routings";
+import { Routes } from "../../routings";
 
-export const navPageItems: NavItemProps[] = [
-  { icon: RiHome4Fill, label: strings.navTitles.home, to: roots.home },
+const contents = strings.navigations;
+
+export const pageNavigations: NavItemProps[] = [
+  { icon: RiHome4Fill, label: contents.home, to: Routes.HOME },
   {
     icon: FaClipboardList,
-    label: strings.navTitles.dashboard,
-    to: roots.dashboard
+    label: contents.dashboard,
+    to: Routes.DASHBOARD
   },
-  { icon: FaBell, label: strings.navTitles.nofi, to: roots.nofi },
-  { icon: FaShoppingBag, label: strings.navTitles.cart, to: roots.cart }
+  { icon: FaBell, label: contents.nofi, to: Routes.NOFI },
+  { icon: FaShoppingBag, label: contents.cart, to: Routes.CART }
 ];
 
-export const navActionItems: NavItemProps[] = [
-  { icon: FiEdit, label: strings.navTitles.post, to: roots.post },
-  { icon: RiAccountCircleFill, label: strings.navTitles.login, to: roots.login }
+export const actionNavigations: NavItemProps[] = [
+  { icon: FiEdit, label: contents.post, to: Routes.POST },
+  { icon: RiAccountCircleFill, label: contents.login, to: Routes.LOGIN }
 ];

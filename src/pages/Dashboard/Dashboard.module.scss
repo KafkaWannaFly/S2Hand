@@ -1,0 +1,53 @@
+@import "../../styles/standard";
+
+.dashboard {
+  width: 100%;
+  min-height: 25rem;
+  height: 100%;
+  background-color: $background;
+  padding: 0.85rem 0 1rem;
+
+  .dashboard__container {
+    width: $w-xl;
+    height: 100%;
+    margin: auto;
+
+    .dashboard__list {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .dashboard {
+    padding: 0.8rem 0 0.9rem;
+    min-height: 22.5rem;
+
+    .dashboard__container {
+      width: $w-lg;
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .dashboard {
+    padding: 0.75rem 0 0.85rem;
+    min-height: 20rem;
+
+    .dashboard__container {
+      width: $w-md;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .dashboard {
+    padding: 0.55rem 0 0.75rem;
+    min-height: 17.5rem;
+
+    .dashboard__container {
+      width: $w-sm;
+    }
+  }
+}

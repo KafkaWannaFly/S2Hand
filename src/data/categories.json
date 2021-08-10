@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "name": "sach",
+    "thumbnail": "https://i.imgur.com/Z8ZZVo3.jpg",
+    "title": "Sách"
+  },
+  {
+    "id": "2",
+    "name": "dodunghoctap",
+    "thumbnail": "https://i.imgur.com/5m8uFNM.jpg",
+    "title": "Đồ dùng học tập"
+  },
+  {
+    "id": "3",
+    "name": "quanao",
+    "thumbnail": "https://i.imgur.com/2VzrSXC.jpg",
+    "title": "Quần áo"
+  },
+  {
+    "id": "4",
+    "name": "dodientu",
+    "thumbnail": "https://i.imgur.com/kCuDO4T.jpg",
+    "title": "Đồ điện tử"
+  },
+  {
+    "id": "5",
+    "name": "dogiadung",
+    "thumbnail": "https://i.imgur.com/aM9YtUA.jpg",
+    "title": "Đồ gia dụng"
+  },
+  {
+    "id": "6",
+    "name": "dodungcanhan",
+    "thumbnail": "https://i.imgur.com/KThX7Tx.jpg",
+    "title": "Đồ dùng cá nhân"
+  },
+  {
+    "id": "7",
+    "name": "khac",
+    "thumbnail": "https://i.imgur.com/Sh2703n.jpg",
+    "title": "Khác"
+  }
+]

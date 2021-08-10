@@ -1,11 +1,28 @@
-import React from "react";
-import { Cart, Dashboard, Home, Login, Post } from "./pages";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { Navbar, Footer } from "./containers";
 import styles from "./App.module.scss";
-import { roots } from "./routings";
+import { AppRoute } from "./routings";
+import { useAppDispatch } from "./hooks";
+import {
+  fetchDataCategories,
+  fetchDataProducts,
+  fetchUserByLogin
+} from "./redux/thunks";
 
 const App = () => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    (async () => {
+      await dispatch(fetchDataCategories());
+      await dispatch(fetchDataProducts());
+
+      const accountLogin = { email: "phatduong@hcmus.edu.vn", password: "123" };
+      await dispatch(fetchUserByLogin(accountLogin));
+    })();
+  }, [dispatch]);
+
   return (
     <Router>
       <div className={styles.app}>
@@ -13,11 +30,7 @@ const App = () => {
           <Navbar className={styles.app__navbar} />
           <div className={styles.app__body}>
             <Switch>
-              <Route exact path={roots.home} component={Home} />
-              <Route path={roots.dashboard} component={Dashboard} />
-              <Route path={roots.cart} component={Cart} />
-              <Route path={roots.post} component={Post} />
-              <Route path={roots.login} component={Login} />
+              <AppRoute />
             </Switch>
           </div>
           <Footer className={styles.app__footer} />
