@@ -13,6 +13,7 @@ import { format } from "date-fns";
 import DeletePostDialog from "../DeletePostDialog/DeletePostDialog";
 import { userActions, productsActions } from "../../redux/slices";
 import { useAppDispatch } from "../../hooks";
+import Panel from "../Panel/Panel";
 
 interface Props extends DivProps {
   items: Product[];
@@ -114,9 +115,7 @@ const DashboardList = ({ items, className, ...props }: Props) => {
         }}
         onCancel={() => setDeleteDialog(false)}
       />
-      <div className={styles.dashboard__container}>
-        <h1 className={styles.dashboard__title}>{contents.title}</h1>
-        <hr className={styles.hr} />
+      <Panel className={styles.dashboard__container} title={contents.title}>
         <div className={styles.dashboard__list__container}>
           {items.length ? (
             <div className={styles.table__overflow}>
@@ -129,7 +128,7 @@ const DashboardList = ({ items, className, ...props }: Props) => {
             <p className={styles.dashboard__list__empty}>{contents.empty}</p>
           )}
         </div>
-      </div>
+      </Panel>
     </div>
   );
 };

@@ -1,24 +1,8 @@
 @import "../../styles/standard";
 
 .dashboard {
-  background-color: $surface;
-  border-radius: 0.55rem;
-  padding: 0.5rem 0 0.75rem 0;
-
   .dashboard__container {
     height: 100%;
-    .dashboard__title {
-      @include set-text($fontSerifRegular, $onDashboardTitle-xl, $onSurface);
-      font-weight: bold;
-      margin-left: 1rem;
-      margin-bottom: 0;
-    }
-
-    .hr {
-      height: 1px;
-      margin: 0.65rem 0;
-      color: $hrNormal;
-    }
 
     .dashboard__list__container {
       padding: 0 0.5rem;
@@ -147,10 +131,6 @@
 @media only screen and (min-width: $lg) and (max-width: $xl) {
   .dashboard {
     .dashboard__container {
-      .dashboard__title {
-        font-size: $onDashboardTitle-lg;
-      }
-
       .dashboard__list__container {
         padding: 0 0.45rem;
 
@@ -202,13 +182,6 @@
 @media only screen and (min-width: $md) and (max-width: $lg) {
   .dashboard {
     .dashboard__container {
-      .hr {
-        margin: 0.5rem 0;
-      }
-      .dashboard__title {
-        font-size: $onDashboardTitle-md;
-      }
-
       .dashboard__list__container {
         padding: 0 0.4rem;
 
@@ -259,15 +232,7 @@
 
 @media only screen and (min-width: $sm) and (max-width: $md) {
   .dashboard {
-    // padding-bottom: 0.5rem;
     .dashboard__container {
-      .hr {
-        margin: 0.45rem 0;
-      }
-      .dashboard__title {
-        font-size: $onDashboardTitle-sm;
-      }
-
       .dashboard__list__container {
         padding: 0 0.35rem;
 
