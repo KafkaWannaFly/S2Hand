@@ -8,6 +8,7 @@ import { MdLocationOn } from "react-icons/md";
 import { Product } from "../../models";
 import Placeholder from "../../assets/images/product-placeholder.png";
 import { Routes } from "../../routings";
+import { strings } from "../../data";
 
 interface Props extends DivProps {
   item: Product;
@@ -47,6 +48,11 @@ const ProductCard = ({ item, className, ...props }: Props) => {
                   <Icon icon={BsBookmark} className={styles.bookmark__icon} />
                 )}
               </button>
+            </div>
+            <div className={styles.product__card__new__percentage__container}>
+              <p className={styles.product__card__new__percentage}>
+                {strings.productPanel.card.newPercentage} {item.newPercentage}%
+              </p>
             </div>
             <div className={styles.product__card__location__container}>
               <Icon icon={MdLocationOn} className={styles.location__icon} />

@@ -18,7 +18,8 @@ export const categoryPanel = {
 export const productPanel = {
   title: "Danh sách tất cả sản phẩm",
   card: {
-    currencyUnit: "đ"
+    currencyUnit: "đ",
+    newPercentage: "Mới"
   },
   empty: "Không tìm thấy bất kỳ sản phẩm nào"
 };
