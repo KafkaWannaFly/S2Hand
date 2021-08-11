@@ -1,1 +1,1 @@
-export const queryCategories = "/categories?category=";
+export const queryCategories = ":/name";
