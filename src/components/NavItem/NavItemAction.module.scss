@@ -1,7 +1,7 @@
 @import "../../styles/standard";
 
 .nav__item {
-  border-radius: 0.45rem;
+  border-radius: 0.2rem;
   color: $onPrimary !important;
   text-decoration: none;
   display: flex;
@@ -21,7 +21,7 @@
   @extend .nav__item;
   font-size: $onNavItemActionText-xl;
   font-family: $fontSansSerifRegular;
-  background-color: $primaryVariantDark;
+  // background-color: $primaryVariantDark;
   padding: 0.075rem 1.25rem;
   transition: all 0.4s ease-in-out;
 
@@ -30,7 +30,7 @@
   }
 
   &.active {
-    background-color: $onPrimaryVariantDarkHover;
+    background-color: $primaryVariantLight;
   }
 
   .nav__item__icon {
