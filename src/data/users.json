@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "email": "duongdinh@hcmus.edu.vn",
+    "password": "123",
+    "name": "Hoang Duong",
+    "postedItems": [],
+    "purchasedItems": []
+  },
+  {
+    "id": 2,
+    "email": "phatduong@hcmus.edu.vn",
+    "password": "123",
+    "name": "Tan Phat",
+    "postedItems": [],
+    "purchasedItems": []
+  },
+  {
+    "id": 3,
+    "email": "nhutran@hcmus.edu.vn",
+    "password": "123",
+    "name": "Nhu Tran",
+    "postedItems": [],
+    "purchasedItems": []
+  },
+  {
+    "id": 4,
+    "email": "nhudang@hcmus.edu.vn",
+    "password": "123",
+    "name": "Nhu Dang",
+    "postedItems": [],
+    "purchasedItems": []
+  },
+  {
+    "id": 5,
+    "email": "luankhuu@hcmus.edu.vn",
+    "password": "123",
+    "name": "Vi Luan",
+    "postedItems": [],
+    "purchasedItems": []
+  }
+]

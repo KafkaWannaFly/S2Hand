@@ -1,0 +1,93 @@
+@import "../../styles/standard";
+
+.edit {
+  width: 100%;
+  height: 100%;
+  min-height: 25rem;
+  background-color: $background;
+  padding: 0.85rem 0 1rem;
+
+  .edit__container {
+    width: $w-xl;
+    margin: auto;
+    height: 100%;
+
+    .edit__form {
+      width: 100%;
+      height: 100%;
+    }
+
+    .empty__container {
+      width: 100%;
+      height: 100%;
+      background-color: $surface;
+      border-radius: 0.55rem;
+      padding: 0.5rem 0 0.75rem 0;
+      display: flex;
+
+      .empty__text {
+        flex: 1;
+        align-self: center;
+        text-align: center;
+        flex: 1;
+        @include set-text(
+          $fontSansSerifRegular,
+          $onEmptyList-xl,
+          $onVariantLight
+        );
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .edit {
+    padding: 0.8rem 0 0.9rem;
+    min-height: 22.5rem;
+
+    .edit__container {
+      width: $w-lg;
+    }
+
+    .empty__container {
+      .empty__text {
+        font-size: $onEmptyList-lg;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .edit {
+    padding: 0.75rem 0 0.85rem;
+    min-height: 20rem;
+
+    .edit__container {
+      width: $w-md;
+    }
+
+    .empty__container {
+      .empty__text {
+        font-size: $onEmptyList-lg;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .edit {
+    padding: 0.55rem 0 0.75rem;
+    min-height: 17.5rem;
+
+    .edit__container {
+      width: $w-sm;
+    }
+
+    .empty__container {
+      .empty__text {
+        font-size: $onEmptyList-lg;
+      }
+    }
+  }
+}

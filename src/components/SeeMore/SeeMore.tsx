@@ -1,13 +1,13 @@
 import React from "react";
-import { DivProps } from "react-html-props";
+import { ButtonProps } from "react-html-props";
 import { strings } from "../../data";
 import styles from "./SeeMore.module.scss";
 
-interface Props extends DivProps {}
+interface Props extends ButtonProps {}
 
-const SeeMore = (props: Props) => {
+const SeeMore = ({ className, ...props }: Props) => {
   return (
-    <button className={`${styles.seemore__button} ${props.className}`}>
+    <button className={`${styles.seemore__button} ${className}`} {...props}>
       {strings.seeMore}
     </button>
   );

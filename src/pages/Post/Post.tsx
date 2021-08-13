@@ -1,9 +1,16 @@
 import React from "react";
+import styles from "./Post.module.scss";
+import { DivProps } from "react-html-props";
+import { PostForm } from "../../containers";
 
-const Post = () => {
+interface Props extends DivProps {}
+
+const Post = (props: Props) => {
   return (
-    <div>
-      <h1>Post Product</h1>
+    <div className={`${styles.post} ${props.className}`}>
+      <div className={styles.post__container}>
+        <PostForm className={styles.post__form} />
+      </div>
     </div>
   );
 };

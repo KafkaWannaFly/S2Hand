@@ -1,0 +1,79 @@
+@import "../../styles/standard";
+
+.panel {
+  background-color: $surface;
+  border-radius: 0.55rem;
+  padding: 0.5rem 0 0.75rem 0;
+
+  .panel__container {
+    height: 100%;
+    width: 100%;
+    .panel__title {
+      @include set-text($fontSerifRegular, $onPanelTitle-xl, $onSurface);
+      font-weight: bold;
+      margin-left: 1rem;
+      margin-bottom: 0;
+      padding-top: 0.05rem;
+    }
+
+    .hr {
+      height: 1px;
+      margin: 0.65rem 0;
+      color: $hrNormal;
+    }
+
+    .panel__content__container {
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .panel {
+    .panel__container {
+      .panel__title {
+        font-size: $onPanelTitle-lg;
+      }
+
+      .panel__content__container {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .panel {
+    .panel__container {
+      .hr {
+        margin: 0.5rem 0;
+      }
+      .panel__title {
+        font-size: $onPanelTitle-md;
+      }
+
+      .panel__content__container {
+        padding: 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .panel {
+    .panel__container {
+      .hr {
+        margin: 0.45rem 0;
+      }
+      .panel__title {
+        font-size: $onPanelTitle-sm;
+      }
+
+      .panel__content__container {
+        padding: 0;
+      }
+    }
+  }
+}

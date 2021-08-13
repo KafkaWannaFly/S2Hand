@@ -1,6 +1,29 @@
 import Navbar from "./Navbar/Navbar";
 import CategoryPanel from "./CategoryPanel/CategoryPanel";
-import HomeProductPanel from "./ProductPanel/HomeProductPanel";
+import ProductPanel from "./ProductPanel/ProductPanel";
 import Footer from "./Footer/Footer";
+import PostForm from "./PostForm/PostForm";
+import EditForm from "./EditForm/EditForm";
+import DashboardList from "./DashboardList/DashboardList";
+import PostSuccessDialog from "./PostSuccessDialog/PostSuccessDialog";
+import DeletePostDialog from "./DeletePostDialog/DeletePostDialog";
+import Panel from "./Panel/Panel";
+import ImagesSlider from "./ImagesSlicer/ImagesSlider";
+import CancelEditDialog from "./CancelEditDialog/CancelEditDialog";
+import CancelPostDialog from "./CancelPostDialog/CancelPostDialog";
 
-export { Navbar, CategoryPanel, HomeProductPanel, Footer };
+export {
+  Navbar,
+  CategoryPanel,
+  ProductPanel,
+  Footer,
+  PostForm,
+  EditForm,
+  DashboardList,
+  PostSuccessDialog,
+  DeletePostDialog,
+  Panel,
+  ImagesSlider,
+  CancelEditDialog,
+  CancelPostDialog
+};
