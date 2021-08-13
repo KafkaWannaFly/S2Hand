@@ -48,16 +48,18 @@ class Login extends React.Component {
 							</div>
 						</div>
 						<div>
-							<button>
-								Đăng nhập
-							</button>
+							<button className="btn btn-primary btn-block btn-lg login-btn" type="submit">Đăng nhập</button>
 						</div>
-						<div>
-							<button>
-								Tạo tài khoản mới
-							</button>
+						<div className="login-or">
+							<span className="or-line"></span>
 						</div>
-
+						<div className="btn-searchsubmit-section proceed-btn btn btn-block">
+							<Link to="/Register" className="btn btn-primary submit-btn">Tạo tài khoản mới</Link>
+							{/* <button className="btn btn-primary btn-block btn-lg login-btn" type="submit">Tạo tài khoản mới</button> */}
+						</div>
+						{/* <div className="btn-searchsubmit-section proceed-btn btn btn-block">
+							<Link to="/invoice-view" className="btn btn-primary submit-btn">Hoàn thành</Link>
+						</div> */}
 					</div>
 				</div>
 				{/* Page Content */}

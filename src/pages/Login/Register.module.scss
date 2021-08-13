@@ -1,10 +1,8 @@
-@import "../../styles/standard";
-
-.login {
+.register {
     padding: 50px 0;
     background-color: #EAEAEA;
 
-    .login__container {
+    .register__container {
         width: 38em;
         margin: auto;
         background-color: #FFFFFF;
@@ -16,10 +14,10 @@
         align-items: center;
     }
 
-    .login__input-wrapper {
+    .register__input-wrapper {
         width: 60%;
 
-        .login__input {
+        .register__input {
             width: 100%;
             position: relative;
             height: 2.75em;
@@ -43,7 +41,7 @@
             } 
         }
         
-        .login__keep-login {
+        .register__keep-register {
             & > input[type=checkbox] {
                 height: 1.25em;
                 width: 1.25em;
@@ -57,7 +55,7 @@
         }
     }
 
-    .login__button-login {
+    .register__button-register {
         &::placeholder {
             font-size: 1.1em;
             font-family: 'IBM Plex serif';
@@ -68,7 +66,7 @@
             padding: .5rem 1rem;
             line-height: 1.5;
         }
-        .login-btn {
+        .register-btn {
             font-size: 25px;
             font-weight: 1000;
         }
@@ -89,23 +87,4 @@
             transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
         }
     }
-
-    .log__line {
-        .login-or {
-            color: #d4d4d4;
-            margin-bottom: 20px;
-            margin-top: 20px;
-            padding-bottom: 10px;
-            padding-top: 10px;
-        }
-
-        .or-line {
-            background-color: #e5e5e5;
-            height: 1px;
-            margin-bottom: 0;
-            margin-top: 0;
-            display: block;
-        }
-    }
 }
-
