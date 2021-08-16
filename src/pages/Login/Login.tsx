@@ -1,70 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Login.module.scss";
-
-// const Login = () => {
-//   return (
-//     <div>
-//       <h1>Login</h1>
-//     </div>
-//   );
-// };
-// export default Login;
 
 import { Link } from 'react-router-dom'
 
-class Login extends React.Component {
-	render() {
-		return (
-			<div>
-				{/* Page Content */}
-				<div className={styles["login"]}>
-					<div className={styles["login__container"]}>
-						<div className={styles["login__input-wrapper"]}>
-							<div className={styles["login__input"]}>
-								<input type="text" placeholder="Số điện thoại hoặc email">
+function Login() {
 
-								</input>
-							</div>
+	const [username, setUsername] = useState<string>("");
+	const [password, setPassword] = useState<string>("");
+
+	return (
+		<div>
+			{/* Page Content */}
+			<div className={styles["login"]}>
+				<div className={styles["login__container"]}>
+					<div className={styles["login__input-wrapper"]}>
+						<div className={styles["login__input"]}>
+							<input 
+								type="text" 
+								placeholder="Số điện thoại hoặc email"
+								value={username}
+								onChange={event => setUsername(event?.target.value)}
+							>
+
+							</input>
 						</div>
-						<div className={styles["login__input-wrapper"]}>
-							<div className={styles["login__input"]}>
-								<input type="text" placeholder="Mật khẩu">
+					</div>
+					<div className={styles["login__input-wrapper"]}>
+						<div className={styles["login__input"]}>
+							<input 
+								type="password" 
+								placeholder="Mật khẩu"
+								value={password}
+								onChange={event => setPassword(event?.target.value)}
+							>
 
-								</input>
-							</div>
+							</input>
 						</div>
-						<div className={styles["login__input-wrapper"]}>
-							<div className={styles["login__keep-login"]}>
-								<input type="checkbox">
+					</div>
+					<div className={`${styles["login__input-wrapper"]} ${styles["login__input-wrapper--flex"]}`}>
+						<div className={styles["login__keep-login"]}>
+							<input type="checkbox">
 
-								</input>
-								<label>
-									Duy trì đăng nhập
-								</label>
-							</div>
-
-							<div>
-								Quên mật khẩu
-							</div>
+							</input>
+							<label>
+								Duy trì đăng nhập
+							</label>
 						</div>
+
+						<div className={styles["login__forget-password"]}>
+							Quên mật khẩu ?
+						</div>
+					</div>
+					<div className={`${styles["login__input-wrapper"]} ${styles["login__input-wrapper--center"]}`}>
 						<div>
-							<button className="btn btn-primary btn-block btn-lg login-btn" type="submit">Đăng nhập</button>
+							<button
+								className={`btn btn-primary btn-block btn-lg login-btn ${styles['btn--orange']}`} 
+								type="submit"
+								onClick={() => alert(`${username} ${password}`)}
+							>
+								Đăng nhập
+							</button>
 						</div>
-						<div className="login-or">
-							<span className="or-line"></span>
+					</div>
+
+					<div className={styles["linebreak"]}></div>
+
+					<div className={`${styles["login__input-wrapper"]} ${styles["login__input-wrapper--center"]}`}>
+						<div>
+							<Link to="/Register">
+								<button className={`btn btn-primary btn-block btn-lg login-btn ${styles['btn--green']}`} type="submit">
+									Tạo tài khoản mới
+								</button>
+							</Link>
 						</div>
-						<div className="btn-searchsubmit-section proceed-btn btn btn-block">
-							<Link to="/Register" className="btn btn-primary submit-btn">Tạo tài khoản mới</Link>
-							{/* <button className="btn btn-primary btn-block btn-lg login-btn" type="submit">Tạo tài khoản mới</button> */}
-						</div>
-						{/* <div className="btn-searchsubmit-section proceed-btn btn btn-block">
-							<Link to="/invoice-view" className="btn btn-primary submit-btn">Hoàn thành</Link>
-						</div> */}
 					</div>
 				</div>
-				{/* Page Content */}
 			</div>
-		)
-	}
+			{/* Page Content */}
+		</div>
+	)
 }
 export default Login;
