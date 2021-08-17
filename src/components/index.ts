@@ -8,6 +8,7 @@ import SeeMore from "./SeeMore/SeeMore";
 import ProductCard from "./ProductCard/ProductCard";
 import UploadImage from "./UploadImage/UploadImage";
 import QuantityInput from "./QuantityInput/QuantityInput";
+import QuantityInputCart from "./QuantityInput/QuantityInput.Cart";
 
 export {
   Searchbar,
@@ -18,7 +19,8 @@ export {
   SeeMore,
   ProductCard,
   UploadImage,
-  QuantityInput
+  QuantityInput,
+  QuantityInputCart
 };
 
 export type { NavItemProps };

@@ -11,10 +11,11 @@
     width: $w-xl;
     height: 100%;
     margin: auto;
+    display: flex;
+    flex-direction: column;
 
     .dashboard__list {
-      width: 100%;
-      height: 100%;
+      flex: 1;
     }
   }
 }

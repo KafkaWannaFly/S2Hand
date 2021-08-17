@@ -11,6 +11,8 @@ import Panel from "./Panel/Panel";
 import ImagesSlider from "./ImagesSlicer/ImagesSlider";
 import CancelEditDialog from "./CancelEditDialog/CancelEditDialog";
 import CancelPostDialog from "./CancelPostDialog/CancelPostDialog";
+import CartList from "./CardList/CartList";
+import DeleteCartDialog from "./DeleteCartDialog/DeleteCartDialog";
 
 export {
   Navbar,
@@ -25,5 +27,7 @@ export {
   Panel,
   ImagesSlider,
   CancelEditDialog,
-  CancelPostDialog
+  CancelPostDialog,
+  CartList,
+  DeleteCartDialog
 };

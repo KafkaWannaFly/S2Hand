@@ -1,0 +1,214 @@
+@import "../../styles/standard";
+
+.cart {
+  width: 100%;
+  min-height: 25rem;
+  height: 100%;
+  background-color: $background;
+  padding: 0.85rem 0 1rem;
+
+  .cart__container {
+    width: $w-xl;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+    .cart__list {
+      flex: 1;
+    }
+
+    .cart__info {
+      margin-top: 1rem;
+
+      .num__container {
+        @include display-flex(flex-end, center);
+
+        .num__label {
+          @include set-text($fontSansSerifRegular, $onCartLabel-xl, $onSurface);
+          font-weight: bold;
+        }
+
+        .num {
+          margin-left: 1rem;
+          @include set-text($fontSansSerifRegular, $onCartNum-xl, $warning);
+          font-weight: bold;
+        }
+      }
+
+      .total__container {
+        @include display-flex(flex-end, center);
+
+        .total__label {
+          @include set-text($fontSansSerifRegular, $onCartLabel-xl, $onSurface);
+          font-weight: bold;
+        }
+
+        .total {
+          margin-left: 1rem;
+          @include set-text($fontSansSerifRegular, $onCartTotal-xl, $primary);
+          font-weight: bold;
+        }
+      }
+    }
+
+    .cart__actions {
+      margin-top: 1rem;
+      @include display-flex(flex-end, center);
+
+      .checkout__button {
+        @include reset-button();
+        @include set-text($fontSansSerifRegular, $onCartAction-xl, $onPrimary);
+        background-color: $primary;
+        transition: all 0.25s ease-in-out;
+        padding: 0.35rem 6.5rem;
+        border-radius: 0.35rem;
+
+        &:hover {
+          background-color: black;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .cart {
+    padding: 0.8rem 0 0.9rem;
+    min-height: 22.5rem;
+
+    .cart__container {
+      width: $w-lg;
+
+      .cart__info {
+        margin-top: 0.95rem;
+
+        .num__container {
+          .num__label {
+            font-size: $onCartLabel-lg;
+          }
+
+          .num {
+            margin-left: 0.95rem;
+            font-size: $onCartNum-lg;
+          }
+        }
+
+        .total__container {
+          .total__label {
+            font-size: $onCartLabel-lg;
+          }
+
+          .total {
+            margin-left: 0.95rem;
+            font-size: $onCartTotal-lg;
+          }
+        }
+      }
+
+      .cart__actions {
+        margin-top: 0.95rem;
+
+        .checkout__button {
+          font-size: $onCartAction-lg;
+          padding: 0.3rem 6rem;
+          border-radius: 0.3rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .cart {
+    padding: 0.75rem 0 0.85rem;
+    min-height: 20rem;
+
+    .cart__container {
+      width: $w-md;
+
+      .cart__info {
+        margin-top: 0.9rem;
+
+        .num__container {
+          .num__label {
+            font-size: $onCartLabel-md;
+          }
+
+          .num {
+            margin-left: 0.9rem;
+            font-size: $onCartNum-md;
+          }
+        }
+
+        .total__container {
+          .total__label {
+            font-size: $onCartLabel-md;
+          }
+
+          .total {
+            margin-left: 0.9rem;
+            font-size: $onCartTotal-md;
+          }
+        }
+      }
+
+      .cart__actions {
+        margin-top: 0.9rem;
+
+        .checkout__button {
+          font-size: $onCartAction-md;
+          padding: 0.25rem 5.5rem;
+          border-radius: 0.25rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .cart {
+    padding: 0.55rem 0 0.75rem;
+    min-height: 17.5rem;
+
+    .cart__container {
+      width: $w-sm;
+
+      .cart__info {
+        margin-top: 0.85rem;
+
+        .num__container {
+          .num__label {
+            font-size: $onCartLabel-sm;
+          }
+
+          .num {
+            margin-left: 0.85rem;
+            font-size: $onCartNum-sm;
+          }
+        }
+
+        .total__container {
+          .total__label {
+            font-size: $onCartLabel-sm;
+          }
+
+          .total {
+            margin-left: 0.85rem;
+            font-size: $onCartTotal-sm;
+          }
+        }
+      }
+
+      .cart__actions {
+        margin-top: 0.85rem;
+
+        .checkout__button {
+          font-size: $onCartAction-sm;
+          padding: 0.2rem 5rem;
+          border-radius: 0.2rem;
+        }
+      }
+    }
+  }
+}

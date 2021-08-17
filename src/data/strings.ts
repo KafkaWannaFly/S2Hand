@@ -276,3 +276,31 @@ export const product = {
     buyNow: "Mua ngay"
   }
 };
+
+export const cart = {
+  title: "Quản lý giỏ hàng",
+  total: "Tổng tiền",
+  table: {
+    stt: "STT",
+    image: "Hình ảnh",
+    name: "Tên sản phẩm",
+    price: "Giá sản phẩm",
+    quantity: "Số lượng",
+    action: "Thao tác"
+  },
+  numItems: "Số lượng sản phẩm",
+  actions: {
+    checkout: "Thanh toán"
+  },
+  empty: "Không có sản phẩm nào trong giỏ hàng của bạn",
+  dialog: {
+    delete: {
+      title: "Bạn có chắc muốn sản phẩm khỏi giỏ hàng ?",
+      body: "Sản phẩm của bạn sẽ bị xoá khỏi giỏ hàng. Thao tác này không thể khôi phục!",
+      actions: {
+        confirm: "Xoá sản phẩm",
+        cacel: "Huỷ"
+      }
+    }
+  }
+};
