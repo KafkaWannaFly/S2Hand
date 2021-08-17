@@ -1,7 +1,7 @@
 @import "../../styles/standard";
 
 .nav__item {
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
   color: $onPrimary !important;
   text-decoration: none;
   display: flex;
@@ -30,7 +30,7 @@
   }
 
   &.active {
-    background-color: $primaryVariantLight;
+    background-color: $primaryVariantDark;
   }
 
   .nav__item__icon {

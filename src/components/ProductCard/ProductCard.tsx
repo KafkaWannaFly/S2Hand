@@ -24,11 +24,17 @@ const ProductCard = ({ item, className, ...props }: Props) => {
           to={Routes.PRODUCT.replace(":id", item.id)}
           className={styles.product__card__link}
         >
-          <img
-            src={item.thumbnail ? item.thumbnail : Placeholder}
-            alt=""
-            className={styles.product__card__thumbnail}
-          />
+          <div className={styles.thumbnail__container}>
+            <img
+              src={item.thumbnail ? item.thumbnail : Placeholder}
+              alt=""
+              className={styles.product__card__thumbnail}
+            />
+
+            <p className={styles.product__card__new__percentage}>
+              {strings.productPanel.card.newPercentage} {item.newPercentage}%
+            </p>
+          </div>
           <p className={styles.product__card__name}>{item.name}</p>
           <div className={styles.product__card__des}>
             <div className={styles.product__card__price__container}>
@@ -49,11 +55,7 @@ const ProductCard = ({ item, className, ...props }: Props) => {
                 )}
               </button>
             </div>
-            <div className={styles.product__card__new__percentage__container}>
-              <p className={styles.product__card__new__percentage}>
-                {strings.productPanel.card.newPercentage} {item.newPercentage}%
-              </p>
-            </div>
+
             <div className={styles.product__card__location__container}>
               <Icon icon={MdLocationOn} className={styles.location__icon} />
               <p
