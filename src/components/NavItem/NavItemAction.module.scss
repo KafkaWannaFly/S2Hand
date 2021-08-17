@@ -21,7 +21,7 @@
   @extend .nav__item;
   font-size: $onNavItemActionText-xl;
   font-family: $fontSansSerifRegular;
-  // background-color: $primaryVariantDark;
+  background-color: $primaryVariantDarkOpacity;
   padding: 0.075rem 1.25rem;
   transition: all 0.4s ease-in-out;
 
@@ -31,6 +31,7 @@
 
   &.active {
     background-color: $primaryVariantDark;
+    box-shadow: 0 0px 3.5px rgba(0, 0, 0, 0.1), 0 0px 4.5px rgba(0, 0, 0, 0.05);
   }
 
   .nav__item__icon {

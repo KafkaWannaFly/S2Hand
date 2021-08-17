@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import Icon from "../Icon/Icon";
 import styles from "./NavItemPage.module.scss";
 
-const NavItemPage = ({ to, icon, label, className }: Props) => {
+const NavItemPage = ({ to, icon, label, badge, className }: Props) => {
   return (
     <NavLink
       to={to}
@@ -14,6 +14,7 @@ const NavItemPage = ({ to, icon, label, className }: Props) => {
     >
       <Icon className={styles.nav__item__icon} icon={icon} />
       <span className={styles.nav__item__text}>{label}</span>
+      {badge && <span className={styles.nav__item__badge}>{badge}</span>}
     </NavLink>
   );
 };

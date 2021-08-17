@@ -7,6 +7,7 @@ import CategoryCard from "./CategoryCard/CategoryCard";
 import SeeMore from "./SeeMore/SeeMore";
 import ProductCard from "./ProductCard/ProductCard";
 import UploadImage from "./UploadImage/UploadImage";
+import QuantityInput from "./QuantityInput/QuantityInput";
 
 export {
   Searchbar,
@@ -16,7 +17,8 @@ export {
   CategoryCard,
   SeeMore,
   ProductCard,
-  UploadImage
+  UploadImage,
+  QuantityInput
 };
 
 export type { NavItemProps };

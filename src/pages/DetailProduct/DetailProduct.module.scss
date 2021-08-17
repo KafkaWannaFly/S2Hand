@@ -131,9 +131,14 @@
             }
           }
 
+          .quantity__input {
+            margin-top: 1.5rem;
+            width: 75%;
+          }
+
           .actions__container {
             @include display-flex(initial, stretch);
-            margin-top: 1.5rem;
+            margin-top: 1rem;
 
             .add__to__cart,
             .buy__now {
@@ -325,8 +330,13 @@
               }
             }
 
-            .actions__container {
+            .quantity__input {
               margin-top: 1.45rem;
+              width: 75%;
+            }
+
+            .actions__container {
+              margin-top: 0.95rem;
 
               .add__to__cart,
               .buy__now {
@@ -476,8 +486,13 @@
               }
             }
 
-            .actions__container {
+            .quantity__input {
               margin-top: 1.45rem;
+              width: 50%;
+            }
+
+            .actions__container {
+              margin-top: 0.95rem;
 
               .add__to__cart,
               .buy__now {
@@ -626,8 +641,13 @@
               }
             }
 
-            .actions__container {
+            .quantity__input {
               margin-top: 1.35rem;
+              width: 50%;
+            }
+
+            .actions__container {
+              margin-top: 0.85rem;
               flex-direction: column;
 
               .add__to__cart,
