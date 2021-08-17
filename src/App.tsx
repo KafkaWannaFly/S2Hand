@@ -7,7 +7,8 @@ import { useAppDispatch } from "./hooks";
 import {
   fetchDataCategories,
   fetchDataProducts,
-  fetchUserByLogin
+  fetchUserByLogin,
+  loadCart
 } from "./redux/thunks";
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
     (async () => {
       await dispatch(fetchDataCategories());
       await dispatch(fetchDataProducts());
+      await dispatch(loadCart());
 
       const accountLogin = { email: "phatduong@hcmus.edu.vn", password: "123" };
       await dispatch(fetchUserByLogin(accountLogin));
