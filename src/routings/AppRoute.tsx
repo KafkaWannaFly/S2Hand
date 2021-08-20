@@ -7,7 +7,8 @@ import {
   Post,
   Edit,
   DetailProduct,
-  Checkout
+  Checkout,
+  Register
 } from "../pages";
 import { Route } from "react-router-dom";
 import Routes from "./routes";
@@ -22,6 +23,7 @@ const AppRoute = () => {
       <Route path={Routes.POST} component={Post} />
       <Route path={Routes.LOGIN} component={Login} />
       <Route path={Routes.PRODUCT} component={DetailProduct} />
+      <Route path={Routes.REGISTER} component={Register} />
       <Route path={Routes.CHECKOUT} component={Checkout} />
     </>
   );

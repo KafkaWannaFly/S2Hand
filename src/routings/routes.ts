@@ -4,6 +4,7 @@ enum Routes {
   CART = "/cart",
   POST = "/post",
   LOGIN = "/login",
+  REGISTER = "/register",
   NOFI = "/nofi",
   ABOUT = "/about",
   RECRUITMENT = "/recruitment",
