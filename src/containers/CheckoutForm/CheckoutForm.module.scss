@@ -174,45 +174,33 @@
   .checkout {
     .checkout__container {
       .form__session__container {
+        .login__request {
+          font-size: $onCheckoutLoginRequest-lg;
+          margin-right: 2.25rem;
+          margin-bottom: 0.45rem;
+
+          .action {
+            margin-left: 0.45rem;
+          }
+        }
+
         .form__field__container {
           margin: 0 2.25rem;
           padding-top: 0.2rem;
 
           .form__field {
-            margin-bottom: 1.25rem;
+            margin-bottom: 0.8rem;
           }
 
           .double__line__field {
             .form__field {
               &:first-child {
-                flex: 8.5;
-                margin-right: 3.5rem;
+                flex: 8;
+                margin-right: 3.25rem;
               }
 
               &:last-child {
-                flex: 3.5;
-              }
-            }
-          }
-
-          .form__field {
-            .note__img__upload {
-              font-size: $onPostFormNote-lg;
-            }
-
-            .err__img__upload {
-              font-size: $onPostFormNote-lg;
-            }
-
-            .form__upload__container {
-              .upload__field {
-                flex-basis: 8.25rem;
-                height: 7.5rem;
-                margin-top: 0.45rem;
-
-                &:not(:last-child) {
-                  margin-right: 1.25rem;
-                }
+                flex: 4;
               }
             }
           }
@@ -220,55 +208,58 @@
           .form__field__address {
             .form__field {
               flex: 1;
-              margin-top: 0.4rem;
-              margin-bottom: 0;
-              // margin-bottom: 0.75rem;
 
               &:not(:last-child) {
-                margin-right: 2.5rem;
+                margin-right: 3.25rem;
               }
             }
           }
 
-          .form__field__label {
-            font-size: $onPostFormFieldLabel-lg;
+          .form__field__input {
+            font-size: $onCheckoutFormFieldInputText-lg;
           }
 
-          .form__field__input {
-            font-size: $onPostFormFieldInputText-lg;
+          .radio__payment {
+            font-size: $onCheckoutFormFieldInputText-lg;
+
+            border-radius: 0.45rem;
+            padding: 0 1.95rem;
+            height: 3.45rem;
+
+            .payment__img {
+              margin: 0 1.45rem 0 0.95rem;
+              height: 1.4rem;
+            }
+
+            .payment__img__momo {
+              margin: 0 1.45rem 0 0.95rem;
+              height: 1.95rem;
+            }
+
+            .payment__icon {
+              margin: 0 1.45rem 0 0.95rem;
+              font-size: 1.95rem;
+              color: $primary;
+            }
           }
         }
       }
 
       .form__actions__container {
-        margin: 1rem 0 2rem;
+        margin-top: 1.8rem;
+        margin-bottom: 0.5rem;
 
-        .form__action__preview {
-          font-size: $onPostFormActionBtnTitle-lg;
-          padding: 0.45rem 2.25rem;
-          border-radius: 0.45rem;
-        }
-
-        .form__action__post {
-          font-size: $onPostFormActionBtnTitle-lg;
-          padding: 0.45rem 2.25rem;
-          border-radius: 0.45rem;
-        }
-
+        .form__action__confirm,
         .form__action__cancel {
-          font-size: $onPostFormActionBtnTitle-lg;
+          font-size: $onCheckoutFormActionBtnTitle-lg;
+
           padding: 0.45rem 2.25rem;
           border-radius: 0.45rem;
         }
-      }
-
-      .note__form {
-        font-size: $onPostFormNote-lg;
-        margin-top: 0.45rem;
       }
 
       .err__form {
-        font-size: $onPostFormNote-lg;
+        font-size: $onCheckoutFormNote-lg;
         margin-top: 0.45rem;
       }
     }
@@ -279,6 +270,16 @@
   .checkout {
     .checkout__container {
       .form__session__container {
+        .login__request {
+          font-size: $onCheckoutLoginRequest-md;
+          margin-right: 1.85rem;
+          margin-bottom: 0.4rem;
+
+          .action {
+            margin-left: 0.4rem;
+          }
+        }
+
         .form__field__container {
           margin: 0 1.85rem;
           padding-top: 0.15rem;
@@ -290,35 +291,22 @@
           .double__line__field {
             .form__field {
               &:first-child {
-                flex: 7.75;
-                margin-right: 2rem;
+                flex: 8;
+                margin-right: 3.25rem;
               }
 
               &:last-child {
-                flex: 4.25;
+                flex: 4;
               }
             }
           }
 
-          .form__field {
-            .note__img__upload {
-              font-size: $onPostFormNote-md;
-            }
+          .form__field__address {
+            .form__field {
+              flex: 1;
 
-            .err__img__upload {
-              font-size: $onPostFormNote-md;
-            }
-
-            .form__upload__container {
-              .upload__field {
-                flex-basis: 7rem;
-                height: 7rem;
-                margin-top: 0.45rem;
-                margin-bottom: 0.5rem;
-
-                &:not(:last-child) {
-                  margin-right: 1rem;
-                }
+              &:not(:last-child) {
+                margin-right: 3.25rem;
               }
             }
           }
@@ -339,45 +327,50 @@
             }
           }
 
-          .form__field__label {
-            font-size: $onPostFormFieldLabel-md;
+          .form__field__input {
+            font-size: $onCheckoutFormFieldInputText-md;
           }
 
-          .form__field__input {
-            font-size: $onPostFormFieldInputText-md;
+          .radio__payment {
+            font-size: $onCheckoutFormFieldInputText-md;
+
+            border-radius: 0.4rem;
+            padding: 0 1.9rem;
+            height: 3.4rem;
+
+            .payment__img {
+              margin: 0 1.4rem 0 0.9rem;
+              height: 1.35rem;
+            }
+
+            .payment__img__momo {
+              margin: 0 1.4rem 0 0.9rem;
+              height: 1.9rem;
+            }
+
+            .payment__icon {
+              margin: 0 1.4rem 0 0.9rem;
+              font-size: 1.9rem;
+            }
           }
         }
       }
 
       .form__actions__container {
-        margin: 1rem 0 2rem;
+        margin-top: 1.75rem;
+        margin-bottom: 0.45rem;
 
-        .form__action__preview {
-          font-size: $onPostFormActionBtnTitle-md;
-          padding: 0.4rem 2.15rem;
-          border-radius: 0.35rem;
-        }
-
-        .form__action__post {
-          font-size: $onPostFormActionBtnTitle-md;
-          padding: 0.4rem 2.15rem;
-          border-radius: 0.35rem;
-        }
-
+        .form__action__confirm,
         .form__action__cancel {
-          font-size: $onPostFormActionBtnTitle-md;
-          padding: 0.4rem 2.15rem;
-          border-radius: 0.35rem;
-        }
-      }
+          font-size: $onCheckoutFormActionBtnTitle-md;
 
-      .note__form {
-        font-size: $onPostFormNote-md;
-        margin-top: 0.4rem;
+          padding: 0.4rem 2.15rem;
+          border-radius: 0.4rem;
+        }
       }
 
       .err__form {
-        font-size: $onPostFormNote-md;
+        font-size: $onCheckoutFormNote-md;
         margin-top: 0.4rem;
       }
     }
@@ -388,6 +381,16 @@
   .checkout {
     .checkout__container {
       .form__session__container {
+        .login__request {
+          font-size: $onCheckoutLoginRequest-sm;
+          margin-right: 1.5rem;
+          margin-bottom: 0.35rem;
+
+          .action {
+            margin-left: 0.35rem;
+          }
+        }
+
         .form__field__container {
           margin: 0 1.5rem;
           padding-top: 0.15rem;
@@ -401,34 +404,23 @@
             .form__field {
               &:first-child {
                 flex: 1;
+                width: 100%;
                 margin-right: 0rem;
               }
 
               &:last-child {
                 flex: 1;
+                width: 100%;
               }
             }
           }
 
-          .form__field {
-            .note__img__upload {
-              font-size: $onPostFormNote-sm;
-            }
+          .form__field__address {
+            .form__field {
+              flex: 1;
 
-            .err__img__upload {
-              font-size: $onPostFormNote-sm;
-            }
-
-            .form__upload__container {
-              .upload__field {
-                flex-basis: 6.25rem;
-                height: 6.25rem;
-                margin-top: 0.45rem;
-                margin-bottom: 0.25rem;
-
-                &:not(:last-child) {
-                  margin-right: 0.75rem;
-                }
+              &:not(:last-child) {
+                margin-right: 3.25rem;
               }
             }
           }
@@ -438,8 +430,9 @@
             flex-direction: column;
 
             .form__field {
-              flex: 0;
-              flex-basis: 47.5%;
+              flex: 1;
+              flex-basis: 100%;
+              width: 100%;
               margin-top: 0.4rem;
               margin-bottom: 0;
               // margin-bottom: 0.75rem;
@@ -450,45 +443,50 @@
             }
           }
 
-          .form__field__label {
-            font-size: $onPostFormFieldLabel-sm;
+          .form__field__input {
+            font-size: $onCheckoutFormFieldInputText-sm;
           }
 
-          .form__field__input {
-            font-size: $onPostFormFieldInputText-sm;
+          .radio__payment {
+            font-size: $onCheckoutFormFieldInputText-sm;
+
+            border-radius: 0.35rem;
+            padding: 0 1.85rem;
+            height: 3.35rem;
+
+            .payment__img {
+              margin: 0 1.35rem 0 0.85rem;
+              height: 1.2rem;
+            }
+
+            .payment__img__momo {
+              margin: 0 1.35rem 0 0.85rem;
+              height: 1.8rem;
+            }
+
+            .payment__icon {
+              margin: 0 1.35rem 0 0.85rem;
+              font-size: 1.8rem;
+            }
           }
         }
       }
 
       .form__actions__container {
-        margin: 1rem 0 2rem;
+        margin-top: 1.7rem;
+        margin-bottom: 0.4rem;
 
-        .form__action__preview {
-          font-size: $onPostFormActionBtnTitle-sm;
-          padding: 0.35rem 1.5rem;
-          border-radius: 0.35rem;
-        }
+        .form__action__confirm,
+        .form__action__cancel {
+          font-size: $onCheckoutFormActionBtnTitle-sm;
 
-        .form__action__post {
-          font-size: $onPostFormActionBtnTitle-sm;
           padding: 0.35rem 1.5rem;
           border-radius: 0.25rem;
         }
-
-        .form__action__cancel {
-          font-size: $onPostFormActionBtnTitle-sm;
-          padding: 0.35rem 1.5rem;
-          border-radius: 0.35rem;
-        }
-      }
-
-      .note__form {
-        font-size: $onPostFormNote-sm;
-        margin-top: 0.4rem;
       }
 
       .err__form {
-        font-size: $onPostFormNote-sm;
+        font-size: $onCheckoutFormNote-sm;
         margin-top: 0.4rem;
       }
     }

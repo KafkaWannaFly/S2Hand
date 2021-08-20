@@ -65,6 +65,29 @@ class Validations {
     if (!formInput.images.length) result = { ...result, errImages: true };
     return result;
   }
+  validateCheckoutForm(formInput: any) {
+    let result = {
+      errName: false,
+      errPhone: false,
+      errEmail: false,
+      errStreet: false,
+      errCity: false,
+      errDistrict: false,
+      errWard: false
+    };
+    const emailPattern =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+    if (!formInput.name) result = { ...result, errName: true };
+    if (!formInput.phone) result = { ...result, errPhone: true };
+    if (!formInput.email)
+      result = { ...result, errEmail: !emailPattern.test(formInput.email) };
+    if (!formInput.street) result = { ...result, errStreet: true };
+    if (!formInput.city) result = { ...result, errCity: true };
+    if (!formInput.district) result = { ...result, errDistrict: true };
+    if (!formInput.ward) result = { ...result, errWard: true };
+    return result;
+  }
 }
 
 export default Validations;

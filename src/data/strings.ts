@@ -352,5 +352,15 @@ export const checkout = {
     confirm: "Xác nhận mua hàng",
     cancel: "Huỷ"
   },
-  err: "Vui lòng kiểm tra lại thông tin mua hàng"
+  err: "Vui lòng kiểm tra lại thông tin mua hàng",
+  dialog: {
+    cancel: {
+      title: "Bạn có muốn thoát khỏi Xác nhận mua hàng ?",
+      body: "Bạn sẽ thoát khỏi trang thông tin mua hàng. Thông tin bạn vừa nhập sẽ mất",
+      actions: {
+        confirm: "Xác nhận",
+        cancel: "Huỷ"
+      }
+    }
+  }
 };

@@ -4,7 +4,7 @@ import Panel from "../Panel/Panel";
 import { strings } from "../../data";
 import styles from "./CheckoutForm.module.scss";
 import { Routes } from "../../routings";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Select from "react-select";
 import { selectStyle, selectStyleErr } from "../../styles/select";
 import { locationsService } from "../../services";
@@ -14,6 +14,7 @@ import Momo from "../../assets/images/momo.png";
 import VnPay from "../../assets/images/vnpayqr.png";
 import { Icon } from "../../components";
 import { FaTruck } from "react-icons/fa";
+import { validations } from "../../utils";
 
 interface FormInput {
   name: string;
@@ -96,10 +97,22 @@ const CheckoutForm = ({ className, ...props }: Props) => {
       label: ward
     }));
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const validateResult = validations.validateCheckoutForm(formInput);
+    const err = Object.values(validateResult).find((item) => item === true);
+    if (!err) {
+      history.replace(Routes.CHECKOUT_SUCCESS);
+    }
+    setFormValidate(validateResult);
+  };
+
+  const history = useHistory();
+
   return (
     <div className={`${styles.checkout} ${className}`} {...props}>
       <div className={styles.checkout__container}>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Panel
             className={styles.form__session__container}
             title={contents.deliverySession.title}
@@ -117,6 +130,10 @@ const CheckoutForm = ({ className, ...props }: Props) => {
                 <div className={styles.double__line__field}>
                   <div className={styles.form__field}>
                     <input
+                      value={formInput.name}
+                      onChange={(e) =>
+                        setFormInput({ ...formInput, name: e.target.value })
+                      }
                       type="text"
                       autoComplete="none"
                       placeholder={
@@ -124,12 +141,18 @@ const CheckoutForm = ({ className, ...props }: Props) => {
                       }
                       id="name"
                       name="name"
-                      className={`${styles.form__field__input}`}
+                      className={`${styles.form__field__input} ${
+                        formValidate.errName ? styles.err : undefined
+                      }`}
                     />
                   </div>
 
                   <div className={styles.form__field}>
                     <input
+                      value={formInput.phone}
+                      onChange={(e) =>
+                        setFormInput({ ...formInput, phone: e.target.value })
+                      }
                       type="text"
                       autoComplete="none"
                       placeholder={
@@ -137,13 +160,19 @@ const CheckoutForm = ({ className, ...props }: Props) => {
                       }
                       id="phone"
                       name="phone"
-                      className={`${styles.form__field__input} `}
+                      className={`${styles.form__field__input} ${
+                        formValidate.errPhone ? styles.err : undefined
+                      }`}
                     />
                   </div>
                 </div>
 
                 <div className={styles.form__field}>
                   <input
+                    value={formInput.email}
+                    onChange={(e) =>
+                      setFormInput({ ...formInput, email: e.target.value })
+                    }
                     type="text"
                     autoComplete="none"
                     placeholder={
@@ -151,12 +180,18 @@ const CheckoutForm = ({ className, ...props }: Props) => {
                     }
                     id="email"
                     name="email"
-                    className={`${styles.form__field__input}`}
+                    className={`${styles.form__field__input} ${
+                      formValidate.errEmail ? styles.err : undefined
+                    }`}
                   />
                 </div>
 
                 <div className={styles.form__field}>
                   <input
+                    value={formInput.street}
+                    onChange={(e) =>
+                      setFormInput({ ...formInput, street: e.target.value })
+                    }
                     type="text"
                     autoComplete="none"
                     placeholder={
@@ -164,7 +199,9 @@ const CheckoutForm = ({ className, ...props }: Props) => {
                     }
                     id="street"
                     name="street"
-                    className={`${styles.form__field__input}`}
+                    className={`${styles.form__field__input} ${
+                      formValidate.errStreet ? styles.err : undefined
+                    }`}
                   />
                 </div>
 
@@ -226,13 +263,17 @@ const CheckoutForm = ({ className, ...props }: Props) => {
 
                 <div className={styles.form__field}>
                   <textarea
+                    value={formInput.note}
+                    onChange={(e) =>
+                      setFormInput({ ...formInput, note: e.target.value })
+                    }
                     rows={5}
                     autoComplete="none"
                     placeholder={
                       contents.deliverySession.fields.note.placeholder
                     }
-                    id="describe"
-                    name="describe"
+                    id="note"
+                    name="note"
                     className={`${styles.form__field__input} `}
                   />
                 </div>
@@ -247,7 +288,13 @@ const CheckoutForm = ({ className, ...props }: Props) => {
             <div className={styles.form__field__container}>
               <div className={styles.form__field}>
                 <div className={styles.radio__payment}>
-                  <input type="radio" id="cod" name="payment" value="cod" />
+                  <input
+                    type="radio"
+                    id="cod"
+                    name="payment"
+                    value="cod"
+                    checked
+                  />
                   <Icon icon={FaTruck} className={styles.payment__icon} />
                   <label htmlFor="cod">
                     {contents.paymentSession.options.cod}
@@ -299,7 +346,11 @@ const CheckoutForm = ({ className, ...props }: Props) => {
             <button className={styles.form__action__confirm} type="submit">
               {contents.actions.confirm}
             </button>
-            <button className={styles.form__action__cancel} type="button">
+            <button
+              className={styles.form__action__cancel}
+              type="button"
+              onClick={() => history.goBack()}
+            >
               {contents.actions.cancel}
             </button>
           </div>
