@@ -13,6 +13,7 @@ import CancelEditDialog from "./CancelEditDialog/CancelEditDialog";
 import CancelPostDialog from "./CancelPostDialog/CancelPostDialog";
 import CartList from "./CardList/CartList";
 import DeleteCartDialog from "./DeleteCartDialog/DeleteCartDialog";
+import CheckoutForm from "./CheckoutForm/CheckoutForm";
 
 export {
   Navbar,
@@ -29,5 +30,6 @@ export {
   CancelEditDialog,
   CancelPostDialog,
   CartList,
-  DeleteCartDialog
+  DeleteCartDialog,
+  CheckoutForm
 };

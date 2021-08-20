@@ -13,7 +13,9 @@ enum Routes {
   HELP = "/help",
   MANAGE = "/manage",
   CATEGORY = "/:name",
-  PRODUCT = "/product/:id"
+  PRODUCT = "/product/:id",
+  CHECKOUT = "/checkout",
+  CHECKOUT_SUCCESS = "/checkout_success"
 }
 
 export default Routes;

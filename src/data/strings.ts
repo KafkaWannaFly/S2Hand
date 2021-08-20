@@ -304,3 +304,53 @@ export const cart = {
     }
   }
 };
+
+export const checkout = {
+  loginRequest: {
+    question: "Bạn chưa có tài khoản?",
+    action: "Đăng nhập ngay"
+  },
+  deliverySession: {
+    title: "Thông tin nhận hàng",
+    fields: {
+      name: {
+        placeholder: "Họ tên người nhận"
+      },
+      phone: {
+        placeholder: "Số điện thoại"
+      },
+      email: {
+        placeholder: "Email"
+      },
+      street: {
+        placeholder: "Số nhà, tên đường"
+      },
+      city: {
+        placeholder: "Tỉnh"
+      },
+      district: {
+        placeholder: "Huyện"
+      },
+      ward: {
+        placeholder: "Xã"
+      },
+      note: {
+        placeholder: "Ghi chú thêm (Ví dụ: Giao giờ hành chánh)"
+      }
+    }
+  },
+  paymentSession: {
+    title: "Thông tin thanh toán",
+    options: {
+      cod: "Thanh toán khi nhận hàng",
+      zalopay: "Ví điện tử ZaloPay",
+      momo: "Ví Momo",
+      vnpay: "VNPAY"
+    }
+  },
+  actions: {
+    confirm: "Xác nhận mua hàng",
+    cancel: "Huỷ"
+  },
+  err: "Vui lòng kiểm tra lại thông tin mua hàng"
+};

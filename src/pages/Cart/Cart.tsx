@@ -5,11 +5,15 @@ import { useAppSelector } from "../../hooks";
 import { useEffect } from "react";
 import { CartList } from "../../containers";
 import { strings } from "../../data";
+import { Routes } from "../../routings";
+import { useHistory } from "react-router-dom";
 
 interface Props extends DivProps {}
 
 const Cart = (props: Props) => {
   const contents = strings.cart;
+
+  const history = useHistory();
 
   const cart = useAppSelector((state) => state.cart);
   let numItems = 0;
@@ -40,7 +44,10 @@ const Cart = (props: Props) => {
         </div>
         {!!numItems && (
           <div className={styles.cart__actions}>
-            <button className={styles.checkout__button}>
+            <button
+              className={styles.checkout__button}
+              onClick={() => history.push(Routes.CHECKOUT)}
+            >
               {contents.actions.checkout}
             </button>
           </div>
