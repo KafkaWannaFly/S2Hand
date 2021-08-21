@@ -1,0 +1,276 @@
+@import "../../styles/standard";
+
+.checkout__success {
+  width: 100%;
+  height: 100%;
+  min-height: 15rem;
+  background-color: $background;
+  padding: 0.85rem 0 1rem;
+
+  .checkout__success__container {
+    @include display-flex(center, flex-start);
+    width: $w-xl;
+    height: 100%;
+    margin: auto;
+
+    .checkout__success__body {
+      width: 50%;
+      padding: 1.85rem 0;
+      background-color: $surface;
+      border-radius: 0.65rem;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        @include set-text(
+          $fontSansSerifRegular,
+          $onCheckoutSuccessTitle-xl,
+          $primary
+        );
+        font-weight: bold;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .icon {
+        font-size: 2.5rem;
+        color: $active;
+        margin: 0.85rem auto;
+      }
+
+      .des {
+        .des__title {
+          @include set-text(
+            $fontSansSerifRegular,
+            $onCheckoutSuccessDes-xl,
+            $onSurface
+          );
+          text-align: center;
+        }
+
+        .cart__des {
+          @include display-flex(center, center);
+          margin-top: 0.5rem;
+          @include set-text(
+            $fontSansSerifRegular,
+            $onCheckoutSuccessSubDes-xl,
+            $onSurface
+          );
+
+          .price__label {
+            font-size: 1.05rem;
+          }
+
+          .price__value {
+            margin-left: 0.5rem;
+            font-size: $onCheckoutSuccessDes-xl;
+            color: $warning;
+            font-weight: bold;
+          }
+        }
+      }
+
+      .actions__btn {
+        margin-top: 1.5rem;
+        @include display-flex(center, center);
+
+        .continue__btn {
+          @include reset-button();
+          @include set-text(
+            $fontSansSerifRegular,
+            $onCheckoutSuccessDes-xl,
+            $onPrimary
+          );
+          padding: 0.5rem 2.5rem;
+          background-color: $primary;
+          transition: all 0.35s ease-in;
+          border-radius: 0.45rem;
+
+          &:hover {
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .checkout__success {
+    padding: 0.8rem 0 0.9rem;
+    min-height: 12.5rem;
+
+    .checkout__success__container {
+      width: $w-lg;
+
+      .checkout__success__body {
+        width: 75%;
+        padding: 1.8rem 0;
+
+        border-radius: 0.6rem;
+
+        .title {
+          font-size: $onCheckoutSuccessTitle-lg;
+        }
+
+        .icon {
+          font-size: 2.45rem;
+
+          margin: 0.8rem auto;
+        }
+
+        .des {
+          .des__title {
+            font-size: $onCheckoutSuccessDes-lg;
+          }
+
+          .cart__des {
+            margin-top: 0.45rem;
+
+            font-size: $onCheckoutSuccessSubDes-lg;
+
+            .price__label {
+              font-size: 1rem;
+            }
+
+            .price__value {
+              margin-left: 0.45rem;
+              font-size: $onCheckoutSuccessDes-lg;
+            }
+          }
+        }
+
+        .actions__btn {
+          margin-top: 1.45rem;
+
+          .continue__btn {
+            font-size: $onCheckoutSuccessDes-lg;
+            padding: 0.45rem 2.45rem;
+
+            border-radius: 0.4rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .checkout__success {
+    padding: 0.75rem 0 0.85rem;
+    min-height: 10rem;
+
+    .checkout__success__container {
+      width: $w-md;
+
+      .checkout__success__body {
+        width: 80%;
+        padding: 1.8rem 0;
+
+        border-radius: 0.55rem;
+
+        .title {
+          font-size: $onCheckoutSuccessTitle-md;
+        }
+
+        .icon {
+          font-size: 2.4rem;
+
+          margin: 0.75rem auto;
+        }
+
+        .des {
+          .des__title {
+            font-size: $onCheckoutSuccessDes-md;
+          }
+
+          .cart__des {
+            margin-top: 0.4rem;
+
+            font-size: $onCheckoutSuccessSubDes-md;
+
+            .price__label {
+              font-size: 0.95rem;
+            }
+
+            .price__value {
+              margin-left: 0.4rem;
+              font-size: $onCheckoutSuccessDes-md;
+            }
+          }
+        }
+
+        .actions__btn {
+          margin-top: 1.4rem;
+
+          .continue__btn {
+            font-size: $onCheckoutSuccessDes-md;
+            padding: 0.4rem 2rem;
+
+            border-radius: 0.35rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .checkout__success {
+    padding: 0.55rem 0 0.75rem;
+    min-height: 10rem;
+
+    .checkout__success__container {
+      width: $w-sm;
+
+      .checkout__success__body {
+        width: 95%;
+        padding: 1.75rem 0;
+
+        border-radius: 0.5rem;
+
+        .title {
+          font-size: $onCheckoutSuccessTitle-sm;
+        }
+
+        .icon {
+          font-size: 2.35rem;
+
+          margin: 0.7rem auto;
+        }
+
+        .des {
+          .des__title {
+            font-size: $onCheckoutSuccessDes-sm;
+          }
+
+          .cart__des {
+            margin-top: 0.35rem;
+
+            font-size: $onCheckoutSuccessSubDes-sm;
+
+            .price__label {
+              font-size: 0.9rem;
+            }
+
+            .price__value {
+              margin-left: 0.35rem;
+              font-size: $onCheckoutSuccessDes-sm;
+            }
+          }
+        }
+
+        .actions__btn {
+          margin-top: 1.35rem;
+
+          .continue__btn {
+            font-size: $onCheckoutSuccessDes-sm;
+            padding: 0.35rem 1.85rem;
+
+            border-radius: 0.35rem;
+          }
+        }
+      }
+    }
+  }
+}

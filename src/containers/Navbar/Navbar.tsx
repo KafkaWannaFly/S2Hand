@@ -6,10 +6,16 @@ import { Link } from "react-router-dom";
 import { pageNavigations, actionNavigations } from "./render";
 import { DivProps } from "react-html-props";
 import { Routes } from "../../routings";
+import { useAppSelector } from "../../hooks";
 
 interface Props extends DivProps {}
 
 const Navbar = ({ className, ...props }: Props) => {
+  const cart = useAppSelector((state) => state.cart);
+  let numItems = 0;
+  if (cart.items.length)
+    cart.items.forEach((item) => (numItems += item.quantity ?? 0));
+
   return (
     <nav className={`${styles.navbar} ${className}`} {...props}>
       <div className={styles.navbar__container}>
@@ -24,7 +30,16 @@ const Navbar = ({ className, ...props }: Props) => {
             <ul className={styles.nav__page}>
               {pageNavigations.map(({ icon, label, to }) => (
                 <li key={label} className={`${styles.nav__item}`}>
-                  <NavItemPage to={to} icon={icon} label={label} />
+                  {to === Routes.CART ? (
+                    <NavItemPage
+                      to={to}
+                      icon={icon}
+                      label={label}
+                      badge={numItems ? numItems.toString() : undefined}
+                    />
+                  ) : (
+                    <NavItemPage to={to} icon={icon} label={label} />
+                  )}
                 </li>
               ))}
             </ul>

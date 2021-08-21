@@ -7,7 +7,7 @@
     .dashboard__list__container {
       padding: 0 0.5rem;
       width: 100%;
-      height: 100%;
+      // height: 100%;
       display: flex;
 
       .dashboard__list__empty {
@@ -25,7 +25,29 @@
 
       .table__overflow {
         overflow-x: auto;
+        padding-bottom: 0.5rem;
         flex: 1;
+
+        &::-webkit-scrollbar {
+          height: 0.35rem;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+          border-radius: 1rem;
+          background-color: $variant;
+        }
+
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+          background: $onVariantLight;
+          border-radius: 5px;
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+          background: $onVariant;
+        }
       }
 
       .dashboard__table {
@@ -71,6 +93,15 @@
               text-align: center;
               padding: 0.05rem;
               color: white;
+              border-radius: 0.5rem;
+            }
+
+            .state__hide {
+              background-color: $variantDark;
+              text-align: center;
+              padding: 0.05rem;
+              text-decoration: line-through;
+              color: $onVariantDark;
               border-radius: 0.5rem;
             }
 
@@ -134,9 +165,16 @@
       .dashboard__list__container {
         padding: 0 0.45rem;
 
+        .dashboard__list__empty {
+          font-size: $onEmptyList-lg;
+        }
+
+        .table__overflow {
+          padding-bottom: 0.5rem;
+        }
+
         .dashboard__table {
           border-radius: 0.45rem;
-
           margin-bottom: 0.45rem;
 
           .dashboard__table__header {
@@ -156,7 +194,7 @@
               .dashboard__thumbnail {
                 width: 6rem;
                 height: 6rem;
-                border-radius: 0.5rem;
+                border-radius: 0.45rem;
               }
 
               .actions__container {
@@ -185,6 +223,18 @@
       .dashboard__list__container {
         padding: 0 0.4rem;
 
+        .dashboard__list__empty {
+          font-size: $onEmptyList-md;
+        }
+
+        .table__overflow {
+          padding-bottom: 0.45rem;
+
+          &::-webkit-scrollbar {
+            height: 0.3rem;
+          }
+        }
+
         .dashboard__table {
           border-radius: 0.4rem;
 
@@ -205,9 +255,9 @@
               padding: 0.4rem 0.7rem;
 
               .dashboard__thumbnail {
-                width: 5.5rem;
-                height: 5.5rem;
-                border-radius: 0.45rem;
+                width: 5.25rem;
+                height: 5.25rem;
+                border-radius: 0.4rem;
               }
 
               .actions__container {
@@ -236,6 +286,18 @@
       .dashboard__list__container {
         padding: 0 0.35rem;
 
+        .dashboard__list__empty {
+          font-size: $onEmptyList-sm;
+        }
+
+        .table__overflow {
+          padding-bottom: 0.45rem;
+
+          &::-webkit-scrollbar {
+            height: 0.25rem;
+          }
+        }
+
         .dashboard__table {
           border-radius: 0.35rem;
 
@@ -256,9 +318,9 @@
               padding: 0.35rem 0.65rem;
 
               .dashboard__thumbnail {
-                width: 5rem;
-                height: 5rem;
-                border-radius: 0.4rem;
+                width: 4.5rem;
+                height: 4.5rem;
+                border-radius: 0.35rem;
               }
 
               .actions__container {

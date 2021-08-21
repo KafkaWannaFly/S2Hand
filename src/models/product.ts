@@ -17,6 +17,7 @@ export class Product {
   state: ProductState;
   amount?: number;
   author: User;
+  quantity?: number;
   isViewed?: boolean;
   isSaved?: boolean;
   thumbnail?: string; // Should be disposed
@@ -38,6 +39,7 @@ export class Product {
     this.street = data.street;
     this.state = data.state;
     this.amount = parseInt(data.amount ?? 0);
+    this.quantity = parseInt(data.quantity ?? 0);
     this.author = data.author;
     this.isViewed = data.isViewed;
     this.isSaved = data.isSaved;
@@ -46,5 +48,6 @@ export class Product {
 
 export enum ProductState {
   ON_SALE = "Đang đăng bán",
-  SOLD = "Đã bán"
+  SOLD = "Đã bán",
+  HIDE = "Ẩn tin"
 }

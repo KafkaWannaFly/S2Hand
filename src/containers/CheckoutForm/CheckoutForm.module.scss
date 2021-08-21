@@ -1,0 +1,494 @@
+@import "../../styles/standard";
+
+.checkout {
+  .checkout__container {
+    .form__session__container {
+      margin-bottom: 1rem;
+
+      .login__request {
+        @include display-flex(flex-end, center);
+        @include set-text(
+          $fontSansSerifRegular,
+          $onCheckoutLoginRequest-xl,
+          black
+        );
+        margin-right: 2.5rem;
+        margin-bottom: 0.5rem;
+
+        .action {
+          margin-left: 0.5rem;
+          text-decoration: none;
+          color: $primary;
+          font-weight: bold;
+        }
+      }
+
+      .form__field__container {
+        margin: 0 2.5rem;
+        padding-top: 0.25rem;
+
+        .form__field {
+          margin-bottom: 0.85rem;
+        }
+
+        .double__line__field {
+          @include display-flex(space-between, center);
+
+          .form__field {
+            &:first-child {
+              flex: 8;
+              margin-right: 3.5rem;
+            }
+
+            &:last-child {
+              flex: 4;
+            }
+          }
+        }
+
+        .form__field__address {
+          @include display-flex(space-between, center);
+
+          .form__field {
+            flex: 1;
+
+            &:not(:last-child) {
+              margin-right: 3.5rem;
+            }
+          }
+        }
+
+        .form__field__input {
+          @include reset-input;
+          @include set-text(
+            $fontSansSerifRegular,
+            $onCheckoutFormFieldInputText-xl,
+            $onSurface
+          );
+          margin-top: 0.4rem;
+          width: 100%;
+          border: 1px solid $borderNormal;
+          padding: 0.45rem 0.5rem;
+          border-radius: 4px;
+          resize: none;
+
+          &.err {
+            border-color: $warning;
+          }
+        }
+
+        .radio__payment {
+          @include set-text(
+            $fontSansSerifRegular,
+            $onCheckoutFormFieldInputText-xl,
+            $onSurface
+          );
+          @include display-flex(initial, center);
+          background-color: #f8f8f8;
+          border-radius: 0.5rem;
+          padding: 0 2rem;
+          height: 3.5rem;
+
+          input,
+          label {
+            cursor: pointer;
+          }
+
+          .payment__img {
+            margin: 0 1.5rem 0 1rem;
+            height: 1.45rem;
+          }
+
+          .payment__img__momo {
+            margin: 0 1.5rem 0 1rem;
+            height: 2rem;
+          }
+
+          .payment__icon {
+            margin: 0 1.5rem 0 1rem;
+            font-size: 2rem;
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .form__actions__container {
+      @include display-flex(flex-end, center);
+      margin-top: 1.85rem;
+      margin-bottom: 0.5rem;
+
+      .form__action__confirm {
+        @include reset-button();
+        @include set-text(
+          $fontSansSerifRegular,
+          $onCheckoutFormActionBtnTitle-xl,
+          $onPrimary
+        );
+        background-color: $primary;
+        padding: 0.5rem 2.5rem;
+        border-radius: 0.5rem;
+        margin-left: 1.5rem;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+
+      .form__action__cancel {
+        @include reset-button();
+        @include set-text(
+          $fontSansSerifRegular,
+          $onCheckoutFormActionBtnTitle-xl,
+          $onVariant
+        );
+        background-color: $variant;
+        padding: 0.5rem 2.5rem;
+        border-radius: 0.5rem;
+        margin-left: 1.5rem;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          background-color: $onVariantLight;
+          color: black;
+        }
+      }
+    }
+
+    .err__form {
+      @include set-text(
+        $fontSansSerifRegular,
+        $onCheckoutFormNote-xl,
+        $warning
+      );
+      margin-top: 0.5rem;
+      text-align: end;
+      font-style: italic;
+    }
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .checkout {
+    .checkout__container {
+      .form__session__container {
+        .login__request {
+          font-size: $onCheckoutLoginRequest-lg;
+          margin-right: 2.25rem;
+          margin-bottom: 0.45rem;
+
+          .action {
+            margin-left: 0.45rem;
+          }
+        }
+
+        .form__field__container {
+          margin: 0 2.25rem;
+          padding-top: 0.2rem;
+
+          .form__field {
+            margin-bottom: 0.8rem;
+          }
+
+          .double__line__field {
+            .form__field {
+              &:first-child {
+                flex: 8;
+                margin-right: 3.25rem;
+              }
+
+              &:last-child {
+                flex: 4;
+              }
+            }
+          }
+
+          .form__field__address {
+            .form__field {
+              flex: 1;
+
+              &:not(:last-child) {
+                margin-right: 3.25rem;
+              }
+            }
+          }
+
+          .form__field__input {
+            font-size: $onCheckoutFormFieldInputText-lg;
+          }
+
+          .radio__payment {
+            font-size: $onCheckoutFormFieldInputText-lg;
+
+            border-radius: 0.45rem;
+            padding: 0 1.95rem;
+            height: 3.45rem;
+
+            .payment__img {
+              margin: 0 1.45rem 0 0.95rem;
+              height: 1.4rem;
+            }
+
+            .payment__img__momo {
+              margin: 0 1.45rem 0 0.95rem;
+              height: 1.95rem;
+            }
+
+            .payment__icon {
+              margin: 0 1.45rem 0 0.95rem;
+              font-size: 1.95rem;
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      .form__actions__container {
+        margin-top: 1.8rem;
+        margin-bottom: 0.5rem;
+
+        .form__action__confirm,
+        .form__action__cancel {
+          font-size: $onCheckoutFormActionBtnTitle-lg;
+
+          padding: 0.45rem 2.25rem;
+          border-radius: 0.45rem;
+        }
+      }
+
+      .err__form {
+        font-size: $onCheckoutFormNote-lg;
+        margin-top: 0.45rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .checkout {
+    .checkout__container {
+      .form__session__container {
+        .login__request {
+          font-size: $onCheckoutLoginRequest-md;
+          margin-right: 1.85rem;
+          margin-bottom: 0.4rem;
+
+          .action {
+            margin-left: 0.4rem;
+          }
+        }
+
+        .form__field__container {
+          margin: 0 1.85rem;
+          padding-top: 0.15rem;
+
+          .form__field {
+            margin-bottom: 0.95rem;
+          }
+
+          .double__line__field {
+            .form__field {
+              &:first-child {
+                flex: 8;
+                margin-right: 3.25rem;
+              }
+
+              &:last-child {
+                flex: 4;
+              }
+            }
+          }
+
+          .form__field__address {
+            .form__field {
+              flex: 1;
+
+              &:not(:last-child) {
+                margin-right: 3.25rem;
+              }
+            }
+          }
+
+          .form__field__address {
+            flex-wrap: wrap;
+
+            .form__field {
+              flex: 0;
+              flex-basis: 47.5%;
+              margin-top: 0.4rem;
+              margin-bottom: 0;
+              // margin-bottom: 0.75rem;
+
+              &:not(:last-child) {
+                margin-right: 0rem;
+              }
+            }
+          }
+
+          .form__field__input {
+            font-size: $onCheckoutFormFieldInputText-md;
+          }
+
+          .radio__payment {
+            font-size: $onCheckoutFormFieldInputText-md;
+
+            border-radius: 0.4rem;
+            padding: 0 1.9rem;
+            height: 3.4rem;
+
+            .payment__img {
+              margin: 0 1.4rem 0 0.9rem;
+              height: 1.35rem;
+            }
+
+            .payment__img__momo {
+              margin: 0 1.4rem 0 0.9rem;
+              height: 1.9rem;
+            }
+
+            .payment__icon {
+              margin: 0 1.4rem 0 0.9rem;
+              font-size: 1.9rem;
+            }
+          }
+        }
+      }
+
+      .form__actions__container {
+        margin-top: 1.75rem;
+        margin-bottom: 0.45rem;
+
+        .form__action__confirm,
+        .form__action__cancel {
+          font-size: $onCheckoutFormActionBtnTitle-md;
+
+          padding: 0.4rem 2.15rem;
+          border-radius: 0.4rem;
+        }
+      }
+
+      .err__form {
+        font-size: $onCheckoutFormNote-md;
+        margin-top: 0.4rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .checkout {
+    .checkout__container {
+      .form__session__container {
+        .login__request {
+          font-size: $onCheckoutLoginRequest-sm;
+          margin-right: 1.5rem;
+          margin-bottom: 0.35rem;
+
+          .action {
+            margin-left: 0.35rem;
+          }
+        }
+
+        .form__field__container {
+          margin: 0 1.5rem;
+          padding-top: 0.15rem;
+
+          .form__field {
+            margin-bottom: 0.65rem;
+          }
+
+          .double__line__field {
+            flex-direction: column;
+            .form__field {
+              &:first-child {
+                flex: 1;
+                width: 100%;
+                margin-right: 0rem;
+              }
+
+              &:last-child {
+                flex: 1;
+                width: 100%;
+              }
+            }
+          }
+
+          .form__field__address {
+            .form__field {
+              flex: 1;
+
+              &:not(:last-child) {
+                margin-right: 3.25rem;
+              }
+            }
+          }
+
+          .form__field__address {
+            flex-wrap: wrap;
+            flex-direction: column;
+
+            .form__field {
+              flex: 1;
+              flex-basis: 100%;
+              width: 100%;
+              margin-top: 0.4rem;
+              margin-bottom: 0;
+              // margin-bottom: 0.75rem;
+
+              &:not(:last-child) {
+                margin-right: 0rem;
+              }
+            }
+          }
+
+          .form__field__input {
+            font-size: $onCheckoutFormFieldInputText-sm;
+          }
+
+          .radio__payment {
+            font-size: $onCheckoutFormFieldInputText-sm;
+
+            border-radius: 0.35rem;
+            padding: 0 1.85rem;
+            height: 3.35rem;
+
+            .payment__img {
+              margin: 0 1.35rem 0 0.85rem;
+              height: 1.2rem;
+            }
+
+            .payment__img__momo {
+              margin: 0 1.35rem 0 0.85rem;
+              height: 1.8rem;
+            }
+
+            .payment__icon {
+              margin: 0 1.35rem 0 0.85rem;
+              font-size: 1.8rem;
+            }
+          }
+        }
+      }
+
+      .form__actions__container {
+        margin-top: 1.7rem;
+        margin-bottom: 0.4rem;
+
+        .form__action__confirm,
+        .form__action__cancel {
+          font-size: $onCheckoutFormActionBtnTitle-sm;
+
+          padding: 0.35rem 1.5rem;
+          border-radius: 0.25rem;
+        }
+      }
+
+      .err__form {
+        font-size: $onCheckoutFormNote-sm;
+        margin-top: 0.4rem;
+      }
+    }
+  }
+}

@@ -18,7 +18,8 @@ export const categoryPanel = {
 export const productPanel = {
   title: "Danh sách tất cả sản phẩm",
   card: {
-    currencyUnit: "đ"
+    currencyUnit: "đ",
+    newPercentage: "Mới"
   },
   empty: "Không tìm thấy bất kỳ sản phẩm nào"
 };
@@ -273,5 +274,103 @@ export const product = {
   actions: {
     addToCart: "Thêm vào giỏ hàng",
     buyNow: "Mua ngay"
+  }
+};
+
+export const cart = {
+  title: "Quản lý giỏ hàng",
+  total: "Tổng tiền",
+  table: {
+    stt: "STT",
+    image: "Hình ảnh",
+    name: "Tên sản phẩm",
+    price: "Giá sản phẩm",
+    quantity: "Số lượng",
+    action: "Thao tác"
+  },
+  numItems: "Số lượng sản phẩm",
+  actions: {
+    checkout: "Thanh toán"
+  },
+  empty: "Không có sản phẩm nào trong giỏ hàng của bạn",
+  dialog: {
+    delete: {
+      title: "Bạn có chắc muốn sản phẩm khỏi giỏ hàng ?",
+      body: "Sản phẩm của bạn sẽ bị xoá khỏi giỏ hàng. Thao tác này không thể khôi phục!",
+      actions: {
+        confirm: "Xoá sản phẩm",
+        cacel: "Huỷ"
+      }
+    }
+  }
+};
+
+export const checkout = {
+  success: {
+    title: "Thanh toán thành công",
+    des: {
+      title: "Bạn đã thanh toán đơn hàng thành công",
+      price: "Giá trị đơn hàng"
+    },
+    action: {
+      seemore: "Xem thêm sản phẩm khác"
+    }
+  },
+  loginRequest: {
+    question: "Bạn chưa có tài khoản?",
+    action: "Đăng nhập ngay"
+  },
+  deliverySession: {
+    title: "Thông tin nhận hàng",
+    fields: {
+      name: {
+        placeholder: "Họ tên người nhận"
+      },
+      phone: {
+        placeholder: "Số điện thoại"
+      },
+      email: {
+        placeholder: "Email"
+      },
+      street: {
+        placeholder: "Số nhà, tên đường"
+      },
+      city: {
+        placeholder: "Tỉnh"
+      },
+      district: {
+        placeholder: "Huyện"
+      },
+      ward: {
+        placeholder: "Xã"
+      },
+      note: {
+        placeholder: "Ghi chú thêm (Ví dụ: Giao giờ hành chánh)"
+      }
+    }
+  },
+  paymentSession: {
+    title: "Thông tin thanh toán",
+    options: {
+      cod: "Thanh toán khi nhận hàng",
+      zalopay: "Ví điện tử ZaloPay",
+      momo: "Ví Momo",
+      vnpay: "VNPAY"
+    }
+  },
+  actions: {
+    confirm: "Xác nhận mua hàng",
+    cancel: "Huỷ"
+  },
+  err: "Vui lòng kiểm tra lại thông tin mua hàng",
+  dialog: {
+    cancel: {
+      title: "Bạn có muốn thoát khỏi Xác nhận mua hàng ?",
+      body: "Bạn sẽ thoát khỏi trang thông tin mua hàng. Thông tin bạn vừa nhập sẽ mất",
+      actions: {
+        confirm: "Xác nhận",
+        cancel: "Huỷ"
+      }
+    }
   }
 };

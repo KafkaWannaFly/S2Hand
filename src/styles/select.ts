@@ -28,12 +28,12 @@ export const selectStyleErr: StylesConfig<
 > = {
   control: (base) => ({
     ...base,
-    border: "1px solid #ff0000",
+    border: "1px solid #b00020",
     padding: "0.11rem 0.05rem",
     fontSize: "1rem",
     boxShadow: "none",
     "&:hover": {
-      border: "1px solid #ff0000"
+      border: "1px solid #b00020"
     },
     fontFamily: "Montserrat-Regular",
     marginTop: "0.4rem"

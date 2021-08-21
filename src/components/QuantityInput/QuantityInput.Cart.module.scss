@@ -1,0 +1,118 @@
+@import "../../styles/standard";
+
+.quantity {
+  width: 100%;
+
+  .quantity__container {
+    width: 100%;
+    @include display-flex(initial, center);
+    height: 2rem;
+
+    .btn__remove,
+    .btn__add {
+      @include reset-button();
+      height: 100%;
+      border: 1px solid $borderNormal;
+      background-color: $surface;
+      padding: 0 1rem;
+
+      .icon__add,
+      .icon__remove {
+        font-size: $onQuantityCart-xl;
+        color: $onVariantDark;
+      }
+
+      &:hover {
+        background-color: $primary;
+
+        .icon__add,
+        .icon__remove {
+          color: $onPrimary;
+        }
+      }
+    }
+  }
+
+  .quantity__input {
+    width: 4rem;
+
+    @include reset-input();
+    @include set-text(
+      $fontSansSerifRegular,
+      $onQuantityCart-xl,
+      $onVariantDark
+    );
+    text-align: center;
+    border: 1px solid $borderNormal;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .quantity {
+    .quantity__container {
+      height: 1.75rem;
+
+      .btn__remove,
+      .btn__add {
+        padding: 0 0.85rem;
+
+        .icon__add,
+        .icon__remove {
+          font-size: $onQuantityCart-lg;
+        }
+      }
+    }
+
+    .quantity__input {
+      width: 3.25rem;
+      font-size: $onQuantityCart-lg;
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .quantity {
+    .quantity__container {
+      height: 1.5rem;
+
+      .btn__remove,
+      .btn__add {
+        padding: 0 0.65rem;
+
+        .icon__add,
+        .icon__remove {
+          font-size: $onQuantityCart-md;
+        }
+      }
+    }
+
+    .quantity__input {
+      width: 3rem;
+      font-size: $onQuantityCart-md;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .quantity {
+    .quantity__container {
+      height: 1.25rem;
+
+      .btn__remove,
+      .btn__add {
+        padding: 0 0.5rem;
+
+        .icon__add,
+        .icon__remove {
+          font-size: $onQuantityCart-sm;
+        }
+      }
+    }
+
+    .quantity__input {
+      width: 2.75rem;
+      font-size: $onQuantityCart-sm;
+    }
+  }
+}

@@ -15,6 +15,11 @@ import { vi } from "date-fns/locale";
 import { IoPersonCircleSharp } from "react-icons/io5";
 import { IoBagAdd } from "react-icons/io5";
 import { ImagesSlider } from "../../containers";
+import { QuantityInput } from "../../components";
+import { cartActions } from "../../redux/slices";
+import { useAppDispatch } from "../../hooks";
+import { useHistory } from "react-router-dom";
+import { Routes } from "../../routings";
 
 interface Props extends DivProps {}
 
@@ -26,6 +31,7 @@ const DetailProduct = ({ className, ...props }: Props) => {
   const contents = strings.product;
 
   const [bookmark, setBookmark] = useState(false);
+  const [quantity, setQuantity] = useState(1);
 
   const { id } = useParams<ParamProps>();
 
@@ -39,6 +45,18 @@ const DetailProduct = ({ className, ...props }: Props) => {
     window.scrollTo(0, 0);
     if (products.length) setProduct(products.find((item) => item.id === id));
   }, [products]);
+
+  const addToCart = () => {
+    if (product)
+      dispatch(
+        cartActions.updateItemToCart({
+          product: product,
+          quantity: quantity
+        })
+      );
+  };
+  const dispatch = useAppDispatch();
+  const history = useHistory();
 
   return (
     <div className={`${styles.detail__product} ${className}`} {...props}>
@@ -108,12 +126,29 @@ const DetailProduct = ({ className, ...props }: Props) => {
                     </div>
                   </div>
 
+                  <QuantityInput
+                    className={styles.quantity__input}
+                    start={1}
+                    min={1}
+                    max={10}
+                    onQuantityChange={(num: number) => setQuantity(num)}
+                  />
+
                   <div className={styles.actions__container}>
-                    <button className={styles.add__to__cart}>
+                    <button
+                      className={styles.add__to__cart}
+                      onClick={addToCart}
+                    >
                       <Icon icon={IoBagAdd} className={styles.cart__icon} />
                       {contents.actions.addToCart}
                     </button>
-                    <button className={styles.buy__now}>
+                    <button
+                      className={styles.buy__now}
+                      onClick={() => {
+                        addToCart();
+                        history.push(Routes.CART);
+                      }}
+                    >
                       {contents.actions.buyNow}
                     </button>
                   </div>

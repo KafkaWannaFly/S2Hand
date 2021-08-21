@@ -1,6 +1,7 @@
 import productsReducer, { productsActions } from "./productsSlice";
 import categoriesReducer, { categoriesActions } from "./categoriesSlice";
 import userReducer, { userActions } from "./userSlice";
+import cartReducer, { cartActions } from "./cartSlice";
 
 export {
   productsReducer,
@@ -8,5 +9,7 @@ export {
   categoriesReducer,
   categoriesActions,
   userReducer,
-  userActions
+  userActions,
+  cartReducer,
+  cartActions
 };

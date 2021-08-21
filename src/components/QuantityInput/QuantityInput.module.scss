@@ -1,0 +1,111 @@
+@import "../../styles/standard";
+
+.quantity {
+  width: 100%;
+
+  .quantity__container {
+    width: 100%;
+    @include display-flex(initial, center);
+    height: 3rem;
+
+    .btn__remove,
+    .btn__add {
+      @include reset-button();
+      height: 100%;
+      border: 1px solid $borderNormal;
+      background-color: $surface;
+      padding: 0 1.25rem;
+
+      .icon__add,
+      .icon__remove {
+        font-size: $onQuantity-xl;
+        color: $onVariantDark;
+      }
+
+      &:hover {
+        background-color: $primary;
+
+        .icon__add,
+        .icon__remove {
+          color: $onPrimary;
+        }
+      }
+    }
+  }
+
+  .quantity__input {
+    width: 0;
+    flex: 1;
+    @include reset-input();
+    @include set-text($fontSansSerifRegular, $onQuantity-xl, $onVariantDark);
+    text-align: center;
+    border: 1px solid $borderNormal;
+    height: 100%;
+  }
+}
+
+@media only screen and (min-width: $lg) and (max-width: $xl) {
+  .quantity {
+    .quantity__container {
+      height: 2.75rem;
+
+      .btn__remove,
+      .btn__add {
+        padding: 0 1.2rem;
+
+        .icon__add,
+        .icon__remove {
+          font-size: $onQuantity-lg;
+        }
+      }
+    }
+
+    .quantity__input {
+      font-size: $onQuantity-lg;
+    }
+  }
+}
+
+@media only screen and (min-width: $md) and (max-width: $lg) {
+  .quantity {
+    .quantity__container {
+      height: 2.7rem;
+
+      .btn__remove,
+      .btn__add {
+        padding: 0 1.15rem;
+
+        .icon__add,
+        .icon__remove {
+          font-size: $onQuantity-md;
+        }
+      }
+    }
+
+    .quantity__input {
+      font-size: $onQuantity-md;
+    }
+  }
+}
+
+@media only screen and (min-width: $sm) and (max-width: $md) {
+  .quantity {
+    .quantity__container {
+      height: 2.65rem;
+
+      .btn__remove,
+      .btn__add {
+        padding: 0 1.1rem;
+
+        .icon__add,
+        .icon__remove {
+          font-size: $onQuantity-sm;
+        }
+      }
+    }
+
+    .quantity__input {
+      font-size: $onQuantity-sm;
+    }
+  }
+}

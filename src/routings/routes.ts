@@ -4,6 +4,7 @@ enum Routes {
   CART = "/cart",
   POST = "/post",
   LOGIN = "/login",
+  REGISTER = "/register",
   NOFI = "/nofi",
   ABOUT = "/about",
   RECRUITMENT = "/recruitment",
@@ -12,8 +13,10 @@ enum Routes {
   EDIT = "/edit/:id",
   HELP = "/help",
   MANAGE = "/manage",
-  CATEGORY = ":/name",
-  PRODUCT = "/product/:id"
+  CATEGORY = "/:name",
+  PRODUCT = "/product/:id",
+  CHECKOUT = "/checkout",
+  CHECKOUT_SUCCESS = "/checkout_success"
 }
 
 export default Routes;

@@ -26,7 +26,7 @@ const Home = ({ className, ...props }: Props) => {
 
   useEffect(() => {
     const productFilter = products.filter(
-      (item) => item.state != ProductState.SOLD
+      (item) => item.state === ProductState.ON_SALE
     );
     setDisplayProducts(productFilter.slice(0, CAPACITY * seeMore));
   }, [seeMore, products]);
