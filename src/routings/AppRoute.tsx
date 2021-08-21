@@ -9,7 +9,8 @@ import {
   DetailProduct,
   Checkout,
   Register,
-  CheckoutSuccess
+  CheckoutSuccess,
+  CategoryDetail
 } from "../pages";
 import { Route } from "react-router-dom";
 import Routes from "./routes";
@@ -27,6 +28,7 @@ const AppRoute = () => {
       <Route path={Routes.REGISTER} component={Register} />
       <Route path={Routes.CHECKOUT} component={Checkout} />
       <Route path={Routes.CHECKOUT_SUCCESS} component={CheckoutSuccess} />
+      <Route path={Routes.CATEGORY} component={CategoryDetail} />
     </>
   );
 };

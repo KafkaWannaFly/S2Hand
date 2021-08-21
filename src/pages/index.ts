@@ -8,6 +8,7 @@ import Edit from "./Edit/Edit";
 import DetailProduct from "./DetailProduct/DetailProduct";
 import Checkout from "./Checkout/Checkout";
 import CheckoutSuccess from "./Checkout/CheckoutSuccess";
+import CategoryDetail from "./CategoryDetail/CategoryDetail";
 
 export {
   Home,
@@ -19,5 +20,6 @@ export {
   DetailProduct,
   Checkout,
   Register,
-  CheckoutSuccess
+  CheckoutSuccess,
+  CategoryDetail
 };
