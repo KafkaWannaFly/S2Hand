@@ -8,7 +8,8 @@ import {
   Edit,
   DetailProduct,
   Checkout,
-  Register
+  Register,
+  CheckoutSuccess
 } from "../pages";
 import { Route } from "react-router-dom";
 import Routes from "./routes";
@@ -25,6 +26,7 @@ const AppRoute = () => {
       <Route path={Routes.PRODUCT} component={DetailProduct} />
       <Route path={Routes.REGISTER} component={Register} />
       <Route path={Routes.CHECKOUT} component={Checkout} />
+      <Route path={Routes.CHECKOUT_SUCCESS} component={CheckoutSuccess} />
     </>
   );
 };

@@ -306,6 +306,16 @@ export const cart = {
 };
 
 export const checkout = {
+  success: {
+    title: "Thanh toán thành công",
+    des: {
+      title: "Bạn đã thanh toán đơn hàng thành công",
+      price: "Giá trị đơn hàng"
+    },
+    action: {
+      seemore: "Xem thêm sản phẩm khác"
+    }
+  },
   loginRequest: {
     question: "Bạn chưa có tài khoản?",
     action: "Đăng nhập ngay"

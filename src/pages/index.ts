@@ -7,6 +7,7 @@ import Cart from "./Cart/Cart";
 import Edit from "./Edit/Edit";
 import DetailProduct from "./DetailProduct/DetailProduct";
 import Checkout from "./Checkout/Checkout";
+import CheckoutSuccess from "./Checkout/CheckoutSuccess";
 
 export {
   Home,
@@ -17,5 +18,6 @@ export {
   Edit,
   DetailProduct,
   Checkout,
-  Register
+  Register,
+  CheckoutSuccess
 };
