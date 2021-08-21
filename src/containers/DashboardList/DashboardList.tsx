@@ -84,7 +84,9 @@ const DashboardList = ({ items, className, ...props }: Props) => {
           className={
             item.state === ProductState.ON_SALE
               ? styles.state__active
-              : styles.state__close
+              : item.state === ProductState.SOLD
+              ? styles.state__close
+              : styles.state__hide
           }
         >
           {item.state}

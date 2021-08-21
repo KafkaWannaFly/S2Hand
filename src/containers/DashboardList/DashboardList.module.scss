@@ -96,6 +96,15 @@
               border-radius: 0.5rem;
             }
 
+            .state__hide {
+              background-color: $variantDark;
+              text-align: center;
+              padding: 0.05rem;
+              text-decoration: line-through;
+              color: $onVariantDark;
+              border-radius: 0.5rem;
+            }
+
             .state__close {
               background-color: $variantDark;
               text-align: center;

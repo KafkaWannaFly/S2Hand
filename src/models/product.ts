@@ -48,5 +48,6 @@ export class Product {
 
 export enum ProductState {
   ON_SALE = "Đang đăng bán",
-  SOLD = "Đã bán"
+  SOLD = "Đã bán",
+  HIDE = "Ẩn tin"
 }
