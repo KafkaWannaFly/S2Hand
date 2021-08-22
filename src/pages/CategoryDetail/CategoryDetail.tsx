@@ -11,7 +11,34 @@ interface Props extends DivProps {}
 const CAPACITY = 24;
 
 const CategoryDetail = ({ className, ...props }: Props) => {
-  const products = useAppSelector((state) => state.products);
+  let products = useAppSelector((state) => state.products);
+  const path = window.location.pathname;
+  switch (path) {
+    case "/sach":
+      products = products.filter((product) => product.category === "Sách");
+      break;
+    case "/dodunghoctap":
+      products = products.filter(
+        (product) => product.category === "Dụng cụ học tập"
+      );
+      break;
+    case "/quanao":
+      products = products.filter((product) => product.category === "Quần áo");
+      break;
+    case "/dodientu":
+      products = products.filter(
+        (product) => product.category === "Đồ điện tử"
+      );
+      break;
+    case "/dogiadung":
+      products = products.filter(
+        (product) => product.category === "Đồ gia dụng"
+      );
+      break;
+    case "/khac":
+      products = products.filter((product) => product.category === "Khác");
+      break;
+  }
 
   const [displayProducts, setDisplayProducts] = useState<Product[]>([]);
   const [seeMore, setSeeMore] = useState(0);
